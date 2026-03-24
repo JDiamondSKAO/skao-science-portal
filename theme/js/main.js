@@ -420,4 +420,66 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    /* -----------------------------------------
+     * RECENT UPDATES — CATEGORY FILTER TABS
+     * ----------------------------------------- */
+    var filterTabs = document.querySelectorAll('.ru-filter-tab');
+    var ruCards = document.querySelectorAll('.ru-card[data-category]');
+
+    filterTabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+            var filter = this.getAttribute('data-filter');
+
+            /* Update active tab */
+            filterTabs.forEach(function (t) { t.classList.remove('ru-filter-active'); });
+            this.classList.add('ru-filter-active');
+
+            /* Filter cards */
+            ruCards.forEach(function (card) {
+                if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                    card.classList.remove('ru-card-hidden');
+                } else {
+                    card.classList.add('ru-card-hidden');
+                }
+            });
+        });
+    });
+
+    /* -----------------------------------------
+     * RELATIVE DATE FORMATTING
+     * ----------------------------------------- */
+    function formatRelativeDate(dateStr) {
+        if (!dateStr) return null;
+        var date = new Date(dateStr + 'T00:00:00');
+        if (isNaN(date.getTime())) return null;
+
+        var now = new Date();
+        var diff = Math.floor((now - date) / 1000); /* seconds */
+
+        if (diff < 0) return 'Upcoming';
+        if (diff < 60) return 'Just now';
+        if (diff < 3600) return Math.floor(diff / 60) + 'm ago';
+        if (diff < 86400) return Math.floor(diff / 3600) + 'h ago';
+        if (diff < 172800) return 'Yesterday';
+        if (diff < 604800) return Math.floor(diff / 86400) + ' days ago';
+        if (diff < 2592000) return Math.floor(diff / 604800) + ' week' + (Math.floor(diff / 604800) > 1 ? 's' : '') + ' ago';
+        if (diff < 31536000) {
+            var months = Math.floor(diff / 2592000);
+            return months + ' month' + (months > 1 ? 's' : '') + ' ago';
+        }
+        return Math.floor(diff / 31536000) + ' year' + (Math.floor(diff / 31536000) > 1 ? 's' : '') + ' ago';
+    }
+
+    /* Apply relative dates to all elements with data-date */
+    document.querySelectorAll('.ru-date[data-date]').forEach(function (el) {
+        var dateStr = el.getAttribute('data-date');
+        if (dateStr) {
+            var relative = formatRelativeDate(dateStr);
+            if (relative) {
+                var textEl = el.querySelector('.ru-date-text');
+                if (textEl) textEl.textContent = relative;
+            }
+        }
+    });
+
 });

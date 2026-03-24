@@ -714,6 +714,30 @@ body {
 
 .ru-view-all:hover { background: var(--blue-100); color: var(--blue-700) !important; text-decoration: none !important; }
 
+/* Filter tabs */
+.ru-filter-tabs {
+    display: flex; gap: 6px; margin-bottom: 16px;
+    overflow-x: auto; padding-bottom: 2px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.ru-filter-tab {
+    padding: 6px 14px; border-radius: 20px;
+    font-size: 13px; font-weight: 500; font-family: inherit;
+    white-space: nowrap; cursor: pointer; border: 1px solid var(--slate-200);
+    background: #fff; color: var(--slate-600);
+    transition: all 0.15s;
+}
+
+.ru-filter-tab:hover { border-color: var(--slate-300); background: var(--slate-50); }
+
+.ru-filter-tab.ru-filter-active {
+    background: var(--slate-900); color: #fff;
+    border-color: var(--slate-900);
+}
+
+.ru-card-hidden { display: none !important; }
+
 .ru-grid {
     display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;
 }
@@ -927,6 +951,49 @@ body {
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
     transform: scale(1.1);
 }
+
+
+/* ============================================= */
+/* SKELETON LOADING STATES                        */
+/* ============================================= */
+@keyframes shimmer {
+    0% { background-position: -400px 0; }
+    100% { background-position: 400px 0; }
+}
+
+.skeleton {
+    background: linear-gradient(90deg, var(--slate-100) 25%, var(--slate-200) 50%, var(--slate-100) 75%);
+    background-size: 800px 100%;
+    animation: shimmer 1.5s infinite ease-in-out;
+    border-radius: var(--radius);
+}
+
+.skeleton-card {
+    background: #fff; border: 1px solid var(--slate-200);
+    border-radius: var(--radius-lg); padding: 16px;
+    display: flex; gap: 12px;
+}
+
+.skeleton-icon {
+    width: 32px; height: 32px; border-radius: 8px; flex-shrink: 0;
+}
+
+.skeleton-body { flex: 1; display: flex; flex-direction: column; gap: 8px; }
+.skeleton-line { height: 12px; border-radius: 4px; }
+.skeleton-line-short { width: 60%; }
+.skeleton-line-long { width: 90%; }
+.skeleton-line-badge { width: 80px; height: 18px; border-radius: 4px; }
+
+/* Quick Access skeleton */
+.skeleton-qa-card {
+    background: #fff; border: 1px solid var(--slate-200);
+    border-radius: 10px; padding: 20px 12px 16px;
+    display: flex; flex-direction: column; align-items: center; gap: 10px;
+}
+
+.skeleton-qa-icon { width: 40px; height: 40px; border-radius: 10px; }
+.skeleton-qa-title { width: 70%; height: 13px; border-radius: 4px; }
+.skeleton-qa-desc { width: 85%; height: 10px; border-radius: 4px; }
 
 
 /* ============================================= */

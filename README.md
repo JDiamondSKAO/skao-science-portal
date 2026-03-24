@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/version-0.7-blue?style=flat-square" alt="Version">
+  <img src="https://img.shields.io/badge/version-0.9-blue?style=flat-square" alt="Version">
   <img src="https://img.shields.io/badge/confluence-8.5.26-0052CC?style=flat-square&logo=confluence&logoColor=white" alt="Confluence">
   <img src="https://img.shields.io/badge/scroll_viewport-K15t-4B5563?style=flat-square" alt="Scroll Viewport">
   <img src="https://img.shields.io/badge/license-internal-lightgrey?style=flat-square" alt="Internal">
@@ -111,6 +111,8 @@ See [`ROADMAP.md`](ROADMAP.md) for planned improvements including visual polish,
 
 | Version | Date | Highlights |
 |---------|------|------------|
+| **v0.9** | 2026-03-24 | Category filter tabs, relative date formatting, skeleton loading states, dynamic footer sections |
+| **v0.8** | 2026-03-24 | Hero typography, card hover states, WCAG focus states, icon sizing, spacing refinements |
 | **v0.7** | 2026-03-24 | Live search, sidebar removed, Quick Access cards matched to Figma, wiki markup content, section page templates |
 | **v0.6** | 2026-03 | Initial full theme — hero, Quick Access, Recent Updates, header nav, footer |
 
