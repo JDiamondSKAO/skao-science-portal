@@ -164,12 +164,12 @@
         <div class="status-strip-inner">
             <span class="status-strip-label">Observatory Status</span>
             <div class="status-strip-items">
-                <a href="#" class="status-item">
+                <a href="https://www.skao.int/en/explore/telescopes/ska-mid" target="_blank" rel="noopener" class="status-item">
                     <span class="status-dot status-amber"></span>
                     <span class="status-name">SKA-Mid</span>
                     <span class="status-state">Commissioning</span>
                 </a>
-                <a href="#" class="status-item">
+                <a href="https://www.skao.int/en/explore/telescopes/ska-low" target="_blank" rel="noopener" class="status-item">
                     <span class="status-dot status-grey"></span>
                     <span class="status-name">SKA-Low</span>
                     <span class="status-state">Construction</span>
@@ -466,8 +466,14 @@
             <section class="upcoming-events">
                 <div class="section-inner">
                     <h2 class="section-heading">Upcoming Deadlines &amp; Events</h2>
+                    <div class="ue-filter-tabs" id="ueFilterTabs">
+                        <button class="ue-filter-tab ue-filter-active" data-ue-filter="all">All</button>
+                        <button class="ue-filter-tab" data-ue-filter="deadline">Deadlines</button>
+                        <button class="ue-filter-tab" data-ue-filter="workshop">Workshops &amp; Conferences</button>
+                        <button class="ue-filter-tab" data-ue-filter="maintenance">Maintenance</button>
+                    </div>
                     <div class="ue-timeline">
-                        <div class="ue-item ue-deadline">
+                        <div class="ue-item ue-deadline" data-ue-category="deadline">
                             <div class="ue-date-col">
                                 <span class="ue-month">JUN</span>
                                 <span class="ue-day">15</span>
@@ -478,7 +484,7 @@
                                 <p class="ue-desc">Submit proposals for SKAO observing time via the proposal submission portal.</p>
                             </div>
                         </div>
-                        <div class="ue-item ue-workshop">
+                        <div class="ue-item ue-workshop" data-ue-category="workshop">
                             <div class="ue-date-col">
                                 <span class="ue-month">JUL</span>
                                 <span class="ue-day">07</span>
@@ -489,7 +495,7 @@
                                 <p class="ue-desc">Hands-on workshop for processing and analysing SKA pathfinder data. Registration open.</p>
                             </div>
                         </div>
-                        <div class="ue-item ue-maintenance">
+                        <div class="ue-item ue-maintenance" data-ue-category="maintenance">
                             <div class="ue-date-col">
                                 <span class="ue-month">JUL</span>
                                 <span class="ue-day">21</span>
@@ -500,7 +506,7 @@
                                 <p class="ue-desc">Planned downtime for infrastructure upgrades. Services may be intermittent 21–23 July.</p>
                             </div>
                         </div>
-                        <div class="ue-item ue-workshop">
+                        <div class="ue-item ue-workshop" data-ue-category="workshop">
                             <div class="ue-date-col">
                                 <span class="ue-month">SEP</span>
                                 <span class="ue-day">15</span>

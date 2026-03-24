@@ -1120,7 +1120,7 @@ body {
 }
 .status-strip-inner {
     max-width: var(--max-width); margin: 0 auto; padding: 0 16px;
-    display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap;
 }
 .status-strip-label {
     font-weight: 600; color: var(--slate-500); font-size: 11px;
@@ -1204,6 +1204,20 @@ body {
     display: inline-block; font-size: 12px; font-weight: 600; color: #dc2626;
     background: #fef2f2; padding: 2px 8px; border-radius: 4px; margin-left: 8px;
 }
+.ue-filter-tabs {
+    display: flex; gap: 6px; margin-bottom: 8px; flex-wrap: wrap;
+}
+.ue-filter-tab {
+    padding: 6px 14px; border-radius: 6px; border: 1px solid var(--slate-200);
+    background: #fff; font-size: 13px; font-weight: 500; color: var(--slate-500);
+    cursor: pointer; transition: all 0.15s;
+}
+.ue-filter-tab:hover { border-color: var(--blue-300); color: var(--blue-600); }
+.ue-filter-active, .ue-filter-active:hover {
+    background: var(--blue-600); color: #fff; border-color: var(--blue-600);
+}
+.ue-item-hidden { display: none; }
+
 @media (max-width: 480px) {
     .ue-item { gap: 12px; }
     .ue-date-col { min-width: 44px; }

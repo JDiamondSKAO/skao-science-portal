@@ -625,6 +625,29 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     /* -----------------------------------------
+     * UPCOMING EVENTS — CATEGORY FILTER TABS
+     * ----------------------------------------- */
+    var ueFilterTabs = document.querySelectorAll('.ue-filter-tab');
+    var ueItems = document.querySelectorAll('.ue-item[data-ue-category]');
+
+    ueFilterTabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+            var filter = this.getAttribute('data-ue-filter');
+
+            ueFilterTabs.forEach(function (t) { t.classList.remove('ue-filter-active'); });
+            this.classList.add('ue-filter-active');
+
+            ueItems.forEach(function (item) {
+                if (filter === 'all' || item.getAttribute('data-ue-category') === filter) {
+                    item.classList.remove('ue-item-hidden');
+                } else {
+                    item.classList.add('ue-item-hidden');
+                }
+            });
+        });
+    });
+
+    /* -----------------------------------------
      * PAGE FEEDBACK WIDGET
      * ----------------------------------------- */
     var pfWidget = document.getElementById('pageFeedback');
