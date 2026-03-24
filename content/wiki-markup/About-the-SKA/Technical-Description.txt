@@ -1,0 +1,68 @@
+* SEFD
+
+* receiver fleet
+
+* array origin - lat / lon / XYZ ECEF
+
+* antenna locations (with CSV file, array-config python package details)
+
+h2. Telescope location
+||  || Geodetic coordinates (WGS84) || Geodetic coordinates (WGS84) || Geodetic coordinates (WGS84) ||
+|  | Latitude | Longitude | Height |
+| SKA-Low | -26.82472208 | 116.7644482 | 365.0 |
+| SKA-Mid | 21.44380263 | -30.71292499 | 1095.967 |
+
+||  || Geocentric coordinates (ECEF) || Geocentric coordinates (ECEF) || Geocentric coordinates (ECEF) ||
+|  | X | Y | Z |
+| SKA-Low | -2565044.42978869 | 5085763.69674313 | -2861062.43955626 |
+| SKA-Mid | 5109272.11138736 | 2006809.1341156 | -3239131.12767906 |
+
+>>from astropy.coordinates import EarthLocation
+
+>>low = EarthLocation.of_site('ska-low')
+
+>>low.geocentric
+
+(,
+
+,
+
+)
+
+>>low.geodetic
+
+GeodeticLocation(lon=, lat=, height=
+
+>>mid = EarthLocation.of_site('ska-mid')
+
+>>mid.geocentric
+
+(,
+
+,
+
+)
+
+>>mid.geodetic
+
+GeodeticLocation(lon=, lat=, height=
+
+
+
+h2. Telescope sensitivity
+TODO: Update for AA* (Mod)
+Provide raw data as CSV
+
+{info}
+*[Image placeholder]* — Image 1
+
+    _Upload the corresponding image from the original document and insert here._
+{info}
+
+{info}
+*[Image placeholder]* — Image 2
+
+    _Upload the corresponding image from the original document and insert here._
+{info}
+
+Reference documents here

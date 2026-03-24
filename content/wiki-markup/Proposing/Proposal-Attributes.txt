@@ -1,0 +1,40 @@
+Proposal Attributes
+
+h1. Proposal Attributes
+In addition to Proposal (and therefore project) types, projects and proposals can be assigned attributes to further refine them. There are a total of five attributes that can be applied, and more than one attribute may apply to any given project or proposal. Depending on the attribute, additional documentation beyond the standard TAC proposal requirements may be required.
+
+h2. Long-Term Project (LTP)
+Long-term Projects (LTPs) are standard PI projects that require more than one observing cycle to complete, but are too short in overall observing time, too limited in observatory resources, and/or too limited in scientific scope to qualify as a KSP.
+
+h2. Target of Opportunity
+These projects will be rapid responses to events that may be triggered either internal or external to the Observatory. ToO status may be recommended by the TAC or awarded by the DirectorGeneral. In some cases ToOs will have override status over other projects currently (or about to be) executing on the SKA telescopes.
+
+h2. Joint SKA Project
+Joint SKA Projects require the use of both SKA-Low and SKA-Mid telescopes to achieve the project’s science goals and may require observations to be executed contemporaneously.
+
+Things it would be good to know:
+
+* Would this be a single proposal containing both low and mid observations? Or two linked proposals. If the latter would they both have to be merit-based selected or if one is selected then the other one becomes auto-selected
+* Is there an earliest cycle where these kinds of proposals would be supported?
+
+h2. Coordinated Project
+A project requiring SKA observations to be coordinated with another facility (either ground- or space-based) with userspecified scheduling constraints provided. A common example of a CP will be a VLBI project, which will require the synchronised participation of a number of additional radio facilities.
+
+h2. Custom Experiment
+Custom Experiments provide a framework within which unique and innovative ideas can be performed with the SKA Telescopes which would not be possible with the SKA’s design baseline. The required extension of SKA functionality would be achieved by teams external to the SKAO bringing custom hardware, software, or other capabilities to interface with Observatory systems (and funded entirely by the external teams). Supporting Custom Experiments can be costly and come with risks to the Observatory, therefore a Custom Experiment will only be considered if the necessary Observatory resources are available and the impact on Observatory operations is anticipated to be negligible and/or scientifically warranted.
+
+Custom experiments will not be supported until at least several initial observing cycles have been completed. Earlier engineering or interface tests may be possible but will require an SKAO sponsor and should be discussed with the SKAO via the Custom Experiment Expression of Interest ticket in the SKA Helpdesk.
+
+After several initial observing cycles, but prior to submitting a proposal with a Custom Experiment attribute, it is still recommended that prospective Custom Experiment teams make an initial enquiry to the SKAO via the Custom Experiment Expression of Interest ticket in the SKA Helpdesk_[link TBD]_. The prospective Custom Experiment can then be discussed with the SKAO to evaluate its feasibility, impacts, and risks to the Observatory’s development and operations. This can be an iterative process to allow for design updates and refinements.
+
+Proposals with the Custom Experiment attribute will be subject to standard merit-based assessment but will also need to provide additional documentation in support of their experiment. This CE-specific documentation will be reviewed by an internal SKAO panel who will carry out an observatory impact assessment. Depending on the custom experiment proposed, council approval may also be required.
+
+Documentation that may be required includes:
+
+* A Hardware Commissioning, Maintenance, and Decommissioning Plan
+* A Software Development, Deployment, and Operations Plan
+* A data processing and archiving plan
+
+Further details on the anticipated Custom Experiment process, requirements, and limitations can be found in the Custom Experiment Implementation Plan_[link TBD]_.
+
+Scratchpad

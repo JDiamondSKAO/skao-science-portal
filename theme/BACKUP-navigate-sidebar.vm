@@ -1,0 +1,76 @@
+    ## =============================================
+    ## SLIDE-OUT SIDEBAR NAVIGATION
+    ## =============================================
+    <div class="nav-overlay" id="navOverlay"></div>
+    <button class="nav-sidebar-toggle" id="navSidebarToggle" aria-label="Open navigation">
+        <div class="nav-toggle-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+        </div>
+        <div class="nav-toggle-divider"></div>
+        <span class="nav-toggle-text">Navigate</span>
+    </button>
+
+    <aside class="nav-sidebar" id="navSidebar">
+        <div class="nav-sidebar-header">
+            <div class="nav-sidebar-header-left">
+                <div class="nav-sidebar-header-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                </div>
+                <div>
+                    <h2 class="nav-sidebar-title">Documentation</h2>
+                    <p class="nav-sidebar-subtitle">Browse all guides</p>
+                </div>
+            </div>
+            <button class="nav-sidebar-close" id="navSidebarClose" aria-label="Close navigation">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+        <div class="nav-sidebar-body">
+            #set($children = $page.children)
+            #if(!$children || $children.size() == 0)
+                #if($page.parent && $page.parent.children)
+                    #set($navSections = $page.parent.children)
+                #end
+            #else
+                #set($navSections = $children)
+            #end
+
+            #if($navSections && $navSections.size() > 0)
+                #set($secIdx = 0)
+                #foreach($section in $navSections)
+                    <div class="nav-section">
+                        <button class="nav-section-btn" data-nav-section="$secIdx">
+                            <div class="nav-section-btn-left">
+                                <div class="nav-section-icon nav-section-icon-${velocityCount}">
+                                    #if($velocityCount == 1)
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                                    #elseif($velocityCount == 2)
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+                                    #elseif($velocityCount == 3)
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                                    #elseif($velocityCount == 4)
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                                    #else
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                                    #end
+                                </div>
+                                <span class="nav-section-label">$section.title</span>
+                            </div>
+                            <svg class="nav-section-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                        </button>
+                        <div class="nav-section-panel" id="navPanel-$secIdx">
+                            #set($subPages = $section.children)
+                            #if($subPages && $subPages.size() > 0)
+                                #foreach($sub in $subPages)
+                                    <a href="$sub.absoluteLink" class="nav-subitem #if($page.title == $sub.title)nav-subitem-active#end">$sub.title</a>
+                                #end
+                            #else
+                                <span class="nav-subitem nav-subitem-empty">Content coming soon</span>
+                            #end
+                        </div>
+                    </div>
+                    #set($secIdx = $secIdx + 1)
+                #end
+            #end
+        </div>
+    </aside>

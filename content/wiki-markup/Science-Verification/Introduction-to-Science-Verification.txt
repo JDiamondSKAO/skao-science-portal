@@ -1,0 +1,26 @@
+h1. Science Verification
+Science Verification (SV) will be the first opportunity for the community to access SKA data. It is a full “dress rehearsal” of the end-to-end SKAO system for every mode of operation of the SKA Telescopes. The purpose is to verify the capabilities, data, pipelines, and workflows coming out of the SKAO. Science Verification is designed to test and verify each and every mode and capability combination, following science commissioning, and to build trust in our systems and processes. To support this, visibilities will be delivered alongside Observatory Data Products_[link TBD]_ to support thorough verification by the community. The Observatory will build up the complexity of the modes, capabilities, and data products as we progress from AA2 through to AA*.
+
+The rollout of modes and capabilities through SV can be found here_[link TBD]_.
+
+New science is a bonus not the focus.
+
+{info}
+*[Image placeholder]* — Image 1
+
+    _Upload the corresponding image from the original document and insert here._
+{info}
+
+h5. Demonstration of how Science Verification will work, what the steps involved are, and what they are for.
+h1. Call for Ideas
+The call for Science Verification ideas to test specific modes and/or capabilities will be issued about 6 months prior to the start of AA2 science verification and be open to all users - e.g. both Member and Non-Member countries. Those responding to the call will need to submit a brief idea description, a short explanation of the verification opportunities, and details of targets and modes required through the Idea Submission Tool (a reduced version of the Proposal Preparation Tool). Additional details can be included, but will be entirely optional to include and will not be used in the assessment of the idea.
+
+Ideas will be subject to a “light touch” assessment by an internal SKAO panel to ensure selected ideas are well-suited, prioritised, and cover the full range of observing modes, capabilities, and data products to ensure the pool of ideas provide the full range of tests the Observatory needs.
+
+Idea submitters will not be granted special or proprietary access to data. All Science Verification data will be public – there will be no proprietary period.
+
+h1. SRCNet Resources During Science Verification
+There will be some limited SRCNet resources available during Science Verification, scaling as we progress through. Users, regardless of whether or not they have submitted a Science Verification idea, will be able to submit a request for SRCNet resources. This process will be decoupled from Idea Submissions and open to _[who?]_.
+
+h1. User Support During Science Verification
+Prior to and during the Call for Ideas, there will be dedicated Science Verification webinars to support users and the wider community with the process of developing and submitting ideas, as well as accessing and using Science Verification data. Alongside those webinars, this science portal documentation set will be continually developed, and the SKA Helpdesk will be expanded to address more complex issues.

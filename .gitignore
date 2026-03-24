@@ -1,0 +1,24 @@
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Node (if we add build tools later)
+node_modules/
+package-lock.json
+
+# Obsidian
+.obsidian/
+
+# Backups (kept separately)
+backups/
+
+# Logs
+*.log

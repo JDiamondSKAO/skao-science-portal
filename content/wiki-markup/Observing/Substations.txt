@@ -1,0 +1,14 @@
+Substations
+
+h1. Substations
+In addition to subarrays, each SKA Low station (consisting of 256 antennas) can be split into up to eight substations (i.e. subsets of antennas). Each substation produces an independent data stream, which can be processed by the SKA Low Correlator and BeamFormer (CBF). Observing in substation mode gives an astronomer access to larger fields of view and short baseline lengths at the cost of reduced instantaneous bandwidth, reduced sensitivity per baseline, and impacts to sidelobes.
+
+{info}
+*[Image placeholder]* — Image 1
+
+    _Upload the corresponding image from the original document and insert here._
+{info}
+
+The figure shows an SKA-Low station subsetted into four 18m substations.
+
+Scratchpad

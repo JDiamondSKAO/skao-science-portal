@@ -1,0 +1,95 @@
+<p>* SEFD</p>
+<p>* receiver fleet</p>
+<p>* array origin - lat / lon / XYZ ECEF</p>
+<p>* antenna locations (with CSV file, array-config python package details)</p>
+<h2>Telescope location</h2>
+<table class="confluenceTable">
+  <tr>
+    <th class="confluenceTh"></th>
+    <th class="confluenceTh">Geodetic coordinates (WGS84)</th>
+    <th class="confluenceTh">Geodetic coordinates (WGS84)</th>
+    <th class="confluenceTh">Geodetic coordinates (WGS84)</th>
+  </tr>
+  <tr>
+    <td class="confluenceTd"></td>
+    <td class="confluenceTd">Latitude</td>
+    <td class="confluenceTd">Longitude</td>
+    <td class="confluenceTd">Height</td>
+  </tr>
+  <tr>
+    <td class="confluenceTd">SKA-Low</td>
+    <td class="confluenceTd">-26.82472208</td>
+    <td class="confluenceTd">116.7644482</td>
+    <td class="confluenceTd">365.0</td>
+  </tr>
+  <tr>
+    <td class="confluenceTd">SKA-Mid</td>
+    <td class="confluenceTd">21.44380263</td>
+    <td class="confluenceTd">-30.71292499</td>
+    <td class="confluenceTd">1095.967</td>
+  </tr>
+</table>
+
+<table class="confluenceTable">
+  <tr>
+    <th class="confluenceTh"></th>
+    <th class="confluenceTh">Geocentric coordinates (ECEF)</th>
+    <th class="confluenceTh">Geocentric coordinates (ECEF)</th>
+    <th class="confluenceTh">Geocentric coordinates (ECEF)</th>
+  </tr>
+  <tr>
+    <td class="confluenceTd"></td>
+    <td class="confluenceTd">X</td>
+    <td class="confluenceTd">Y</td>
+    <td class="confluenceTd">Z</td>
+  </tr>
+  <tr>
+    <td class="confluenceTd">SKA-Low</td>
+    <td class="confluenceTd">-2565044.42978869</td>
+    <td class="confluenceTd">5085763.69674313</td>
+    <td class="confluenceTd">-2861062.43955626</td>
+  </tr>
+  <tr>
+    <td class="confluenceTd">SKA-Mid</td>
+    <td class="confluenceTd">5109272.11138736</td>
+    <td class="confluenceTd">2006809.1341156</td>
+    <td class="confluenceTd">-3239131.12767906</td>
+  </tr>
+</table>
+
+<p>&gt;&gt;from astropy.coordinates import EarthLocation</p>
+<p>&gt;&gt;low = EarthLocation.of_site('ska-low')</p>
+<p>&lt;EarthLocation (-2565044.42978869, 5085763.69674313, -2861062.43955626) m&gt;</p>
+<p>&gt;&gt;low.geocentric</p>
+<p>(&lt;Quantity -2565044.42978869 m&gt;,</p>
+<p>&lt;Quantity 5085763.69674313 m&gt;,</p>
+<p>&lt;Quantity -2861062.43955626 m&gt;)</p>
+<p>&gt;&gt;low.geodetic</p>
+<p>GeodeticLocation(lon=&lt;Longitude 116.7644482 deg&gt;, lat=&lt;Latitude -26.82472208 deg&gt;, height=&lt;Quantity 365. m&gt;</p>
+<p>&gt;&gt;mid = EarthLocation.of_site('ska-mid')</p>
+<p>&lt;EarthLocation (5109272.11138736, 2006809.1341156, -3239131.12767906) m&gt;</p>
+<p>&gt;&gt;mid.geocentric</p>
+<p>(&lt;Quantity 5109272.11138736 m&gt;,</p>
+<p>&lt;Quantity 2006809.1341156 m&gt;,</p>
+<p>&lt;Quantity -3239131.12767906 m&gt;)</p>
+<p>&gt;&gt;mid.geodetic</p>
+<p>GeodeticLocation(lon=&lt;Longitude 21.44380263 deg&gt;, lat=&lt;Latitude -30.71292499 deg&gt;, height=&lt;Quantity 1095.967 m&gt;</p>
+<p></p>
+<h2>Telescope sensitivity</h2>
+<p>TODO: Update for AA* (Mod)
+Provide raw data as CSV</p>
+<ac:structured-macro ac:name="info">
+  <ac:rich-text-body>
+    <p><strong>[Image placeholder]</strong> — Image 1</p>
+    <p><em>Upload the corresponding image from the original document and insert here.</em></p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+
+<ac:structured-macro ac:name="info">
+  <ac:rich-text-body>
+    <p><strong>[Image placeholder]</strong> — Image 2</p>
+    <p><em>Upload the corresponding image from the original document and insert here.</em></p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+
+<p>Reference documents here</p>

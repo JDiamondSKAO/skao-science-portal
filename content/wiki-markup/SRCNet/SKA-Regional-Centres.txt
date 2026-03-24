@@ -1,0 +1,107 @@
+h2. Data Management
+The SKA will generate data products at high rates and each potentially on such large a scale that the end-to-end data management resource needs for each experiment will have to be considered when awarding telescope time and planning observational schedules. This complex area considers the resources within the SKA Observatory (notably, the Science Data Processor, SDP) as well as considering the data volumes produced as Observatory Data Products, and an estimation of how these will be used in the science community and the resources needed to enable effective delivery of science. For an introduction to the data management layers see this presentation on SDP and SRCs (A. Chrysostomou, April 2019).
+
+h3. Remote video URL
+h2. What is an SKA Regional Centre?
+An SKA regional centre (SRC) is a regionally funded virtual entity offering data access and processing resources for use by SKA Scientists, and general users. These SRCs will collaborate to form a global network that will provide the SKA community with:
+
+* access to support using the SKA and its data products
+* a platform for collaborative science
+* transparent and location agnostic interface for users
+* access to project data for all SKA users
+* a place for development of software tools: analysis, modelling, visualisation
+
+{info}
+*[Image placeholder]* — Image 1
+
+    _Upload the corresponding image from the original document and insert here._
+{info}
+
+The different SRCs are likely to be heterogeneous, and we anticipate that even within a single federated SRC there could be resource contribution from a mixture of different elements – e.g. with use made of existing national and pan-national HPC infrastructures, new purpose built facilities and even cloud components. Whatever its make-up, each SRC will present itself to the SKA and to the SKA users in a standardised way, observing the requirements on technical interfaces and provided access via the user-facing science gateway.
+
+{info}
+*[Image placeholder]* — Image 2
+
+    _Upload the corresponding image from the original document and insert here._
+{info}
+
+There are two classes of user of SKA data: SKA Observatory Users and Archive Users. The first of these are users accessing SRC resources to analyse proprietary SKA data products from their own projects – this work will have been foreseen at the time of proposal preparation. Such analyses could include combining data from multiple observations across a project, or performing model fitting to data cubes, amongst many other possibilities. After the proprietary period ends, SKA data products will become public and be available to general Archive Users. These users will access SRCs to find and analyse SKA data products relevant to their science goals.
+
+h2. Why have SRCs?
+There are three main factors that lead to a global collaborative model for SKA Regional Centres (SRCs):
+
+1. The science data products that emerge from the SKA observatory are not in the final state required for science analysis and publication
+
+2. The data volumes are so large that direct delivery to end users is unfeasible
+
+3. The community of scientists working on SKA science data will be geographically distributed
+
+Although these points could in principle be answered by regional or national data centres that do not form part of a collaboration, combining these into a global collaboration of SRCs will bring benefits to the scientists and allow more efficient data management.
+
+h2. Principles of SRCs
+The detailed design of the behind-the-scenes management of a network of SKA Regional Centres is ongoing. However the raison d’etre of the SRCs will be to enable the best science to be done by the users of the SKA – this means embracing best practices in Open Science, ensuring equality of access to all users, regardless of their geographic location of the distribution of members on their science team. This will require provision of a mechanism for all SRCs to present data and computing resources to the user uniformly – a user will not need to know where the data they are working on resides, nor will they have to log in to a particular regional centre to initiate work.
+
+From a user perspective, there are several points where interaction with staff at the SKA Observatory and/ or at SRCs might be required – for example in the writing of initial SKA proposals, the subsequent development of successful proposals into schedulable projects and for help with the development or deployment of efficient workflows to perform analyses at SRCs. We envision a single help-desk system for SKA/SRC work with internal triage ensuring that queries are fielded to the correct teams.
+
+h2. Relevant documents
+SRC Background and Framework document (2017) (A useful description of reasons for and vision of the SKA Regional Centres.)
+
+SRC Data Network model (2018) (An overview of potential global data connection links, showing that we can confidently expect to achieve 100 Gbit/s comfortably on the relevant timescales.)
+
+Initial model for estimating the scale of SRC resources required (2018) (A simple model for estimating the compute and storage needs for the programme science aspects of the SRCs taking a top-down approach.)
+
+SRC High-level requirements document (2019) (Top-level requirements and goals for the individual SRCs and the global collaborative network of SRCs.)
+
+h2. SRC Networking
+{info}
+*[Image placeholder]* — Image 3
+
+    _Upload the corresponding image from the original document and insert here._
+{info}
+
+Representatives from the major NREN (National Research and Education Network) providers have developed a model for worldwide data transport for SKA – we foresee a network of links around the globe. Our estimates are based on 100Gbit/s links connecting the sites and regional centres. (The 100Gigabit links are full duplex which means that the link will transmit information at 100G in both directions simultaneously.) Based on current technology and cost trends we are confident that the provision of this network will be affordable and achievable – assuming that we purchase 10-15 year IRUs on dedicated fibres within larger cables.
+
+The data product rate coming out of the observatory varies greatly depending on the experiments being undertaken. We continue to develop our models of data products coming out of the SKA Observatory but at this stage we are confident that 100 Gbit/s bidirectional links will have sufficient capacity for the first decade or so of SKA operations.
+
+h2. Links to regional projects
+There are several regional initiatives underway to promote the development of SRC designs and to undertake proof of concept activities. These include:
+
+{info}
+*[Image placeholder]* — Image 4
+
+    _Upload the corresponding image from the original document and insert here._
+{info}
+
+{info}
+*[Image placeholder]* — Image 5
+
+    _Upload the corresponding image from the original document and insert here._
+{info}
+
+In Europe: The AENEAS project (Advanced European Network of E-infrastructures for Astronomy with the SKA) – completion end 2019 – has been developing a design for a European SKA Regional Centre, whilst the ESCAPE project (2019-2022) will develop prototype solutions for SRC technology and define the European Open Science Cloud in Astronomy and Particle Physics.
+
+{info}
+*[Image placeholder]* — Image 6
+
+    _Upload the corresponding image from the original document and insert here._
+{info}
+
+In Asia/Pacific region, the ERIDANUS project (2017-2020) ‘is a three year design study commenced in April 2017, aimed at deploying prototype data intensive research infrastructure and middleware, between and within Australia and China, capable of addressing SKA-class data and processing challenges.”
+
+{info}
+*[Image placeholder]* — Image 7
+
+    _Upload the corresponding image from the original document and insert here._
+{info}
+
+In Canada: the CIRADA project “will build the new hardware enhancements, research databases and science ready data products needed to enable ground-breaking Canadian science from next-generation radio astronomy facilities on the path to the SKA. [They] focus [their] efforts on three instruments for which Canada has already made substantial investments: the Canadian Hydrogen Intensity Mapping Experiment (CHIME), the US-based Very Large Array (VLA), and the Australian SKA Pathfinder (ASKAP),(The Canadian Initiative for Radio Astronomy Data Analysis)”
+
+Work within CIRADA is split into 4 main categories: Science Ready Data Products (including collecting examples of user stories); Pre-processor Systems; Bulk Data Storage; Cross-Matching & Public Accessibility
+
+{info}
+*[Image placeholder]* — Image 8
+
+    _Upload the corresponding image from the original document and insert here._
+{info}
+
+Please send Rosie Bolton (rosie.bolton@skao.int) any suggestions of how this page may be improved, including information on any relevant projects.

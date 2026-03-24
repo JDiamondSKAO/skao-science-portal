@@ -1,0 +1,38 @@
+Commensal Observing
+
+h1. Commensal Observing
+Commensal observing will have a significant positive impact on the scientific productivity of the SKA. Some projects will require commensal observing to achieve their science goals (e.g. concurrent observations in multiple modes), while other opportunities will be identified by the SKAO – the latter opportunity will be invisible to the user.
+
+PIs and Leadership Teams are strongly discouraged from making scientific concessions in order to artificially allow surveys or other projects to be conducted commensally.
+
+h2. Types of commensality
+There are three main types of commensality that would be feasible with the SKA Telescopes:
+
+* Data Commensality where multiple projects use the same Observatory Data Products but for different Science Goals.
+* Observing Commensality where multiple projects observe the same field with the same telescope and/or instrument configuration, but each project requires different Observatory Data Products to be created from those observations.
+* Multiplexed Commensality where multiple subarrays and/or tied-array beams can be used to concurrently observe different fields.
+
+{info}
+*[Image placeholder]* — _[Could pull in the drawings from the parallel session slides as a visual aid?]_
+
+    _Upload the corresponding image from the original document and insert here._
+{info}
+
+h2. Availability of Commensal Observing
+The SKAO is responsible for creating the schedule of observations and as part of that will consider opportunities for commensality. The ability to carry out commensal observing will be constrained by the availability of the resources required to carry out the observations and produce the required data products (e.g. SDP compute and storage availability, compute resource availability on the CSP, overall network capacity limits etc) and the scheduling priorities of all potentially commensal observations.
+
+It is unlikely that it would be known at the time of proposal submission or observation design whether or not a particular observation will be executed commensally with another (unless required as part of a project’s science goals). All decisions regarding commensal projects will be taken at the Cycle Planning and Observation Planning stages by SKAO operations staff.
+
+h2. Competing Science Goals
+Given that some projects’ observations or data products will be the same or based on the same set as those for other projects, and there will be opportunities for serendipitous discoveries, project teams must adhere to the publication rules and requirements set out by the observatory _[link TBD]_. In particular, permission from the Director-General must be sought prior to publishing results that differ from your project’s stated and approved science goals (to remove the chance of impinging on another project’s data rights and science goals based on the same observations).
+
+h2. Accounting and Member Shares
+For information on how Member Shares and Time Accounting is carried out, see _[link TBD]_.
+
+Scratchpad
+
+* Whether projects can be executed commensally will depend on there being sufficient telescope resources available to do so. The Observatory will use the Observation Planning Tool (OPT) to identify scheduling blocks (SBs) that can be executed commensally, as it is not expected that PI projects will know ahead of time whether their projects can or will be executed commensally. For large surveys, it is perhaps more likely that we will know ahead of time the kind of projects that can be executed commensally and arrangements will be made once the KSPs are allocated. Given the changing resource limitations, we anticipate that our ability to execute commensal observations will evolve as we progress through the cycles. As such, we would caution against making scientific concessions in order to artificially allow large surveys to be conducted commensally.
+
+SKAO will construct the science programme for each observing Cycle, aiming to deliver the greatest scientific impact while considering scheduling feasibility and sky coverage, opportunities for commensality, and the availability of observatory resources. The science programme will be designed to align Members’ access to SKA resources in proportion to their share in the SKA Project.
+
+At the proposal submission or observation design stage, it is not possible to know with certainty whether a particular project can be executed commensally or not7 , and as such PIs are not required to identify or label their proposals or projects as commensal8 . The nature and number of commensal projects at any point in time will always depend on the telescope resources available, as well as the relative scheduling priorities of other potentially commensal projects. All decisions with regard to commensal projects will be taken at the Cycle Planning and Observation Planning stages (§6.4.5.2) by SKA operations staff.

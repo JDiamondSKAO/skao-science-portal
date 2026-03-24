@@ -1,0 +1,30 @@
+The Detected Filterbank archive data product is a dynamic spectra; that is, a time series of spectra (also known as ‘waterfall’ data). Spectra are formed by detecting (squaring) and time-averaging channelized voltage data. The spectral resolution depends upon the channel width, and the temporal resolution depends upon how many time samples are averaged together.
+
+Detected Filterbank data contain quasi-Stokes I,Q,U and V coherency products. The Detected Filterbank file can optionally have phase-coherent dedispersion applied (to remove the effect of dispersion due to signal propagation through electrons in the interstellar medium) and phase-coherent correction of Faraday rotation applied (to correct polarization rotation due to propagation through magnetic fields). RFI mitigation/flagging may also be applied.
+
+The Detected Filterbank data product can be considered as a N-dimensional array with:
+
+* Shape:
+* Datatype: integer
+* Bitdepth: 1,2, 4, 8, 16 or 32 bits.
+
+Key parameters for Detected Filterbank mode are shown in Table 4.
+
+h4. Table 4: Key parameters for Detected Filterbank mode
+|| Parameter ||  || Allowed values ||
+| Channel width* |  | 2 Hz to 10 MHz |
+| Time resolution* |  | 100 ns to 10 s |
+| No. quasi-Stokes parameters |  | 1-4 |
+| Bitdepth of output samples |  | 1,2,4,8,16 or 32 |
+| Dedispersion DM applied |  | 0-100,000 pc cm-3 |
+| Rotation measure correction |  | (-2, 2) rad m-2 |
+| No. channels recorded** |  | 1 to 1 |
+| *Time and frequency resolution are related/ limited by Nyquist criterion.
+**Number of channels is limited by data recording rate and receiver bandwidth. | *Time and frequency resolution are related/ limited by Nyquist criterion.
+**Number of channels is limited by data recording rate and receiver bandwidth. | *Time and frequency resolution are related/ limited by Nyquist criterion.
+**Number of channels is limited by data recording rate and receiver bandwidth. |
+
+h3. Data formats
+Detected filterbank data are stored in the PSRFITS file format [RD9], along with statistics stored in a custom HDF5-based file format.
+
+Reference documents here

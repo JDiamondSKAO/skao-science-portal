@@ -1,0 +1,59 @@
+h1. The SKA Observatory
+The telescopes are being built in a modular fashion in the form of array assemblies _[link TBD]_.
+
+h1. Member Countries
+The SKAO was established as an inter-governmental organisation in early 2021. Our current members and host countries are: Australia, Canada, China, Germany, India, Italy, The Netherlands, Portugal, South Africa, Spain, Sweden, Switzerland, The United Kingdom.
+
+Prospective members include: France, Japan, South Korea.
+
+For information on our governance, see https://www.skao.int/en/about-us/governance.
+
+h1. Host Countries
+The SKAO is one global observatory, operating two telescopes on three continents. Each of our telescopes is supported by a Science Operations Centre (SOC) as well as an Engineering Operations Centre (EOC) in its host country.
+
+Our three host countries are:
+
+* The United Kingdom, where our Global Headquarters is located. We are located at the Jodrell Bank site in Cheshire, next to The University of Manchester's Jodrell Bank Observatory and Centre for Engagement, a UNESCO World Heritage Site.
+* Australia, where our SKA-Low telescope is located. The SKA-Low SOC is located in Perth, Western Australia (WA), while the SKA-Low EOC is located in Geraldton, WA.
+* South Africa, where our SKA-Mid telescope is located. The SKA-Mid SOC is located in Cape Town, while SKA-Mid EOC is located in Klerefontein near Carnarvon in the Northern Cape province.
+
+We recognise and acknowledge the Indigenous peoples and cultures that have traditionally lived on the lands on which our facilities are located. In Australia, we acknowledge the Wajarri Yamaji as the Traditional Owners and Native Title Holders of Inyarrimanha Ilgari Bundara, the CSIRO Murchison Radio-astronomy Observatory, the site where the SKA-Low telescope is being built. Inyarrimanha ilgari bundara means “sharing sky and stars” in the Wajarri language.
+
+h1. SKA-Low
+{info}
+*[Image placeholder]* — SKA-Low, covering the frequencies 50-350MHz, is located at Inyarrimanha Ilgari Bundara, the CSIRO Murchison Radio-astronomy Observatory, on the traditional lands of the Wajarri Yamaji. It will consist of 131,072 log-periodic dipole antennas distributed across 512 aperture array stations of 256 antennas each. About 50% of the stations will be located within a 1 km diameter core, with the remaining stations organised in clusters of 6 stations spaced logarithmically on three spiral arms. The maximum baseline length will be around 74 km.
+
+    _Upload the corresponding image from the original document and insert here._
+{info}
+
+Though many projects will require the sensitivity of the full SKA-Low array to achieve their science goals, some projects won’t. To maximise efficiency, SKA-Low will support up to 16 independent subarrays_[link TBD]_ for scientific and engineering or maintenance purposes. Potential users will be able to select from a range of templates _[link TBD]_ to find the most appropriate set-up for their project, or request the addition of new subarray templates_[TBD]_.
+
+Additionally, each SKA Low station (consisting of 256 antennas) can be split into up to 8 substations_[link TBD]_. Each substation produces an independent data stream, which can be processed by the SKA Low Correlator and BeamFormer (CBF). Observing in substation mode gives access to larger fields of view and shorter baseline lengths at the cost of instantaneous bandwidth, reduced sensitivity per baseline, and impacts to sidelobes.
+
+{info}
+*[Image placeholder]* — Image 2
+
+    _Upload the corresponding image from the original document and insert here._
+{info}
+
+h5. Left: Layout of the inner core of SKA-Low. The figure shows the core and the first few clusters of stations of the spiral arms. The dots represent individual stations, each comprising 256 antennas.
+h5. Right: SKA-Low full array layout. The black dots represent station clusters. Each cluster consists of 6 stations, and each station consists of 256 antennas.
+h1. SKA-Mid
+SKA-Mid, covering frequencies 0.35-15.4GHz, is located at the Karoo Radio Astronomy Reserve in the Northern Cape of South Africa. SKA-mid will consist of 197 offset Gregorian dishes - 133 of those will be 15-m SKA dishes and 64 will be 13.5-m Meerkat dishes. About 50% of the dishes will be located in a 2km core region, with the remaining spaced logarithmically on three spiral arms. The maximum baseline will be 160km.
+
+{info}
+*[Image placeholder]* — Image 3
+
+    _Upload the corresponding image from the original document and insert here._
+{info}
+
+Though many projects will require the sensitivity of the full SKA-Mid array to achieve their science goals, some projects won’t. To maximise efficiency, SKA-Mid will support up to 16 independent subarrays_[link TBD]_ for scientific and engineering or maintenance purposes. Potential users will be able to select from a range of templates _[link TBD]_ to find the most appropriate set-up for their project, or request the addition of new subarray templates_[TBD]_.
+
+{info}
+*[Image placeholder]* — Image 4
+
+    _Upload the corresponding image from the original document and insert here._
+{info}
+
+h5. Left: Layout of the inner core of SKA-Mid. The figure show the core and the first few dishes in the spiral arms. The dots represent individual dishes.
+h5. Right: SKA-Mid full array layout. The black dots represent individual dishes

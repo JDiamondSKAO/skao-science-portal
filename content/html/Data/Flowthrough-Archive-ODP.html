@@ -1,0 +1,93 @@
+<ac:structured-macro ac:name="info">
+  <ac:rich-text-body>
+    <p><strong>[Image placeholder]</strong> — Image 1</p>
+    <p><em>Upload the corresponding image from the original document and insert here.</em></p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+
+<h5>Figure 1: Illustration of the Flowthrough Mode filterbank data for a single timestep. Channels are spaced apart by , and each channel has a bandwidth bw. The contiguous Nchan channels selected to be recorded are shown in colour.</h5>
+<p>The pulsar timing subsystem (PST) has a mode called flowthrough that can be requested to record the tied-array beam to disk with minimal processing. The recorded data products are referred to as Flowthrough Archives.</p>
+<p>Flowthrough archives provide access to the tied-array beam’s channelized voltage stream. These data allow for phase-coherent signal processing techniques, which some (non-standard) science cases require. However, the user must manually calibrate and process these data; as such, flowthrough archives should only be requested if the science case cannot be achieved with other Observatory Data Products.</p>
+<p>Flowthrough mode data are commonly referred to as ‘channelized voltages’ (see Figure 1). More formally, the data are the quadrature-sampled (complex-valued) output of the oversampled polyphase filterbank (OPFB) implemented in the correlator-beamformer (CBF).</p>
+<p>In FT archive mode, a set of contiguous channels are selected for recording after requantization. As recorded to disk, the data product can be considered as a N-dimensional array with:</p>
+<ul>
+  <li>Shape:</li>
+  <li>Datatype: complex integer</li>
+  <li>Bitdepth: 1,2, 4, 8, 16 or 32 bits.</li>
+</ul>
+<p>Key parameters for Flowthrough mode are provided in Table 2. For SKA-Low, channels are spaced 3.6 kHz apart, with a 4/3 oversample rate; for SKA-Mid, channels are spaced 53.76 kHz apart, with a 8/7 oversampling factor.</p>
+<h4>Table 2: Key parameters for Flowthrough mode.</h4>
+<table class="confluenceTable">
+  <tr>
+    <th class="confluenceTh"></th>
+    <th class="confluenceTh"></th>
+    <th class="confluenceTh">SKA-Low</th>
+    <th class="confluenceTh">SKA-Mid</th>
+  </tr>
+  <tr>
+    <td class="confluenceTd">Channel spacing</td>
+    <td class="confluenceTd"></td>
+    <td class="confluenceTd">3.6 kHz*</td>
+    <td class="confluenceTd">53.76 kHz</td>
+  </tr>
+  <tr>
+    <td class="confluenceTd">Channel bandwidth / sampling rate</td>
+    <td class="confluenceTd"></td>
+    <td class="confluenceTd">4.8 kHz**</td>
+    <td class="confluenceTd">61.44 kHz</td>
+  </tr>
+  <tr>
+    <td class="confluenceTd">Sampling resolution</td>
+    <td class="confluenceTd"></td>
+    <td class="confluenceTd">207.36 us</td>
+    <td class="confluenceTd">16.276 us#</td>
+  </tr>
+  <tr>
+    <td class="confluenceTd">Oversampling factor</td>
+    <td class="confluenceTd"></td>
+    <td class="confluenceTd">4/3</td>
+    <td class="confluenceTd">8/7</td>
+  </tr>
+  <tr>
+    <td class="confluenceTd">Max bandwidth per beam</td>
+    <td class="confluenceTd"></td>
+    <td class="confluenceTd">300 MHz†</td>
+    <td class="confluenceTd">700 MHz (Band 1)
+810 MHz (Band 2)
+2500 MHz (Band 5)</td>
+  </tr>
+  <tr>
+    <td class="confluenceTd">Max number of beams**</td>
+    <td class="confluenceTd"></td>
+    <td class="confluenceTd">9</td>
+    <td class="confluenceTd">16</td>
+  </tr>
+  <tr>
+    <td class="confluenceTd">*Actual value kHz = 
+**Actual value kHz = 
+#Actual value us = 
+†From AA* onwards, see Availability during rollout schedule</td>
+    <td class="confluenceTd">*Actual value kHz = 
+**Actual value kHz = 
+#Actual value us = 
+†From AA* onwards, see Availability during rollout schedule</td>
+    <td class="confluenceTd">*Actual value kHz = 
+**Actual value kHz = 
+#Actual value us = 
+†From AA* onwards, see Availability during rollout schedule</td>
+    <td class="confluenceTd">*Actual value kHz = 
+**Actual value kHz = 
+#Actual value us = 
+†From AA* onwards, see Availability during rollout schedule</td>
+  </tr>
+</table>
+
+<h3>Data formats</h3>
+<p>FT archive data will be output in PSRDADA format. This file format consists of a 4096-byte ASCII header followed by a binary data payload. While there are some defacto standards for header keywords, the header keywords are not mandated.</p>
+<p>For each observation, three types of PSRDADA file are created per tied-array beam:</p>
+<ul>
+  <li>Data Files: Sequence of PSRDADA files containing re-quantised, channelised, voltage time-series.</li>
+  <li>Weights Files: Sequence of PSRDADA files containing the relative weights describing upstream flagging of the data.</li>
+  <li>Scales and Offsets: Single PSRDADA file containing scales and offsets required to denormalise the data.</li>
+</ul>
+<p>Reference documents here</p>

@@ -1,0 +1,11 @@
+The SKA sensitivity calculators enable astronomers to estimate the theoretical sensitivity for all supported observing modes with the SKA-Low and SKA-Mid telescopes. In the current release, the calculators support three observing modes: Continuum, zoom/spectral line imaging modes and the pulsar search (PSS) tied-array beamformed mode. For imaging observing modes, the calculators can also estimate the synthesized beam sizes for specific subarray configurations and visibility weighting schemes.
+
+Since SKA-Low is an aperture array with electronic beamforming, the telescope's sensitivity depends on the pointing direction and varies as the source moves across the station beam. The SKA-Low sensitivity calculator takes the direction-, LST-, and frequency-dependent effects into account following the procedure described in Sokolowski et al. (2022).
+
+Both calculators can be accessed using this common link. The web interface loads by default with the SKA-Low calculator. You can switch between the two telescopes using the telescope toggle button near the top-right corner of the web interface. The user guides can be accessed using these links: Low calculator user guide and Mid calculator user guide.
+
+In addition to a web interface, we also provide an Application Programming Interface (API), which makes it easy to incorporate SKA sensitivity estimates in computer simulations. The documentation on how to interact with the sensitivity calculator API can be found here: Sensitivity calculator API user guide.
+
+We will normally host the calculator user guides on the SKAO website. However, for a few initial releases, we make it public as a Google document to encourage inline comments from the wider community.
+
+We encourage feedback from the SKA users' community, ideally addressed to sciops@skao.int.

@@ -1,0 +1,64 @@
+<p>The Detected Filterbank archive data product is a dynamic spectra; that is, a time series of spectra (also known as ‘waterfall’ data). Spectra are formed by detecting (squaring) and time-averaging channelized voltage data. The spectral resolution depends upon the channel width, and the temporal resolution depends upon how many time samples are averaged together.</p>
+<p>Detected Filterbank data contain quasi-Stokes I,Q,U and V coherency products. The Detected Filterbank file can optionally have phase-coherent dedispersion applied (to remove the effect of dispersion due to signal propagation through electrons in the interstellar medium) and phase-coherent correction of Faraday rotation applied (to correct polarization rotation due to propagation through magnetic fields). RFI mitigation/flagging may also be applied.</p>
+<p>The Detected Filterbank data product can be considered as a N-dimensional array with:</p>
+<ul>
+  <li>Shape:</li>
+  <li>Datatype: integer</li>
+  <li>Bitdepth: 1,2, 4, 8, 16 or 32 bits.</li>
+</ul>
+<p>Key parameters for Detected Filterbank mode are shown in Table 4.</p>
+<h4>Table 4: Key parameters for Detected Filterbank mode</h4>
+<table class="confluenceTable">
+  <tr>
+    <th class="confluenceTh">Parameter</th>
+    <th class="confluenceTh"></th>
+    <th class="confluenceTh">Allowed values</th>
+  </tr>
+  <tr>
+    <td class="confluenceTd">Channel width*</td>
+    <td class="confluenceTd"></td>
+    <td class="confluenceTd">2 Hz to 10 MHz</td>
+  </tr>
+  <tr>
+    <td class="confluenceTd">Time resolution*</td>
+    <td class="confluenceTd"></td>
+    <td class="confluenceTd">100 ns to 10 s</td>
+  </tr>
+  <tr>
+    <td class="confluenceTd">No. quasi-Stokes parameters</td>
+    <td class="confluenceTd"></td>
+    <td class="confluenceTd">1-4</td>
+  </tr>
+  <tr>
+    <td class="confluenceTd">Bitdepth of output samples</td>
+    <td class="confluenceTd"></td>
+    <td class="confluenceTd">1,2,4,8,16 or 32</td>
+  </tr>
+  <tr>
+    <td class="confluenceTd">Dedispersion DM applied</td>
+    <td class="confluenceTd"></td>
+    <td class="confluenceTd">0-100,000 pc cm-3</td>
+  </tr>
+  <tr>
+    <td class="confluenceTd">Rotation measure correction</td>
+    <td class="confluenceTd"></td>
+    <td class="confluenceTd">(-2, 2) rad m-2</td>
+  </tr>
+  <tr>
+    <td class="confluenceTd">No. channels recorded**</td>
+    <td class="confluenceTd"></td>
+    <td class="confluenceTd">1 to 1</td>
+  </tr>
+  <tr>
+    <td class="confluenceTd">*Time and frequency resolution are related/ limited by Nyquist criterion.
+**Number of channels is limited by data recording rate and receiver bandwidth.</td>
+    <td class="confluenceTd">*Time and frequency resolution are related/ limited by Nyquist criterion.
+**Number of channels is limited by data recording rate and receiver bandwidth.</td>
+    <td class="confluenceTd">*Time and frequency resolution are related/ limited by Nyquist criterion.
+**Number of channels is limited by data recording rate and receiver bandwidth.</td>
+  </tr>
+</table>
+
+<h3>Data formats</h3>
+<p>Detected filterbank data are stored in the PSRFITS file format [RD9], along with statistics stored in a custom HDF5-based file format.</p>
+<p>Reference documents here</p>

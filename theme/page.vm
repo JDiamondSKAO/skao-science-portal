@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="robots" content="index,follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="generator" content="Created with Scroll Viewport - K15t">
+
+    <script>
+        var contextPath = '$contextPath';
+        ## $page.space.key may not exist in all Viewport versions — fallback to SPK
+        #if($page.space && $page.space.key)
+            var spaceKey = '$page.space.key';
+        #else
+            var spaceKey = 'SPK';
+        #end
+    </script>
+
+    ## Resolve the viewport root (home) page by walking up the page tree
+    #set($homePage = $page)
+    #if($homePage.parent)#set($homePage = $homePage.parent)#end
+    #if($homePage.parent)#set($homePage = $homePage.parent)#end
+    #if($homePage.parent)#set($homePage = $homePage.parent)#end
+    #if($homePage.parent)#set($homePage = $homePage.parent)#end
+    #set($homeLink = $homePage.absoluteLink)
+
+    $webPanels
+    $page.resources.meta
+    $page.resources.js
+    $page.resources.css
+    $page.resources.requireForContext('viewcontent')
+    $page.resources.require('com.atlassian.confluence.plugins.confluence-inline-tasks:inline-tasks-styles')
+
+    <title>$page.title — SKAO Science Users Portal</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="${theme.baseUrl}/css/style.css">
+</head>
+
+<body>
+
+    ## =============================================
+    ## SEARCH MODAL OVERLAY
+    ## =============================================
+    <div class="search-modal" id="searchModal">
+        <div class="search-modal-backdrop" id="searchModalBackdrop"></div>
+        <div class="search-modal-dialog">
+            <div class="search-modal-header">
+                <div class="search-modal-input-wrap">
+                    <svg class="search-modal-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <form id="searchForm" action="${contextPath}/plugins/scroll-viewport/search" method="GET" style="flex:1;" onsubmit="return false;">
+                        <input type="text" name="q" id="searchModalInput" placeholder="Search documentation..." class="search-modal-field" autocomplete="off" />
+                    </form>
+                    <button class="search-modal-close" id="searchModalClose" aria-label="Close search">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    </button>
+                </div>
+            </div>
+            <div class="search-modal-body" id="searchModalBody">
+                <div class="search-modal-empty" id="searchEmpty">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color:var(--slate-300);margin-bottom:16px;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <p style="color:var(--slate-500);">Start typing to search documentation...</p>
+                    <p style="font-size:13px;color:var(--slate-400);margin-top:8px;">Search by title, category, or keywords</p>
+                </div>
+                <div class="search-modal-loading" id="searchLoading" style="display:none;">
+                    <p style="color:var(--slate-500);text-align:center;padding:24px 0;">Searching...</p>
+                </div>
+                <div class="search-modal-results" id="searchResults" style="display:none;"></div>
+                <div class="search-modal-no-results" id="searchNoResults" style="display:none;">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color:var(--slate-300);margin-bottom:16px;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <p style="color:var(--slate-500);">No results found</p>
+                    <p style="font-size:13px;color:var(--slate-400);margin-top:8px;">Try different keywords or check your spelling</p>
+                </div>
+            </div>
+            <div class="search-modal-footer">
+                <div class="search-kbd-hints">
+                    <span class="kbd-hint"><kbd>↵</kbd> to search</span>
+                    <span class="kbd-hint"><kbd>Esc</kbd> to close</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    ## SLIDE-OUT SIDEBAR removed — backup in BACKUP-navigate-sidebar.vm
+
+    ## =============================================
+    ## HEADER
+    ## =============================================
+    <header class="skao-header">
+        <div class="header-bg" style="background-image: url('${theme.baseUrl}/images/header-bg.jpg');"></div>
+        <div class="header-overlay"></div>
+        <div class="header-content">
+            <div class="header-top">
+                <div class="header-inner">
+                    <a href="$homeLink" class="brand-link">
+                        <img src="${theme.baseUrl}/images/skao-logo-white.png" alt="SKAO" class="logo-img">
+                        <div class="brand-title">
+                            <span class="site-title">Science Users Portal</span>
+                            <span class="site-subtitle">Square Kilometre Array Observatory</span>
+                        </div>
+                    </a>
+                    <div class="header-actions">
+                        <button class="header-search-btn" id="openSearchModal" aria-label="Search documentation">
+                            <span class="header-search-text">Search documentation...</span>
+                            <span class="header-search-right">
+                                <kbd class="header-kbd">Ctrl+K</kbd>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                            </span>
+                        </button>
+                        <button class="mobile-search-btn" id="openSearchModalMobile" aria-label="Search">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                        </button>
+                        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <nav class="header-nav" id="headerNav">
+                <div class="header-inner">
+                    <ul class="nav-list">
+                        <li><a href="$homeLink" class="nav-link">Home</a></li>
+                        ## Always show root-level sections in the header nav
+                        #set($rootChildren = $homePage.children)
+                        #if($rootChildren && $rootChildren.size() > 0)
+                            #foreach($navItem in $rootChildren)
+                                <li><a href="$navItem.absoluteLink" class="nav-link #if($page.title == $navItem.title)nav-active#end">$navItem.title</a></li>
+                            #end
+                        #end
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    ## =============================================
+    ## ANNOUNCEMENT BANNER
+    ## =============================================
+    <div class="announcement-banner" id="announcementBanner">
+        <div class="announcement-inner">
+            <div class="announcement-content">
+                <svg class="announcement-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                <p class="announcement-text">
+                    Welcome to the SKAO Science Users Portal — documentation is being migrated. Check back regularly for updates.
+                </p>
+            </div>
+            <button class="announcement-close" aria-label="Dismiss">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+    </div>
+
+    ## =============================================
+    ## MAIN CONTENT
+    ## =============================================
+    <main class="skao-main">
+
+        #set($children = $page.children)
+        #set($isHomePage = (!$page.parent))
+        #if($isHomePage && $children && $children.size() > 0)
+        ## =============================================
+        ## HOMEPAGE LAYOUT (only for the root page)
+        ## =============================================
+
+            ## HERO (collapsible)
+            <section class="hero" id="heroSection">
+                <div class="hero-content">
+                    <div class="hero-inner">
+                        <h1 class="hero-title">$page.title</h1>
+                        <p class="hero-desc">
+                            Welcome to the SKAO Science Users Portal. Access comprehensive documentation,
+                            tools, and guidance for using the Square Kilometre Array Observatory for your research.
+                        </p>
+                        <div class="hero-actions">
+                            ## Find the Getting Started page dynamically
+                            #foreach($heroChild in $children)
+                                #set($heroTitle = $heroChild.title.toLowerCase())
+                                #if($heroTitle.contains("getting") || $heroTitle.contains("started"))
+                                    <a href="$heroChild.absoluteLink" class="btn btn-gradient">Getting Started Guide</a>
+                                #end
+                            #end
+                            <a href="#docs" class="btn btn-outline-white">Browse Documentation</a>
+                        </div>
+                        <button class="hero-toggle">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"></polyline></svg>
+                            Collapse
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-collapsed" style="display:none;">
+                    <div class="hero-inner">
+                        <span>Show welcome</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </div>
+                </div>
+            </section>
+
+            ## QUICK ACCESS — icons & descriptions matched by page title
+            <section class="quick-access" id="docs">
+                <div class="section-inner">
+                    <h2 class="section-heading">Quick Access</h2>
+                    <div class="qa-grid">
+                        #foreach($child in $children)
+                            #set($t = $child.title.toLowerCase())
+                            ## Skip Full Operations sections for now
+                            #if(!$t.contains("observ") && !$t.contains("propos"))
+                            <a href="$child.absoluteLink" class="qa-card">
+                                <div class="qa-icon #if($t.contains('about'))qa-icon-about#elseif($t.contains('getting') || $t.contains('started'))qa-icon-getting#elseif($t.contains('science') || $t.contains('verif'))qa-icon-sv#elseif($t.contains('data'))qa-icon-data#elseif($t.contains('support') || $t.contains('faq'))qa-icon-support#elseif($t.contains('srcnet') || $t.contains('src'))qa-icon-srcnet#elseif($t.contains('tool'))qa-icon-tools#else qa-icon-default#end">
+                                    ## About — info circle
+                                    #if($t.contains("about"))
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                                    ## Getting Started — compass
+                                    #elseif($t.contains("getting") || $t.contains("started"))
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+                                    ## Science Verification — beaker/flask
+                                    #elseif($t.contains("science") || $t.contains("verif"))
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6v7l4 8H5l4-8V3z"/><line x1="8" y1="3" x2="16" y2="3"/></svg>
+                                    ## Data — database
+                                    #elseif($t.contains("data"))
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+                                    ## Support — help circle
+                                    #elseif($t.contains("support") || $t.contains("faq"))
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                                    ## SRCNet — globe
+                                    #elseif($t.contains("srcnet") || $t.contains("src"))
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                                    ## Tools — wrench
+                                    #elseif($t.contains("tool"))
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                                    ## Default — document
+                                    #else
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                                    #end
+                                </div>
+                                <h3 class="qa-title">$child.title</h3>
+                                <p class="qa-desc">
+                                    #if($t.contains("about"))
+                                        Learn about the Observatory
+                                    #elseif($t.contains("getting") || $t.contains("started"))
+                                        Start observing with SKAO
+                                    #elseif($t.contains("science") || $t.contains("verif"))
+                                        Early access programme
+                                    #elseif($t.contains("data"))
+                                        Access observation data
+                                    #elseif($t.contains("support") || $t.contains("faq"))
+                                        Get help and contact us
+                                    #elseif($t.contains("srcnet") || $t.contains("src"))
+                                        Regional centre network
+                                    #elseif($t.contains("tool"))
+                                        Software and pipelines
+                                    #else
+                                        Browse documentation
+                                    #end
+                                </p>
+                            </a>
+                            #end
+                        #end
+                    </div>
+                </div>
+            </section>
+
+            ## RECENT UPDATES
+            <section class="recent-updates">
+                <div class="section-inner">
+                    <div class="ru-header">
+                        <h2 class="section-heading" style="margin-bottom:0;">Recent Updates</h2>
+                        <a href="#" class="ru-view-all">View All Updates →</a>
+                    </div>
+                    <div class="ru-grid">
+                        ## These are placeholder cards — content will be dynamic once pages exist
+                        <div class="ru-card">
+                            <div class="ru-card-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                            </div>
+                            <div class="ru-card-body">
+                                <div class="ru-card-meta">
+                                    <span class="ru-badge">Documentation</span>
+                                    <span class="ru-date">
+                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                        Mar 2026
+                                    </span>
+                                </div>
+                                <h3 class="ru-card-title">Portal launched</h3>
+                                <p class="ru-card-desc">The Science Users Portal is now live. Documentation is being migrated from existing sources.</p>
+                            </div>
+                        </div>
+                        <div class="ru-card">
+                            <div class="ru-card-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                            </div>
+                            <div class="ru-card-body">
+                                <div class="ru-card-meta">
+                                    <span class="ru-badge ru-badge-announce">Announcement</span>
+                                    <span class="ru-date">
+                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                        Mar 2026
+                                    </span>
+                                </div>
+                                <h3 class="ru-card-title">Call for Proposals — Cycle 2026A open</h3>
+                                <p class="ru-card-desc">Submit your proposals for SKAO observing time. Deadline information coming soon.</p>
+                            </div>
+                        </div>
+                        <div class="ru-card">
+                            <div class="ru-card-icon ru-card-icon-sw">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                            </div>
+                            <div class="ru-card-body">
+                                <div class="ru-card-meta">
+                                    <span class="ru-badge ru-badge-software">Software</span>
+                                    <span class="ru-date">
+                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                        Coming soon
+                                    </span>
+                                </div>
+                                <h3 class="ru-card-title">Data Pipeline updates</h3>
+                                <p class="ru-card-desc">Improved imaging algorithms and enhanced quality control features are in development.</p>
+                            </div>
+                        </div>
+                        <div class="ru-card">
+                            <div class="ru-card-icon ru-card-icon-tut">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                            </div>
+                            <div class="ru-card-body">
+                                <div class="ru-card-meta">
+                                    <span class="ru-badge ru-badge-tutorial">Tutorial</span>
+                                    <span class="ru-date">
+                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                        Coming soon
+                                    </span>
+                                </div>
+                                <h3 class="ru-card-title">Getting Started with SKA Data</h3>
+                                <p class="ru-card-desc">Step-by-step guide for accessing and analysing your first SKAO dataset.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            ## HOMEPAGE BODY CONTENT
+            #if($page.content && $page.content.toString().trim().length() > 0)
+                <section class="homepage-content">
+                    <div class="section-inner">
+                        <div class="content-body">
+                            $page.content
+                        </div>
+                    </div>
+                </section>
+            #end
+
+        #else
+        ## =============================================
+        ## CONTENT PAGE LAYOUT
+        ## =============================================
+
+            ## Determine if this is a section page (has children) or a leaf page
+            #set($pageChildren = $page.children)
+            #set($isSectionPage = ($pageChildren && $pageChildren.size() > 0))
+
+            <div class="content-layout">
+                <nav class="breadcrumb">
+                    #if($page.parent)
+                        <a href="$page.parent.absoluteLink" class="breadcrumb-link">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                            $page.parent.title
+                        </a>
+                        <svg class="breadcrumb-sep" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    #end
+                    <span class="breadcrumb-current">$page.title</span>
+                </nav>
+
+                <div class="content-columns">
+                    <article class="article">
+                        <h1 class="article-title">$page.title</h1>
+                        <div class="content-body">
+                            $page.content
+
+                            ## For section pages, render a list of child pages
+                            #if($isSectionPage)
+                                <div class="section-children">
+                                    <p>This section contains the following pages:</p>
+                                    <div class="section-children-grid">
+                                        #foreach($childPage in $pageChildren)
+                                            <a href="$childPage.absoluteLink" class="section-child-card">
+                                                <h3 class="section-child-title">$childPage.title</h3>
+                                                <span class="section-child-arrow">
+                                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                                                </span>
+                                            </a>
+                                        #end
+                                    </div>
+                                </div>
+                            #end
+                        </div>
+                    </article>
+
+                    ## Sidebar: show children for section pages, siblings for leaf pages
+                    #if($isSectionPage)
+                        <aside class="sidebar">
+                            <div class="sidebar-inner">
+                                <h4 class="sidebar-title">$page.title</h4>
+                                <ul class="sidebar-nav">
+                                    #foreach($childPage in $pageChildren)
+                                        <li>
+                                            <a href="$childPage.absoluteLink" class="sidebar-link">$childPage.title</a>
+                                        </li>
+                                    #end
+                                </ul>
+                            </div>
+                        </aside>
+                    #elseif($page.parent && $page.parent.children && $page.parent.children.size() > 1)
+                        <aside class="sidebar">
+                            <div class="sidebar-inner">
+                                <h4 class="sidebar-title">$page.parent.title</h4>
+                                <ul class="sidebar-nav">
+                                    #foreach($sibling in $page.parent.children)
+                                        <li>
+                                            <a href="$sibling.absoluteLink" class="sidebar-link #if($page.title == $sibling.title)sidebar-active#end">$sibling.title</a>
+                                        </li>
+                                    #end
+                                </ul>
+                            </div>
+                        </aside>
+                    #end
+                </div>
+            </div>
+
+        #end
+    </main>
+
+    ## =============================================
+    ## FOOTER
+    ## =============================================
+    <footer class="skao-footer">
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="footer-heading">About SKAO</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://www.skao.int/en/about" target="_blank" rel="noopener">About the Observatory</a></li>
+                        <li><a href="https://www.skao.int/en/science" target="_blank" rel="noopener">Science Goals</a></li>
+                        <li><a href="https://www.skao.int/en/organisation" target="_blank" rel="noopener">Organisation</a></li>
+                        <li><a href="https://www.skao.int/en/news" target="_blank" rel="noopener">News &amp; Events</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-heading">Documentation</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Getting Started</a></li>
+                        <li><a href="#">User Manuals</a></li>
+                        <li><a href="#">Technical Memos</a></li>
+                        <li><a href="#">API Reference</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-heading">Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Software Tools</a></li>
+                        <li><a href="#">Data Archive</a></li>
+                        <li><a href="#">Publications</a></li>
+                        <li><a href="#">Proposal Templates</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-heading">Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://jira.skatelescope.org/servicedesk" target="_blank" rel="noopener">Help Desk</a></li>
+                        <li><a href="https://www.skao.int/en/explore/contact" target="_blank" rel="noopener">Contact Us</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Training Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-heading">Policies</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Data Policy</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Accessibility</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Square Kilometre Array Observatory (SKAO). All rights reserved.</p>
+                <p class="footer-tagline">Building the world's largest radio telescope</p>
+            </div>
+        </div>
+    </footer>
+
+    ## BACK TO TOP
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+    </button>
+
+    <script src="${theme.baseUrl}/js/main.js"></script>
+
+</body>
+</html>

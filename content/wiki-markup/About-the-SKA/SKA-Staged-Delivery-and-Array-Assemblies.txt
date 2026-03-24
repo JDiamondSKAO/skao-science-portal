@@ -1,0 +1,13 @@
+SKAO has adopted a staged approach to construction where the Low and Mid telescopes are constructed and verified in stages called array assemblies (AA). Interferometers lend themselves to easy expansion as new antennas can be added to existing arrays, provided sufficient compute and network resources are available to accommodate the increased data rates. Such an approach ensures that the full functionality of all the software and hardware can be tested and verified at the earliest possible stage during construction.
+
+To clarify the staged delivery of the SKAO telescopes, we have published a memo (linked below) that provides the astronomy community with a single point of reference that describes the array assemblies, the list of antennas and their coordinates in the array assemblies that will be available to the scientific community from the start of Science Verification through to the full design baseline.
+
+The content presented in this document is complemented by a Python package (called ska_ost_array_config) that allows astronomers to simulate interferometric observations using both the entirety of the dishes or stations available during a particular AA, or a subset of those available (i.e. a “subarray”). Both Low and Mid telescopes are capable of providing up to 16 concurrent subarrays, offering a lot of flexibility to both operations and science observing. The Python package also provides a programmatic interface to the "as-built" coordinates of the Low Frequency Aperture Array (LFAA) antennas in each SKA-Low station. The current version of the package includes coordinates of all AA1 stations. Coordinates of LFAAs in other stations will be added as they are installed.
+
+The memo and the software package can be accessed using the links below:
+
+* Staged delivery memo (version 4)
+* Python package (ska_ost_array_config)
+* Two Jupyter notebooks (interferometry examples and low station examples) in the repository provide a more detailed description of the various functionalities available in ska_ost_array_config.
+
+We encourage feedback from the SKA users community, ideally addressed to sciops@skao.int.
