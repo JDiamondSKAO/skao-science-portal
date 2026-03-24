@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="theme/images/skao-logo-white.png" alt="SKAO" width="200" style="background:#1e293b;padding:16px 24px;border-radius:12px;">
+  <img src="theme/images/skao-logo-colour.png" alt="SKAO" width="300">
 </p>
 
 <h1 align="center">Science Users Portal</h1>
