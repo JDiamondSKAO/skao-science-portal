@@ -6,13 +6,31 @@
 document.addEventListener('DOMContentLoaded', function () {
 
     /* -----------------------------------------
-     * ANNOUNCEMENT BANNER DISMISS
+     * ANNOUNCEMENT BANNER DISMISS (with persistence)
      * ----------------------------------------- */
+    var banner = document.getElementById('announcementBanner');
     var dismissBtn = document.querySelector('.announcement-close');
+
+    function bannerKey() {
+        /* Key derived from banner text so a new message reappears */
+        if (!banner) return null;
+        var txt = banner.textContent.replace(/\s+/g, ' ').trim().substring(0, 80);
+        return 'skao-banner-' + txt.length + '-' + txt.replace(/\W/g, '').substring(0, 20);
+    }
+
+    /* Hide on load if previously dismissed */
+    if (banner) {
+        try {
+            if (localStorage.getItem(bannerKey()) === '1') {
+                banner.style.display = 'none';
+            }
+        } catch (e) { /* localStorage unavailable — show banner */ }
+    }
+
     if (dismissBtn) {
         dismissBtn.addEventListener('click', function () {
-            var banner = document.getElementById('announcementBanner');
             if (banner) {
+                try { localStorage.setItem(bannerKey(), '1'); } catch (e) {}
                 banner.style.transition = 'opacity 0.3s, max-height 0.3s';
                 banner.style.opacity = '0';
                 banner.style.maxHeight = '0';
@@ -480,6 +498,84 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (textEl) textEl.textContent = relative;
             }
         }
+    });
+
+    /* -----------------------------------------
+     * AUTO-GENERATED TABLE OF CONTENTS
+     * Scans .content-body for h2/h3 headings
+     * and injects a TOC into the sidebar.
+     * ----------------------------------------- */
+    var contentBody = document.querySelector('.article .content-body');
+    var sidebarInner = document.querySelector('.sidebar .sidebar-inner');
+
+    if (contentBody && sidebarInner) {
+        var headings = contentBody.querySelectorAll('h2, h3');
+        if (headings.length >= 3) {
+            /* Build TOC */
+            var tocHtml = '<h4 class="sidebar-title sidebar-toc-title">On this page</h4><ul class="sidebar-toc">';
+            for (var h = 0; h < headings.length; h++) {
+                var heading = headings[h];
+                /* Ensure each heading has an ID */
+                if (!heading.id) {
+                    heading.id = 'toc-' + heading.textContent.trim().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+                }
+                var indent = heading.tagName === 'H3' ? ' sidebar-toc-h3' : '';
+                tocHtml += '<li class="sidebar-toc-item' + indent + '"><a href="#' + heading.id + '" class="sidebar-toc-link">' + heading.textContent.trim() + '</a></li>';
+            }
+            tocHtml += '</ul>';
+
+            /* Insert TOC before existing sidebar nav */
+            var tocContainer = document.createElement('div');
+            tocContainer.className = 'sidebar-toc-wrap';
+            tocContainer.innerHTML = tocHtml;
+            sidebarInner.insertBefore(tocContainer, sidebarInner.firstChild);
+
+            /* Scroll-spy: highlight active heading */
+            var tocLinks = tocContainer.querySelectorAll('.sidebar-toc-link');
+            var tocObserver = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        tocLinks.forEach(function (l) { l.classList.remove('sidebar-toc-active'); });
+                        var activeLink = tocContainer.querySelector('a[href="#' + entry.target.id + '"]');
+                        if (activeLink) activeLink.classList.add('sidebar-toc-active');
+                    }
+                });
+            }, { rootMargin: '-80px 0px -60% 0px', threshold: 0 });
+
+            headings.forEach(function (heading) { tocObserver.observe(heading); });
+        }
+    }
+
+    /* -----------------------------------------
+     * CODE BLOCK COPY-TO-CLIPBOARD
+     * ----------------------------------------- */
+    document.querySelectorAll('pre').forEach(function (pre) {
+        /* Skip if already has a copy button */
+        if (pre.querySelector('.code-copy-btn')) return;
+
+        var wrapper = document.createElement('div');
+        wrapper.className = 'code-block-wrap';
+        pre.parentNode.insertBefore(wrapper, pre);
+        wrapper.appendChild(pre);
+
+        var btn = document.createElement('button');
+        btn.className = 'code-copy-btn';
+        btn.setAttribute('aria-label', 'Copy code');
+        btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>';
+
+        btn.addEventListener('click', function () {
+            var code = pre.querySelector('code') ? pre.querySelector('code').textContent : pre.textContent;
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(code).then(function () {
+                    btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+                    setTimeout(function () {
+                        btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>';
+                    }, 2000);
+                });
+            }
+        });
+
+        wrapper.appendChild(btn);
     });
 
 });
