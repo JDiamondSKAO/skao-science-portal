@@ -1,12 +1,54 @@
 /* ============================================= */
 /* SKAO Science Users Portal — Scroll Viewport   */
-/* v0.6 — Full Figma feature set                  */
+/* v0.8 — Visual & UX refinements                 */
 /* ============================================= */
 
 /* --- Reset --- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 a, a:link, a:visited { text-decoration: none; }
+
+/* --- Focus states for keyboard accessibility (WCAG 2.1 AA) --- */
+*:focus-visible {
+    outline: 2px solid var(--blue-600);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+button:focus-visible {
+    outline: 2px solid var(--blue-600);
+    outline-offset: 2px;
+}
+
+.qa-card:focus-visible {
+    outline: 2px solid var(--blue-600);
+    outline-offset: 2px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+}
+
+.nav-link:focus-visible {
+    outline: 2px solid var(--cyan-300);
+    outline-offset: -2px;
+    border-radius: 4px;
+}
+
+.search-result:focus-visible {
+    outline: 2px solid var(--blue-600);
+    outline-offset: -2px;
+    background: var(--slate-100);
+}
+
+.sidebar-link:focus-visible {
+    outline: 2px solid var(--blue-600);
+    outline-offset: -2px;
+}
+
+.section-child-card:focus-visible {
+    outline: 2px solid var(--blue-600);
+    outline-offset: 2px;
+    border-color: var(--blue-400);
+}
 
 body {
     font-family: 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -470,12 +512,12 @@ body {
     border-bottom: 1px solid var(--slate-200);
 }
 
-.hero-content { padding: 28px 16px; text-align: center; }
-.hero-inner { max-width: 672px; margin: 0 auto; }
+.hero-content { padding: 40px 16px 36px; text-align: center; }
+.hero-inner { max-width: 720px; margin: 0 auto; }
 
-.hero-title { font-size: 24px; font-weight: 500; color: var(--slate-900); margin-bottom: 12px; }
+.hero-title { font-size: 32px; font-weight: 700; color: var(--slate-900); margin-bottom: 14px; letter-spacing: -0.5px; line-height: 1.2; }
 
-.hero-desc { font-size: 15px; color: var(--slate-600); line-height: 1.5; margin-bottom: 16px; }
+.hero-desc { font-size: 16px; color: var(--slate-600); line-height: 1.6; margin-bottom: 20px; }
 
 .hero-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 12px; }
 
@@ -526,7 +568,7 @@ body {
 /* QUICK ACCESS                                   */
 /* ============================================= */
 .quick-access {
-    padding: 20px 0 24px;
+    padding: 28px 0 32px;
 }
 .section-inner { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
 .section-heading {
@@ -553,18 +595,19 @@ body {
 }
 
 .qa-card:hover {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+    border-color: var(--slate-300);
     text-decoration: none !important;
 }
 
 .qa-icon {
-    width: 36px; height: 36px; border-radius: 9px;
+    width: 40px; height: 40px; border-radius: 10px;
     display: flex; align-items: center; justify-content: center;
     margin-bottom: 10px; color: #fff;
 }
 
-.qa-icon svg { width: 18px; height: 18px; }
+.qa-icon svg { width: 20px; height: 20px; stroke-linecap: round; stroke-linejoin: round; }
 
 .qa-icon-about { background: #2563eb; }
 .qa-icon-getting { background: #0d9488; }
@@ -654,7 +697,7 @@ body {
 /* ============================================= */
 /* RECENT UPDATES                                 */
 /* ============================================= */
-.recent-updates { padding: 20px 16px; }
+.recent-updates { padding: 28px 16px 36px; }
 
 .ru-header {
     display: flex; align-items: center; justify-content: space-between;
@@ -662,11 +705,14 @@ body {
 }
 
 .ru-view-all, .ru-view-all:link, .ru-view-all:visited {
-    color: var(--blue-600) !important; font-size: 13px; font-weight: 500;
-    transition: color 0.15s;
+    display: inline-flex; align-items: center;
+    color: var(--blue-600) !important; font-size: 13px; font-weight: 600;
+    padding: 6px 14px; border-radius: 6px;
+    background: var(--blue-50);
+    transition: all 0.15s;
 }
 
-.ru-view-all:hover { color: var(--blue-700) !important; text-decoration: none !important; }
+.ru-view-all:hover { background: var(--blue-100); color: var(--blue-700) !important; text-decoration: none !important; }
 
 .ru-grid {
     display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;
@@ -674,14 +720,17 @@ body {
 
 .ru-card {
     background: #fff; border: 1px solid var(--slate-200);
-    border-radius: var(--radius-lg); padding: 12px;
-    display: flex; gap: 10px;
+    border-radius: var(--radius-lg); padding: 16px;
+    display: flex; gap: 12px;
     transition: all 0.2s;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
 .ru-card:hover {
     border-color: #93c5fd;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 6px 16px -4px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
 }
 
 .ru-card-icon {
@@ -898,8 +947,8 @@ body {
     .header-search-btn { display: none; }
     .mobile-search-btn, .mobile-menu-btn { display: flex; }
     .brand-title { display: none; }
-    .hero-content { padding: 32px 16px; }
-    .hero-title { font-size: 20px; }
+    .hero-content { padding: 32px 16px 28px; }
+    .hero-title { font-size: 24px; }
     .qa-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; }
     .footer-grid { grid-template-columns: repeat(2, 1fr); }
     .ru-grid { grid-template-columns: 1fr; }

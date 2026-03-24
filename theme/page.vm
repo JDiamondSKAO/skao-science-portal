@@ -446,21 +446,28 @@
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h3 class="footer-heading">Documentation</h3>
+                    <h3 class="footer-heading">Portal Sections</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Getting Started</a></li>
-                        <li><a href="#">User Manuals</a></li>
-                        <li><a href="#">Technical Memos</a></li>
-                        <li><a href="#">API Reference</a></li>
+                        ## Dynamically list root-level portal sections
+                        #set($footerSections = $homePage.children)
+                        #if($footerSections && $footerSections.size() > 0)
+                            #foreach($fSection in $footerSections)
+                                #set($ft = $fSection.title.toLowerCase())
+                                ## Skip hidden Full Operations sections
+                                #if(!$ft.contains("observ") && !$ft.contains("propos"))
+                                    <li><a href="$fSection.absoluteLink">$fSection.title</a></li>
+                                #end
+                            #end
+                        #end
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h3 class="footer-heading">Resources</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Software Tools</a></li>
-                        <li><a href="#">Data Archive</a></li>
-                        <li><a href="#">Publications</a></li>
-                        <li><a href="#">Proposal Templates</a></li>
+                        <li><a href="https://www.skao.int/en/science/ska-science-book" target="_blank" rel="noopener">Science Book</a></li>
+                        <li><a href="https://www.skao.int/en/explore/publications" target="_blank" rel="noopener">Publications</a></li>
+                        <li><a href="https://sensitivity-calculator.skao.int" target="_blank" rel="noopener">Sensitivity Calculator</a></li>
+                        <li><a href="https://www.srcnet.org" target="_blank" rel="noopener">SRCNet Portal</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -468,17 +475,16 @@
                     <ul class="footer-links">
                         <li><a href="https://jira.skatelescope.org/servicedesk" target="_blank" rel="noopener">Help Desk</a></li>
                         <li><a href="https://www.skao.int/en/explore/contact" target="_blank" rel="noopener">Contact Us</a></li>
-                        <li><a href="#">FAQs</a></li>
-                        <li><a href="#">Training Resources</a></li>
+                        <li><a href="https://www.skao.int/en/explore/subscribe" target="_blank" rel="noopener">Subscribe to Updates</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h3 class="footer-heading">Policies</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Data Policy</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Use</a></li>
-                        <li><a href="#">Accessibility</a></li>
+                        <li><a href="https://www.skao.int/en/explore/data-policy" target="_blank" rel="noopener">Data Policy</a></li>
+                        <li><a href="https://www.skao.int/en/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a></li>
+                        <li><a href="https://www.skao.int/en/terms" target="_blank" rel="noopener">Terms of Use</a></li>
+                        <li><a href="https://www.skao.int/en/accessibility" target="_blank" rel="noopener">Accessibility</a></li>
                     </ul>
                 </div>
             </div>
