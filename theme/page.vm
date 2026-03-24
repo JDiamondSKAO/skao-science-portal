@@ -38,6 +38,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="${theme.baseUrl}/css/style.css">
+    <link rel="stylesheet" href="${theme.baseUrl}/css/eggs.css">
 </head>
 
 <body>
@@ -507,6 +508,7 @@
     </button>
 
     <script src="${theme.baseUrl}/js/main.js"></script>
+    <script src="${theme.baseUrl}/js/eggs.js"></script>
 
 </body>
 </html>

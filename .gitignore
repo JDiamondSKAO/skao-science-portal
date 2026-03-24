@@ -22,3 +22,7 @@ backups/
 
 # Logs
 *.log
+
+# Easter eggs — keep these out of version control
+theme/css/eggs.css
+theme/js/eggs.js
