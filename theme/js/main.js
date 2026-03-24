@@ -1,6 +1,6 @@
 /* ============================================= */
 /* SKAO Science Users Portal — Scroll Viewport   */
-/* main.js v0.6 — Full interactivity              */
+/* main.js v1.0 — Full feature parity              */
 /* ============================================= */
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -577,5 +577,173 @@ document.addEventListener('DOMContentLoaded', function () {
 
         wrapper.appendChild(btn);
     });
+
+    /* -----------------------------------------
+     * HELP BUTTON VISIBILITY
+     * ----------------------------------------- */
+    var helpBtn = document.getElementById('helpBtn');
+    if (helpBtn) {
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 200) {
+                helpBtn.classList.add('help-visible');
+            } else {
+                helpBtn.classList.remove('help-visible');
+            }
+        });
+        /* Show immediately if already scrolled */
+        if (window.scrollY > 200) helpBtn.classList.add('help-visible');
+    }
+
+    /* -----------------------------------------
+     * UPCOMING DEADLINES — COUNTDOWN BADGES
+     * ----------------------------------------- */
+    document.querySelectorAll('.ue-item').forEach(function (item) {
+        var monthEl = item.querySelector('.ue-month');
+        var dayEl = item.querySelector('.ue-day');
+        if (!monthEl || !dayEl) return;
+
+        var monthNames = { JAN: 0, FEB: 1, MAR: 2, APR: 3, MAY: 4, JUN: 5, JUL: 6, AUG: 7, SEP: 8, OCT: 9, NOV: 10, DEC: 11 };
+        var m = monthNames[monthEl.textContent.trim().toUpperCase()];
+        var d = parseInt(dayEl.textContent.trim(), 10);
+        if (m === undefined || isNaN(d)) return;
+
+        var now = new Date();
+        var eventDate = new Date(now.getFullYear(), m, d);
+        /* If the date has passed this year, assume next year */
+        if (eventDate < now) eventDate.setFullYear(now.getFullYear() + 1);
+
+        var daysLeft = Math.ceil((eventDate - now) / 86400000);
+        if (daysLeft <= 14 && daysLeft >= 0) {
+            var titleEl = item.querySelector('.ue-title');
+            if (titleEl) {
+                var badge = document.createElement('span');
+                badge.className = 'ue-countdown';
+                badge.textContent = daysLeft === 0 ? 'Today' : daysLeft === 1 ? 'Tomorrow' : daysLeft + ' days left';
+                titleEl.appendChild(badge);
+            }
+        }
+    });
+
+    /* -----------------------------------------
+     * PAGE FEEDBACK WIDGET
+     * ----------------------------------------- */
+    var pfWidget = document.getElementById('pageFeedback');
+    if (pfWidget) {
+        var pfForm = document.getElementById('pfForm');
+        var pfThanks = document.getElementById('pfThanks');
+        var pfComment = document.getElementById('pfComment');
+        var pfSubmit = document.getElementById('pfSubmit');
+        var pfSkip = document.getElementById('pfSkip');
+        var pfVote = null;
+
+        pfWidget.querySelectorAll('.pf-btn').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                pfVote = this.getAttribute('data-vote');
+                /* Highlight selected button */
+                pfWidget.querySelectorAll('.pf-btn').forEach(function (b) { b.classList.remove('pf-selected'); });
+                this.classList.add('pf-selected');
+                /* Show comment form */
+                if (pfForm) pfForm.style.display = '';
+            });
+        });
+
+        function submitFeedback() {
+            var comment = pfComment ? pfComment.value.trim() : '';
+            var pageTitle = document.title || '';
+
+            /* Log to console (Phase 1 — replace with API POST in Phase 2) */
+            console.log('[Page Feedback]', { page: pageTitle, vote: pfVote, comment: comment });
+
+            /* Hide form, show thanks */
+            pfWidget.querySelector('.pf-question').style.display = 'none';
+            if (pfForm) pfForm.style.display = 'none';
+            if (pfThanks) pfThanks.style.display = '';
+        }
+
+        if (pfSubmit) pfSubmit.addEventListener('click', submitFeedback);
+        if (pfSkip) pfSkip.addEventListener('click', submitFeedback);
+    }
+
+    /* -----------------------------------------
+     * FACETED SEARCH — Section filters
+     * ----------------------------------------- */
+    var searchFacetsAdded = false;
+
+    function addSearchFacets() {
+        if (searchFacetsAdded) return;
+        var searchHeader = document.querySelector('.search-modal-header');
+        if (!searchHeader) return;
+
+        var facetBar = document.createElement('div');
+        facetBar.className = 'search-facets';
+        facetBar.innerHTML =
+            '<button class="search-facet search-facet-active" data-facet="">All Sections</button>' +
+            '<button class="search-facet" data-facet="Getting Started">Getting Started</button>' +
+            '<button class="search-facet" data-facet="Data">Data</button>' +
+            '<button class="search-facet" data-facet="Tools">Tools</button>' +
+            '<button class="search-facet" data-facet="Support">Support</button>';
+
+        searchHeader.appendChild(facetBar);
+        searchFacetsAdded = true;
+
+        facetBar.querySelectorAll('.search-facet').forEach(function (facetBtn) {
+            facetBtn.addEventListener('click', function () {
+                facetBar.querySelectorAll('.search-facet').forEach(function (f) { f.classList.remove('search-facet-active'); });
+                this.classList.add('search-facet-active');
+                /* Re-trigger search with current query */
+                var q = document.getElementById('searchModalInput');
+                if (q && q.value.trim().length >= 2) {
+                    performFacetedSearch(q.value.trim(), this.getAttribute('data-facet'));
+                }
+            });
+        });
+    }
+
+    function performFacetedSearch(query, facet) {
+        showSearchState('loading');
+
+        var cql = 'type=page AND space="' + spaceKey + '" AND (title~"' + query + '" OR text~"' + query + '")';
+        if (facet) {
+            cql += ' AND ancestor="' + facet + '"';
+        }
+
+        var url = contextPath + '/rest/api/content/search?cql=' + encodeURIComponent(cql) + '&limit=10&expand=body.view,space,ancestors';
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', url, true);
+        xhr.setRequestHeader('Accept', 'application/json');
+        xhr.setRequestHeader('X-Atlassian-Token', 'nocheck');
+
+        xhr.onload = function () {
+            if (xhr.status >= 200 && xhr.status < 300) {
+                try {
+                    var data = JSON.parse(xhr.responseText);
+                    renderResults(data.results || [], query);
+                } catch (e) {
+                    showSearchState('noResults');
+                }
+            } else {
+                showSearchState('noResults');
+            }
+        };
+        xhr.onerror = function () { showSearchState('noResults'); };
+        xhr.send();
+    }
+
+    /* Inject facets when search modal opens */
+    var origOpen = openSearchModal;
+    openSearchModal = function () {
+        origOpen();
+        addSearchFacets();
+    };
+    /* Re-bind buttons */
+    if (openSearchBtn) {
+        openSearchBtn.removeEventListener('click', origOpen);
+        openSearchBtn.addEventListener('click', openSearchModal);
+    }
+    if (openSearchBtnMobile) {
+        openSearchBtnMobile.removeEventListener('click', origOpen);
+        openSearchBtnMobile.addEventListener('click', openSearchModal);
+    }
 
 });

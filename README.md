@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/version-0.9-blue?style=flat-square" alt="Version">
+  <img src="https://img.shields.io/badge/version-1.0-blue?style=flat-square" alt="Version">
   <img src="https://img.shields.io/badge/confluence-8.5.26-0052CC?style=flat-square&logo=confluence&logoColor=white" alt="Confluence">
   <img src="https://img.shields.io/badge/scroll_viewport-K15t-4B5563?style=flat-square" alt="Scroll Viewport">
   <img src="https://img.shields.io/badge/license-internal-lightgrey?style=flat-square" alt="Internal">
