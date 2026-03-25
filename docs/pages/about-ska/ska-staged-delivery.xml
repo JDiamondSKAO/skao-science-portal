@@ -1,0 +1,138 @@
+<ac:structured-macro ac:name="excerpt">
+  <ac:parameter ac:name="atlassian-macro-output-type">BLOCK</ac:parameter>
+  <ac:rich-text-body>
+    <p>SKA is deployed in stages called Array Assemblies, enabling early science and commissioning before full completion.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+
+<h2>Staged Delivery Approach</h2>
+<p>The SKA is deployed in stages called Array Assemblies (AAs). Each AA represents a construction milestone that provides end-to-end telescope functionality, including receiver systems, signal processing, and correlators. This approach enables early science operations, commissioning activities, and procedural development before the array reaches full completion, reducing technical risk and accelerating scientific capability.</p>
+
+<h2>Array Assembly Stages</h2>
+
+<h3>AA0.5 (Engineering Phase)</h3>
+<p>The first test array designed for interferometry verification and system-level validation.</p>
+<ul>
+  <li>Prototype dishes and receiver systems</li>
+  <li>Engineering-focused deployment to discover system-level issues early</li>
+  <li>Used for commissioning procedures and technical integration</li>
+</ul>
+<p><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Yellow</ac:parameter><ac:parameter ac:name="title">In Progress</ac:parameter></ac:structured-macro> Expected completion mid-2026.</p>
+
+<h3>AA1</h3>
+<p>First operational array stage with 8 dishes for SKA-Mid.</p>
+<ul>
+  <li>Correlator upgraded to 16k channels</li>
+  <li>800 MHz imaging bandwidth</li>
+  <li>Establishes operational procedures for future stages</li>
+</ul>
+<p><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Yellow</ac:parameter><ac:parameter ac:name="title">Planned</ac:parameter></ac:structured-macro></p>
+
+<h3>AA2 (Science Verification)</h3>
+<p>Major expansion phase with significant performance gains and science validation.</p>
+<ul>
+  <li>56 dishes added to SKA-Mid array (approximately one dish per week integration rate)</li>
+  <li>Performance comparable to existing radio facilities</li>
+  <li>Dedicated science verification and validation phase</li>
+  <li>SKA-Low Science Verification data expected 2027</li>
+  <li>SKA-Mid Science Verification data expected 2029</li>
+</ul>
+<p><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Yellow</ac:parameter><ac:parameter ac:name="title">Planned</ac:parameter></ac:structured-macro></p>
+
+<h3>AA* (Planned Pause Point)</h3>
+<p>Represents a planned transition and consolidation point before full array capability.</p>
+<ul>
+  <li>SKA-Mid: 144 dishes total (80 SKA + 64 MeerKAT partnership dishes)</li>
+  <li>SKA-Low: 257 stations</li>
+  <li>November 2025 SKAO Council approved deferral of some planned capabilities to balance scope and funding</li>
+</ul>
+<p><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Yellow</ac:parameter><ac:parameter ac:name="title">Planned</ac:parameter></ac:structured-macro></p>
+
+<h3>AA3 and AA4 (Future Completion)</h3>
+<p>Final expansion phases leading to full array capability.</p>
+<ul>
+  <li>AA4 represents the complete SKA array with all planned elements</li>
+  <li>Scheduling and funding subject to future decisions and resource availability</li>
+</ul>
+<p><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Neutral</ac:parameter><ac:parameter ac:name="title">Future</ac:parameter></ac:structured-macro></p>
+
+<h2>Current Construction Status</h2>
+
+<h3>SKA-Low</h3>
+<p>Science commissioning is proceeding with strong progress on key metrics:</p>
+<ul>
+  <li>Per-antenna sensitivity performing as anticipated</li>
+  <li>Interferometric fringes successfully demonstrated</li>
+  <li>Continuum imaging operational</li>
+  <li>Faraday synthesis spectra capabilities validated</li>
+  <li>Pulsar timing measurements producing results</li>
+</ul>
+
+<h3>SKA-Mid</h3>
+<p>Construction proceeding on schedule. Currently approximately 2 years behind SKA-Low due to the complexity of the mid-frequency array systems and prototyping phase.</p>
+
+<ac:structured-macro ac:name="info">
+  <ac:rich-text-body>
+    <p><strong>Key Milestone:</strong> SKA-Low has achieved full interferometric functionality with all science verification modes operational. This validates the staged delivery approach and provides confidence for SKA-Mid development.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+
+<h2>Timeline Overview</h2>
+
+<table>
+  <colgroup><col /><col /><col /><col /></colgroup>
+  <tbody>
+    <tr>
+      <th>Array Assembly</th>
+      <th>SKA-Low Timeline</th>
+      <th>SKA-Mid Timeline</th>
+      <th>Status</th>
+    </tr>
+    <tr>
+      <td>AA0.5 (Engineering)</td>
+      <td>Ongoing</td>
+      <td>Ongoing</td>
+      <td><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Yellow</ac:parameter><ac:parameter ac:name="title">In Progress</ac:parameter></ac:structured-macro></td>
+    </tr>
+    <tr>
+      <td>AA1</td>
+      <td>2026–2027</td>
+      <td>2027–2028</td>
+      <td><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Yellow</ac:parameter><ac:parameter ac:name="title">Planned</ac:parameter></ac:structured-macro></td>
+    </tr>
+    <tr>
+      <td>AA2 (Science Verification)</td>
+      <td>2027–2029</td>
+      <td>2029–2031</td>
+      <td><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Yellow</ac:parameter><ac:parameter ac:name="title">Planned</ac:parameter></ac:structured-macro></td>
+    </tr>
+    <tr>
+      <td>AA* (Pause Point)</td>
+      <td>2029</td>
+      <td>2031</td>
+      <td><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Yellow</ac:parameter><ac:parameter ac:name="title">Planned</ac:parameter></ac:structured-macro></td>
+    </tr>
+    <tr>
+      <td>AA3 &amp; AA4 (Full Array)</td>
+      <td>Post-2031</td>
+      <td>Post-2031</td>
+      <td><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Neutral</ac:parameter><ac:parameter ac:name="title">Future</ac:parameter></ac:structured-macro></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Subarrays</h2>
+
+<ac:structured-macro ac:name="expand">
+  <ac:parameter ac:name="title">Subarray Operations and Concurrent Observations</ac:parameter>
+  <ac:rich-text-body>
+    <p>Each Array Assembly stage is designed to support subarray operations, enabling the array to be partitioned into independent observing units for concurrent science observations. Subarray capability allows:</p>
+    <ul>
+      <li>Multiple simultaneous science targets at different frequencies</li>
+      <li>Flexible scheduling of heterogeneous observation types</li>
+      <li>Improved utilisation of array resources</li>
+      <li>Support for both survey and deep-field observations in parallel</li>
+    </ul>
+    <p>This operational flexibility is integral to maximizing scientific return across the array's staged deployment.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>

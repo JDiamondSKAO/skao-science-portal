@@ -1,0 +1,360 @@
+<ac:structured-macro ac:name="excerpt">
+  <ac:parameter ac:name="atlassian-macro-output-type">BLOCK</ac:parameter>
+  <ac:rich-text-body>
+    <p>
+      <strong>Types of SKA Proposals</strong>
+    </p>
+    <p>
+      The SKA offers multiple proposal types to accommodate different science needs and timescales. This page describes each type, eligibility criteria, review processes, and typical time allocations.
+    </p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+
+<h2>Overview</h2>
+
+<p>
+  The SKA recognizes three main proposal types, each designed for different observing scenarios and science goals:
+</p>
+
+<ul>
+  <li><strong>PI Projects:</strong> Standard, competitively reviewed observing programmes (available Cycle 0 onwards)</li>
+  <li><strong>Director's Discretionary Time (DDT):</strong> Rapid-response observations for time-critical targets (available Cycle 0 onwards)</li>
+  <li><strong>Key Science Projects (KSP):</strong> Large, long-duration programmes spanning multiple cycles (planned for Cycle 3 onwards)</li>
+</ul>
+
+<h2>PI Projects</h2>
+
+<p>
+  <strong>PI Projects</strong> are the standard avenue for SKA observations. They are competitively peer-reviewed and awarded observing time based on scientific merit.
+</p>
+
+<h3>Eligibility</h3>
+
+<ul>
+  <li><strong>Open to all researchers:</strong> Scientists from any institution worldwide can serve as PI</li>
+  <li><strong>Institutional affiliation:</strong> PI must have a formal affiliation with a research or educational institution</li>
+  <li><strong>No nationality restrictions:</strong> Eligibility is based on institutional affiliation, not citizenship</li>
+  <li><strong>Early-career researchers:</strong> Special consideration or reserved time available; check Cycle Announcement for details</li>
+</ul>
+
+<h3>Proposal Format</h3>
+
+<ul>
+  <li><strong>Typical length:</strong> 5–10 pages (including science case, technical justification, figures)</li>
+  <li><strong>Structured format:</strong> Title, abstract, science category, team, observing requirements, technical specifications, data management</li>
+  <li><strong>Single-cycle scope:</strong> One observing cycle only (typically 12 months)</li>
+</ul>
+
+<h3>Review Process</h3>
+
+<ul>
+  <li><strong>Peer review:</strong> Proposals are evaluated by independent experts in relevant science areas</li>
+  <li><strong>Science committee:</strong> SKA Science Collaboration committees review proposals and make time-allocation recommendations</li>
+  <li><strong>Time Allocation Committee (TAC):</strong> Final decisions on observing time are made by the TAC, which balances scientific merit against available resources</li>
+  <li><strong>Review timeline:</strong> Typically 2–3 months from proposal deadline to notification of results</li>
+</ul>
+
+<h3>Time Allocation</h3>
+
+<ul>
+  <li><strong>Typical awards:</strong> 5–1000 hours (depending on science case and cycle constraints)</li>
+  <li><strong>Average award:</strong> ~50–200 hours per proposal (highly variable)</li>
+  <li><strong>Total per cycle:</strong> ~60–70% of available observing time allocated to PI projects; remainder reserved for DDT, calibration, commissioning</li>
+</ul>
+
+<h3>Data Rights</h3>
+
+<ul>
+  <li><strong>Proprietary period:</strong> Typically 12 months from observation date; PI has exclusive access during this period</li>
+  <li><strong>Release to archive:</strong> After proprietary period, data enters SKA data archive available to all users</li>
+  <li><strong>Extended proprietary period:</strong> May be requested for special cases (e.g., sensitive targets); must be justified in proposal</li>
+</ul>
+
+<h3>Publication and Data Release</h3>
+
+<ul>
+  <li><strong>Publication rights:</strong> PI team has right of first publication during proprietary period</li>
+  <li><strong>SKA publication policy:</strong> All data users (including archive users post-proprietary period) must acknowledge the SKA in publications</li>
+  <li><strong>Collaboration statement:</strong> PIs should acknowledge co-investigators and collaborators</li>
+</ul>
+
+<h2>Director's Discretionary Time (DDT)</h2>
+
+<p>
+  <strong>DDT</strong> is allocated by the Director of the SKA for rapid-response observations of unexpected or time-critical targets. Observations typically occur within days to weeks of approval.
+</p>
+
+<h3>Eligibility</h3>
+
+<ul>
+  <li><strong>Science-driven urgency:</strong> Target must be scientifically time-critical (e.g., transient, ToO, coordinated multi-wavelength campaign)</li>
+  <li><strong>Discovery context:</strong> Often triggered by discoveries from other telescopes (GRBs, transient alerts, gravitational-wave events)</li>
+  <li><strong>Any researcher:</strong> Similar to PI projects; no career-stage restrictions</li>
+</ul>
+
+<h3>Proposal Format</h3>
+
+<ul>
+  <li><strong>Brief proposal:</strong> 1–2 pages, with emphasis on urgency and time-critical nature</li>
+  <li><strong>Rapid turnaround:</strong> Can be submitted anytime (no fixed deadline)</li>
+  <li><strong>Fast review:</strong> Typically reviewed within 24–48 hours</li>
+</ul>
+
+<h3>Review Process</h3>
+
+<ul>
+  <li><strong>Expedited evaluation:</strong> DDT proposals are evaluated on scientific merit and feasibility, with emphasis on rapid decision-making</li>
+  <li><strong>Director's decision:</strong> Final approval rests with the SKA Director or delegated authority</li>
+  <li><strong>Scheduling priority:</strong> Approved DDT observations may displace non-critical programmes in the schedule</li>
+</ul>
+
+<h3>Time Allocation</h3>
+
+<ul>
+  <li><strong>Per-proposal awards:</strong> Typically 1–100 hours</li>
+  <li><strong>Annual DDT pool:</strong> ~10–15% of observing time reserved for DDT across all cycles</li>
+  <li><strong>Competition:</strong> Fewer proposals compete for DDT time, but only high-priority targets are approved</li>
+</ul>
+
+<h3>Data Rights and Publication</h3>
+
+<ul>
+  <li><strong>Proprietary period:</strong> Same as PI projects (typically 12 months)</li>
+  <li><strong>Publication policy:</strong> Same as PI projects</li>
+  <li><strong>Rapid publication encouraged:</strong> Given the time-critical nature, PIs are encouraged to publish results quickly</li>
+</ul>
+
+<h3>Common DDT Scenarios</h3>
+
+<ul>
+  <li><strong>GRB follow-up:</strong> Rapid imaging/spectroscopy of gamma-ray burst afterglows</li>
+  <li><strong>Gravitational-wave event localization:</strong> Counterpart identification following LIGO/Virgo detections</li>
+  <li><strong>Pulsar magnetar outbursts:</strong> Observations of sudden emission changes or glitches</li>
+  <li><strong>Nearby supernova discovery:</strong> Rapid characterization of newly discovered SNe</li>
+  <li><strong>Solar flare monitoring:</strong> Real-time observation of significant solar radio events</li>
+</ul>
+
+<h2>Key Science Projects (KSP)</h2>
+
+<p>
+  <strong>Key Science Projects (KSPs)</strong> are large, coordinated observing programmes spanning multiple observing cycles (typically 2–5 years). KSPs are designed to tackle major science questions and require substantial array time.
+</p>
+
+<h3>Motivation and Scope</h3>
+
+<ul>
+  <li><strong>Major science drivers:</strong> Address key science goals outlined in the SKA Science Book (e.g., "Detecting the Epoch of Reionization," "A Census of Pulsars in the Galactic Plane")</li>
+  <li><strong>Large data volumes:</strong> Require multi-year surveys or deep, targeted observations</li>
+  <li><strong>Team effort:</strong> Coordinated science teams with expertise spanning multiple areas</li>
+  <li><strong>Strategic importance:</strong> Align with SKA's mission to pursue transformative astronomy</li>
+</ul>
+
+<h3>Eligibility</h3>
+
+<ul>
+  <li><strong>Large consortia:</strong> Must involve a collaboration of >~10 researchers from multiple institutions</li>
+  <li><strong>Formal structure:</strong> Governance model defining decision-making, publication rights, and data-sharing within the collaboration</li>
+  <li><strong>Science leadership:</strong> Identified science lead and co-leads for different working groups</li>
+</ul>
+
+<h3>Proposal Format</h3>
+
+<ul>
+  <li><strong>Comprehensive proposal:</strong> 20–40 pages (much longer than PI projects or DDT)</li>
+  <li><strong>Sections include:</strong> Detailed science rationale, survey strategy, data products, team organization, management plan, budget (if applicable)</li>
+  <li><strong>Multi-cycle specification:</strong> Year-by-year breakdown of observations and expected milestones</li>
+</ul>
+
+<h3>Review Process</h3>
+
+<ul>
+  <li><strong>Science review:</strong> Detailed evaluation by science committee experts</li>
+  <li><strong>Management review:</strong> Assessment of collaboration structure, team capability, and feasibility</li>
+  <li><strong>Strategic alignment:</strong> Evaluation of how the KSP aligns with SKA's strategic science goals</li>
+  <li><strong>Timeline:</strong> Typically 3–4 months for review and decision</li>
+</ul>
+
+<h3>Time Allocation</h3>
+
+<ul>
+  <li><strong>Substantial allocations:</strong> Typically 1,000–10,000+ hours per year</li>
+  <li><strong>Multi-year commitment:</strong> Time guaranteed across multiple cycles (subject to milestone review)</li>
+  <li><strong>Annual reviews:</strong> KSPs are reviewed annually to assess progress and adjust future allocations if needed</li>
+  <li><strong>Total annual pool:</strong> ~20–30% of available observing time reserved for KSPs (starting Cycle 3)</li>
+</ul>
+
+<h3>Data Rights and Publication</h3>
+
+<ul>
+  <li><strong>Proprietary period:</strong> Typically 18–24 months for KSP data (longer than PI projects to allow coordinated analysis)</li>
+  <li><strong>Collaboration data policy:</strong> Each KSP defines its own publication policy and data-sharing rules among collaborators</li>
+  <li><strong>Public release:</strong> After proprietary period, all KSP data enters SKA archive</li>
+  <li><strong>Coordinated publication:</strong> KSPs coordinate major publications to avoid conflicting claims and maximize impact</li>
+</ul>
+
+<h3>Example KSP Science Cases</h3>
+
+<ul>
+  <li><strong>HI Universe Survey (HUS):</strong> Deep HI survey for galaxy evolution and cosmology across multiple redshift bins</li>
+  <li><strong>Galactic Plane Survey:</strong> Comprehensive continuum and spectral-line survey of the Milky Way</li>
+  <li><strong>Pulsar Timing Array:</strong> Multi-year timing of hundreds of pulsars for gravitational-wave detection</li>
+  <li><strong>AGN and Jet Population Study:</strong> Statistical survey and detailed follow-up of active galaxies and relativistic jets</li>
+</ul>
+
+<h2>Comparison Table: Proposal Types</h2>
+
+<ac:structured-macro ac:name="info">
+  <ac:parameter ac:name="title">SKA Proposal Type Comparison</ac:parameter>
+  <ac:rich-text-body>
+    <table>
+      <colgroup><col /></colgroup>
+      <tbody>
+        <tr>
+          <th>Attribute</th>
+          <th>PI Project</th>
+          <th>DDT</th>
+          <th>KSP</th>
+        </tr>
+        <tr>
+          <td>Availability</td>
+          <td>Cycle 0 onwards</td>
+          <td>Cycle 0 onwards</td>
+          <td>Cycle 3 onwards</td>
+        </tr>
+        <tr>
+          <td>Eligibility</td>
+          <td>Any researcher with institutional affiliation</td>
+          <td>Any researcher; time-critical science required</td>
+          <td>Large consortia (>~10 researchers, multiple institutions)</td>
+        </tr>
+        <tr>
+          <td>Submission Deadline</td>
+          <td>Fixed annual deadline per Cycle</td>
+          <td>Any time (rolling)</td>
+          <td>Fixed deadline per Cycle</td>
+        </tr>
+        <tr>
+          <td>Proposal Length</td>
+          <td>5–10 pages</td>
+          <td>1–2 pages</td>
+          <td>20–40 pages</td>
+        </tr>
+        <tr>
+          <td>Review Timeline</td>
+          <td>2–3 months</td>
+          <td>24–48 hours</td>
+          <td>3–4 months</td>
+        </tr>
+        <tr>
+          <td>Observing Cycle</td>
+          <td>Single cycle (12 months)</td>
+          <td>Flexible (days to weeks)</td>
+          <td>Multi-cycle (2–5 years)</td>
+        </tr>
+        <tr>
+          <td>Typical Time Award</td>
+          <td>5–1,000 hours</td>
+          <td>1–100 hours</td>
+          <td>1,000–10,000+ hours/year</td>
+        </tr>
+        <tr>
+          <td>Fraction of Annual Time</td>
+          <td>~60–70%</td>
+          <td>~10–15%</td>
+          <td>~20–30% (Cycle 3+)</td>
+        </tr>
+        <tr>
+          <td>Proprietary Period</td>
+          <td>12 months</td>
+          <td>12 months</td>
+          <td>18–24 months</td>
+        </tr>
+        <tr>
+          <td>Typical Science</td>
+          <td>Targeted observations, single survey</td>
+          <td>Transients, ToO, rapid response</td>
+          <td>Large surveys, multi-year monitoring</td>
+        </tr>
+        <tr>
+          <td>Review Committee</td>
+          <td>Science Collaboration + TAC</td>
+          <td>Director or delegated authority</td>
+          <td>Science committees + Management review</td>
+        </tr>
+      </tbody>
+    </table>
+  </ac:rich-text-body>
+</ac:structured-macro>
+
+<h2>Choosing the Right Proposal Type</h2>
+
+<p>
+  <strong>Use PI Projects if:</strong>
+</p>
+
+<ul>
+  <li>Your science can be completed in a single observing cycle (12 months)</li>
+  <li>You have a well-defined science question with clear observing requirements</li>
+  <li>Your team is small to moderate in size (&lt;~20 researchers)</li>
+</ul>
+
+<p>
+  <strong>Use DDT if:</strong>
+</p>
+
+<ul>
+  <li>Your target is time-critical (transient, GRB, gravitational-wave counterpart, pulsar outburst)</li>
+  <li>You need observing time within weeks (not during scheduled Cycle)</li>
+  <li>You can justify scientific urgency to the Director</li>
+</ul>
+
+<p>
+  <strong>Use KSP if (Cycle 3 onwards):</strong>
+</p>
+
+<ul>
+  <li>Your science requires multi-year observations (e.g., survey, monitoring)</li>
+  <li>You have or can assemble a large, coordinated collaboration</li>
+  <li>Your science aligns with SKA's strategic science goals</li>
+  <li>You need substantial array time (1000+ hours/year)</li>
+</ul>
+
+<h2>Submission and Deadlines</h2>
+
+<p>
+  Detailed submission instructions and deadlines are provided in the annual <strong>SKA Cycle Call for Proposals</strong>, published 6–9 months before observations begin. The Cycle Call includes:
+</p>
+
+<ul>
+  <li>Proposal deadlines (PI and KSP)</li>
+  <li>Available observing time per cycle</li>
+  <li>Proposal template and submission system details</li>
+  <li>Special programmes or reserved time (e.g., for early-career researchers, commissioning science)</li>
+  <li>Contact information for User Support</li>
+</ul>
+
+<ac:structured-macro ac:name="tip">
+  <ac:parameter ac:name="title">Get Help with Your Proposal</ac:parameter>
+  <ac:rich-text-body>
+    <p>
+      The SKA User Support team is available to help with proposal preparation. Contact them early to discuss feasibility, technical requirements, or proposal strategy. Pre-submission consultations can improve proposal quality and success rates.
+    </p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+
+<h2>Feedback and Appeals</h2>
+
+<ul>
+  <li><strong>Feedback available:</strong> All proposers receive reviewer comments (typically 1–2 months after decision)</li>
+  <li><strong>Appeals process:</strong> If you believe a proposal was treated unfairly, an appeals process is available; details in Cycle Call</li>
+  <li><strong>Resubmission:</strong> Proposals are often submitted multiple times; resubmit with attention to reviewer comments for improved chances</li>
+</ul>
+
+<ac:structured-macro ac:name="note">
+  <ac:parameter ac:name="title">Questions About Proposal Types?</ac:parameter>
+  <ac:rich-text-body>
+    <p>
+      Contact the SKA User Support team at proposals@skao.int or visit the SKA website for the latest Cycle Call and proposal guidelines.
+    </p>
+  </ac:rich-text-body>
+</ac:structured-macro>

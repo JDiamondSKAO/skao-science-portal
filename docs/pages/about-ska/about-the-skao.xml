@@ -1,0 +1,302 @@
+<ac:structured-macro ac:name="excerpt">
+  <ac:parameter ac:name="atlassian-macro-output-type">BLOCK</ac:parameter>
+  <ac:rich-text-body>
+    <p>An overview of the SKA Observatory — its mission, member countries, host nations, and the two most advanced radio telescopes on Earth.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+
+<h2>The SKA Observatory</h2>
+
+<p>The SKAO is a next-generation radio astronomy-driven Big Data facility that will revolutionise our understanding of the Universe and the laws of fundamental physics. Enabled by cutting-edge technology, it promises to have a major impact on society, in science and beyond.</p>
+
+<p>The SKA Observatory, or SKAO for short, is an intergovernmental organisation bringing together nations from around the world. Its mission is to build and operate cutting-edge radio telescopes to transform our understanding of the Universe, and deliver benefits to society through global collaboration and innovation.</p>
+
+<ac:structured-macro ac:name="info">
+  <ac:rich-text-body>
+    <p><strong>One Observatory. Two Telescopes. Three Sites.</strong><br />The observatory has a global footprint: headquarters in the UK, and telescope sites in South Africa and Australia — with associated facilities to support the operations of the telescopes.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+
+<p>Constructing and operating these telescopes will position the SKAO as the leading research infrastructure for radio astronomy globally, providing science capabilities to the international astronomical community for decades to come. Once in operation, the SKAO will be one global observatory operating two telescopes across three continents on behalf of its Member States and partners.</p>
+
+<h2>Member Countries</h2>
+
+<p>The SKAO was established as an intergovernmental organisation in early 2021. It currently has 16 member countries spanning four continents.</p>
+
+<table>
+  <colgroup><col /><col /><col /></colgroup>
+  <tbody>
+    <tr>
+      <th>Country</th>
+      <th>Role</th>
+      <th>Joined</th>
+    </tr>
+    <tr>
+      <td>Australia</td>
+      <td><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Blue</ac:parameter><ac:parameter ac:name="title">Host — SKA-Low</ac:parameter></ac:structured-macro></td>
+      <td>Founding member</td>
+    </tr>
+    <tr>
+      <td>South Africa</td>
+      <td><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Blue</ac:parameter><ac:parameter ac:name="title">Host — SKA-Mid</ac:parameter></ac:structured-macro></td>
+      <td>Founding member</td>
+    </tr>
+    <tr>
+      <td>United Kingdom</td>
+      <td><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Green</ac:parameter><ac:parameter ac:name="title">HQ Host</ac:parameter></ac:structured-macro></td>
+      <td>Founding member</td>
+    </tr>
+    <tr>
+      <td>Canada</td>
+      <td>Member</td>
+      <td>Founding member</td>
+    </tr>
+    <tr>
+      <td>China</td>
+      <td>Member</td>
+      <td>Founding member</td>
+    </tr>
+    <tr>
+      <td>France</td>
+      <td>Member</td>
+      <td>Founding member</td>
+    </tr>
+    <tr>
+      <td>Germany</td>
+      <td>Member</td>
+      <td>Founding member</td>
+    </tr>
+    <tr>
+      <td>India</td>
+      <td>Member</td>
+      <td>Founding member</td>
+    </tr>
+    <tr>
+      <td>Italy</td>
+      <td>Member</td>
+      <td>Founding member</td>
+    </tr>
+    <tr>
+      <td>Japan</td>
+      <td>Member</td>
+      <td>2024</td>
+    </tr>
+    <tr>
+      <td>The Netherlands</td>
+      <td>Member</td>
+      <td>Founding member</td>
+    </tr>
+    <tr>
+      <td>Portugal</td>
+      <td>Member</td>
+      <td>Founding member</td>
+    </tr>
+    <tr>
+      <td>South Korea</td>
+      <td>Member</td>
+      <td>Founding member</td>
+    </tr>
+    <tr>
+      <td>Spain</td>
+      <td>Member</td>
+      <td>Founding member</td>
+    </tr>
+    <tr>
+      <td>Sweden</td>
+      <td>Member</td>
+      <td>Founding member</td>
+    </tr>
+    <tr>
+      <td>Switzerland</td>
+      <td>Member</td>
+      <td>Founding member</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Prospective members include Finland, Israel, and South Korea. For information on our governance, see <a href="https://www.skao.int/en/about-us/governance">skao.int/governance</a>.</p>
+
+<h2>Host Countries</h2>
+
+<p>The SKAO is one global observatory, operating two telescopes on three continents. Each of our telescopes is supported by a Science Operations Centre (SOC) as well as an Engineering Operations Centre (EOC) in its host country.</p>
+
+<ac:structured-macro ac:name="tip">
+  <ac:rich-text-body>
+    <p>We recognise and acknowledge the indigenous peoples and cultures that have traditionally lived on the lands on which our facilities are located. In Australia, we acknowledge the Wajarri Yamaji as the Traditional Owners and Native Title Holders of Inyarrimanha Ilgari Bundara, the CSIRO Murchison Radio-astronomy Observatory, the site where the SKA-Low telescope is being built. <em>Inyarrimanha Ilgari Bundara</em> means "sharing sky and stars" in the Wajarri language.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+
+<h3>SKA-Low — Western Australia</h3>
+
+<p>SKA-Low, covering the frequencies 50–350 MHz, is located at Inyarrimanha Ilgari Bundara, the CSIRO Murchison Radio-astronomy Observatory, on the traditional lands of the Wajarri Yamaji. It will consist of 131,072 log-periodic dipole antennas distributed across 512 aperture array stations of 256 antennas each.</p>
+
+<p>About 50% of the stations will be located within a 1 km diameter core, with the remaining stations organised in clusters of 6 stations spaced logarithmically on three spiral arms. The maximum baseline length will be around 74 km.</p>
+
+<ac:structured-macro ac:name="expand">
+  <ac:parameter ac:name="title">SKA-Low technical details</ac:parameter>
+  <ac:rich-text-body>
+    <table>
+      <colgroup><col /><col /></colgroup>
+      <tbody>
+        <tr>
+          <th>Parameter</th>
+          <th>Value</th>
+        </tr>
+        <tr>
+          <td>Frequency range</td>
+          <td>50–350 MHz</td>
+        </tr>
+        <tr>
+          <td>Antennas</td>
+          <td>131,072 (512 stations × 256 antennas)</td>
+        </tr>
+        <tr>
+          <td>Maximum baseline</td>
+          <td>~74 km</td>
+        </tr>
+        <tr>
+          <td>Core diameter</td>
+          <td>1 km</td>
+        </tr>
+        <tr>
+          <td>SOC location</td>
+          <td>Perth, Western Australia</td>
+        </tr>
+        <tr>
+          <td>EOC location</td>
+          <td>Geraldton, Western Australia</td>
+        </tr>
+        <tr>
+          <td>Status</td>
+          <td><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Yellow</ac:parameter><ac:parameter ac:name="title">Construction</ac:parameter></ac:structured-macro></td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Each SKA-Low station (consisting of 256 antennas) can be split into up to 8 substations. Each substation produces an independent data stream, which can be processed by the SKA-Low Correlator and BeamFormer (CBF). Observing in substation mode gives access to larger fields of view and shorter baseline lengths at the cost of instantaneous bandwidth, reduced sensitivity per baseline, and impacts to sidelobes.</p>
+    <p>Though many projects will require the sensitivity of the full SKA-Low array to achieve their science goals, some projects won't. To maximise efficiency, SKA-Low will support up to 16 independent subarrays for scientific and engineering or maintenance purposes.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+
+<h3>SKA-Mid — South Africa</h3>
+
+<p>SKA-Mid, covering frequencies 0.35–15.4 GHz, is located at the Karoo Radio Astronomy Reserve in the Northern Cape of South Africa. It will consist of 197 offset Gregorian dishes — 133 new 15-metre SKA dishes and the 64 existing 13.5-metre MeerKAT dishes.</p>
+
+<p>About 50% of the dishes will be located in a 2 km core region, with the remaining spaced logarithmically on three spiral arms. The maximum baseline will be 160 km.</p>
+
+<ac:structured-macro ac:name="expand">
+  <ac:parameter ac:name="title">SKA-Mid technical details</ac:parameter>
+  <ac:rich-text-body>
+    <table>
+      <colgroup><col /><col /></colgroup>
+      <tbody>
+        <tr>
+          <th>Parameter</th>
+          <th>Value</th>
+        </tr>
+        <tr>
+          <td>Frequency range</td>
+          <td>0.35–15.4 GHz</td>
+        </tr>
+        <tr>
+          <td>Dishes</td>
+          <td>197 (133 SKA + 64 MeerKAT)</td>
+        </tr>
+        <tr>
+          <td>SKA dish diameter</td>
+          <td>15 m</td>
+        </tr>
+        <tr>
+          <td>MeerKAT dish diameter</td>
+          <td>13.5 m</td>
+        </tr>
+        <tr>
+          <td>Maximum baseline</td>
+          <td>~160 km</td>
+        </tr>
+        <tr>
+          <td>Core diameter</td>
+          <td>2 km</td>
+        </tr>
+        <tr>
+          <td>SOC location</td>
+          <td>Cape Town, South Africa</td>
+        </tr>
+        <tr>
+          <td>EOC location</td>
+          <td>Klerefontein, Northern Cape</td>
+        </tr>
+        <tr>
+          <td>Status</td>
+          <td><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Yellow</ac:parameter><ac:parameter ac:name="title">Commissioning</ac:parameter></ac:structured-macro></td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Though many projects will require the sensitivity of the full SKA-Mid array to achieve their science goals, some projects won't. To maximise efficiency, SKA-Mid will support up to 16 independent subarrays for scientific and engineering or maintenance purposes.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+
+<h2>The SKA Telescopes</h2>
+
+<p>Composed of respectively hundreds of dishes and thousands of antennas, the SKAO's telescopes will be the two most advanced radio telescopes on Earth.</p>
+
+<ac:structured-macro ac:name="note">
+  <ac:rich-text-body>
+    <p><strong>Data at scale:</strong> Together with other state-of-the-art research facilities, the SKAO's telescopes will explore the unknown frontiers of science and deepen our understanding of key processes, including the formation and evolution of galaxies, fundamental physics in extreme environments, and the origins of life.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+
+<p>The telescopes are being built in a modular fashion in the form of array assemblies. Potential users will be able to select from a range of templates to find the most appropriate set-up for their project, or request the addition of new subarray templates.</p>
+
+<p>Learn more about our telescopes at <a href="https://www.skao.int/en/explore/telescopes">skao.int/telescopes</a>.</p>
+
+<h2>Our Locations</h2>
+
+<p>The SKAO is a distributed organisation, one global observatory operating two telescopes on three continents. To operate, each of our telescopes is supported by a Science Operations Centre (SOC) as well as an Engineering Operations Centre (EOC) in its host country. Our three host countries are:</p>
+
+<table>
+  <colgroup><col /><col /><col /></colgroup>
+  <tbody>
+    <tr>
+      <th>Location</th>
+      <th>Function</th>
+      <th>Country</th>
+    </tr>
+    <tr>
+      <td>Jodrell Bank, Cheshire</td>
+      <td><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Green</ac:parameter><ac:parameter ac:name="title">Global HQ</ac:parameter></ac:structured-macro></td>
+      <td>United Kingdom</td>
+    </tr>
+    <tr>
+      <td>Inyarrimanha Ilgari Bundara, Murchison</td>
+      <td><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Blue</ac:parameter><ac:parameter ac:name="title">SKA-Low Site</ac:parameter></ac:structured-macro></td>
+      <td>Australia</td>
+    </tr>
+    <tr>
+      <td>Perth</td>
+      <td>SKA-Low SOC</td>
+      <td>Australia</td>
+    </tr>
+    <tr>
+      <td>Geraldton</td>
+      <td>SKA-Low EOC</td>
+      <td>Australia</td>
+    </tr>
+    <tr>
+      <td>Karoo Radio Astronomy Reserve</td>
+      <td><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Blue</ac:parameter><ac:parameter ac:name="title">SKA-Mid Site</ac:parameter></ac:structured-macro></td>
+      <td>South Africa</td>
+    </tr>
+    <tr>
+      <td>Cape Town</td>
+      <td>SKA-Mid SOC</td>
+      <td>South Africa</td>
+    </tr>
+    <tr>
+      <td>Klerefontein, Northern Cape</td>
+      <td>SKA-Mid EOC</td>
+      <td>South Africa</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>You can find out more about our locations and how to contact us at <a href="https://www.skao.int/en/about-us/our-locations">skao.int/our-locations</a>.</p>

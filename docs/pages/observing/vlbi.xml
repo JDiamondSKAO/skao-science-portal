@@ -1,0 +1,283 @@
+<ac:structured-macro ac:name="excerpt">
+  <ac:parameter ac:name="atlassian-macro-output-type">BLOCK</ac:parameter>
+  <ac:rich-text-body>
+    <p>
+      <strong>Very Long Baseline Interferometry with the SKA</strong>
+    </p>
+    <p>
+      VLBI combines radio signals from widely separated telescopes to synthesize an extremely large virtual antenna, achieving angular resolutions far beyond individual telescopes. SKA-Mid will provide transformative VLBI capability, enabling unprecedented studies of compact objects and fine structure in galaxies.
+    </p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+
+<h2>What is VLBI?</h2>
+
+<p>
+  Very Long Baseline Interferometry is a technique in which signals from geographically separated radio telescopes are recorded and later cross-correlated to produce images with angular resolution determined by the longest baseline rather than the individual telescope sizes.
+</p>
+
+<p>
+  <strong>Key principle:</strong> An interferometer's angular resolution is <em>θ ~ λ / D</em>, where <em>D</em> is the baseline length. By using baselines spanning continents or planet Earth, VLBI achieves milliarcsecond to micro-arcsecond resolutions.
+</p>
+
+<p>
+  <strong>Advantages over single-telescope observations:</strong>
+</p>
+
+<ul>
+  <li>Milliarcsecond resolution unattainable by individual telescopes</li>
+  <li>Direct measurement of compact source structure (jets, cores, accretion disks)</li>
+  <li>Astrometry with micro-arcsecond precision</li>
+  <li>Ability to "image the invisible"—detecting and resolving sources hidden in dust or obscured by confusion</li>
+</ul>
+
+<h2>SKA-Mid VLBI Capability</h2>
+
+<p>
+  <strong>SKA-Mid's VLBI design:</strong>
+</p>
+
+<ul>
+  <li><strong>Frequency range:</strong> 0.35–15.4 GHz (continuous coverage)</li>
+  <li><strong>Array size and sensitivity:</strong> 197 dishes provide unprecedented sensitivity when combined with global VLBI networks</li>
+  <li><strong>Data rate:</strong> High-bandwidth capability for correlation with international partners</li>
+  <li><strong>Technology:</strong> Full VLBI capability (recording, real-time transmission, or playback correlation)</li>
+</ul>
+
+<p>
+  <strong>SKA-Low VLBI:</strong> Limited capability at low frequencies; best used for specific science cases requiring low-frequency resolution (e.g., 110 MHz VLBI). Most VLBI observations will use SKA-Mid.
+</p>
+
+<h2>VLBI Networks and Collaboration</h2>
+
+<p>
+  SKA-Mid will integrate with established global VLBI networks:
+</p>
+
+<h3>EVN (European VLBI Network)</h3>
+
+<ul>
+  <li>Network of ~15 radio telescopes across Europe, Africa, and Asia</li>
+  <li>Routine observations at 1.6–22 GHz</li>
+  <li>SKA-Mid participation will extend sensitivity and baseline coverage toward southern hemisphere</li>
+</ul>
+
+<h3>LBA (Long Baseline Array, Australia)</h3>
+
+<ul>
+  <li>Australian and southern-hemisphere network</li>
+  <li>Observations at 1.4–8.4 GHz</li>
+  <li>SKA-Mid, co-located in southern Africa, will strengthen baseline distributions</li>
+</ul>
+
+<h3>VLBA (Very Long Baseline Array, USA)</h3>
+
+<ul>
+  <li>Dedicated 10-element US array with baselines to 8,600 km</li>
+  <li>Operates at multiple frequencies (1.6–43 GHz)</li>
+  <li>SKA-Mid can be included in VLBA observing sessions via electronic transmission</li>
+</ul>
+
+<h3>Global Networks</h3>
+
+<ul>
+  <li>Ad-hoc arrays combining telescopes from multiple networks and continents</li>
+  <li>SKA-Mid's sensitivity will enable fainter source detection in global arrays</li>
+  <li>High data rates allow real-time participation or rapid playback correlation</li>
+</ul>
+
+<h2>Data Transport and Correlation</h2>
+
+<p>
+  VLBI observations impose specific technical requirements:
+</p>
+
+<h3>Real-Time Electronic Transmission</h3>
+
+<ul>
+  <li><strong>Data rate:</strong> Typical VLBI observations: 512 Mbps to several Gbps per telescope</li>
+  <li><strong>Network requirements:</strong> High-capacity fiber-optic links connecting SKA-Mid to correlation centers (EVN, VLBA)</li>
+  <li><strong>Latency:</strong> Minimal latency (&lt;1 second) for real-time processing</li>
+  <li><strong>Advantage:</strong> Results available within days of observation</li>
+</ul>
+
+<h3>Playback Correlation</h3>
+
+<ul>
+  <li><strong>Data shipping:</strong> Recorded data is shipped (via disk drives, tape, or high-capacity transfers) to central correlation facility</li>
+  <li><strong>Correlation facility:</strong> Specialized computing (e.g., EVN MkIV or VLBA hardware correlator) cross-correlates all baselines</li>
+  <li><strong>Timeline:</strong> Results available 1–4 weeks post-observation (depending on data volume and correlator queue)</li>
+  <li><strong>Storage:</strong> Playback mode requires on-site recording infrastructure at SKA-Mid</li>
+</ul>
+
+<h3>Hybrid Approaches</h3>
+
+<ul>
+  <li>SKA-Mid can transmit electronic data while co-observing telescopes record to disk, later correlating all baselines together</li>
+  <li>Enables most flexible use of global VLBI resources</li>
+</ul>
+
+<h2>VLBI Science Applications</h2>
+
+<h3>Active Galactic Nuclei (AGN) and Jets</h3>
+
+<ul>
+  <li><strong>Jet structure:</strong> Resolve jets on parsec and sub-parsec scales near black hole event horizons</li>
+  <li><strong>Hotspot morphology:</strong> Study compact radio lobes and regions of particle acceleration</li>
+  <li><strong>Core brightness temperature:</strong> Diagnose magnetic field strength and plasma conditions</li>
+  <li><strong>Variability:</strong> Monitor rapid flux and structural changes in AGN cores</li>
+</ul>
+
+<h3>Compact Objects</h3>
+
+<ul>
+  <li><strong>Pulsars:</strong> Resolve interstellar scattering and measure precise positions</li>
+  <li><strong>X-ray binaries:</strong> Pinpoint positions and track orbital motion at high precision</li>
+  <li><strong>Stellar masers:</strong> Resolve maser emission regions in evolved stars and star-forming regions</li>
+</ul>
+
+<h3>Astrometry and Dynamics</h3>
+
+<ul>
+  <li><strong>Parallax measurement:</strong> Micro-arcsecond astrometry for accurate distances to nearby galaxies and calibration of cosmic distance ladder</li>
+  <li><strong>Proper motion:</strong> Track motion of compact sources over years for orbital mass determinations</li>
+  <li><strong>Proper motion studies:</strong> Measure galactic rotation and dynamics in external galaxies</li>
+</ul>
+
+<h3>Gravitational Lensing</h3>
+
+<ul>
+  <li><strong>Lensed AGN:</strong> Resolve multiple images and lens geometry at milliarcsecond scales</li>
+  <li><strong>Time delays:</strong> Measure gravitational time delays for Hubble constant determination (cosmology)</li>
+</ul>
+
+<h3>Masers and Circumstellar Environments</h3>
+
+<ul>
+  <li><strong>OH masers:</strong> Map maser spatial distribution in AGN narrow-line regions and disks</li>
+  <li><strong>H<sub>2</sub>O masers:</strong> Resolve accretion disk geometry and black hole mass in nearby galaxies</li>
+  <li><strong>SiO masers:</strong> Resolve circumstellar maser emission in AGB stars</li>
+</ul>
+
+<h3>Transient and Multi-Messenger Astronomy</h3>
+
+<ul>
+  <li><strong>GRB localizations:</strong> Provide precise positions for rapid follow-up by other facilities</li>
+  <li><strong>Neutron star mergers:</strong> Localize kilonovae and constrain jet physics</li>
+  <li><strong>VLBI ToO (Target-of-Opportunity):</strong> Rapid VLBI observations of unexpected transient events</li>
+</ul>
+
+<h2>Expected SKA-Mid VLBI Performance</h2>
+
+<ac:structured-macro ac:name="info">
+  <ac:parameter ac:name="title">SKA-Mid VLBI Specifications</ac:parameter>
+  <ac:rich-text-body>
+    <table>
+      <colgroup><col /></colgroup>
+      <tbody>
+        <tr>
+          <th>Parameter</th>
+          <th>Value</th>
+        </tr>
+        <tr>
+          <td>Frequency range</td>
+          <td>0.35–15.4 GHz</td>
+        </tr>
+        <tr>
+          <td>Angular resolution (European VLBI Network)</td>
+          <td>1–100 milliarcsec (depending on frequency)</td>
+        </tr>
+        <tr>
+          <td>Angular resolution (global array)</td>
+          <td>Micro-arcsec (Earth-baseline scale)</td>
+        </tr>
+        <tr>
+          <td>Sensitivity (1 Jy standard source)</td>
+          <td>Image noise ~10–50 µJy/beam (EVN; depends on array and frequency)</td>
+        </tr>
+        <tr>
+          <td>Field of view</td>
+          <td>1–100 arcsec (frequency dependent)</td>
+        </tr>
+        <tr>
+          <td>Data rate (native)</td>
+          <td>~1–8 Gbps (configurable)</td>
+        </tr>
+        <tr>
+          <td>Typical integration time</td>
+          <td>1–24 hours (Earth-rotation synthesis)</td>
+        </tr>
+      </tbody>
+    </table>
+  </ac:rich-text-body>
+</ac:structured-macro>
+
+<h2>Requesting VLBI Observations</h2>
+
+<p>
+  VLBI proposals are typically submitted to the host network's Call for Proposals:
+</p>
+
+<ul>
+  <li><strong>EVN observations:</strong> Apply to the European VLBI Network Steering Committee (3 calls per year)</li>
+  <li><strong>VLBA observations:</strong> Apply to the NRAO (National Radio Astronomy Observatory) Proposal System</li>
+  <li><strong>Global arrays:</strong> Coordinate proposals across multiple networks</li>
+</ul>
+
+<p>
+  When submitting a VLBI proposal involving SKA-Mid, include:
+</p>
+
+<ul>
+  <li><strong>Scientific justification:</strong> Why milliarcsecond or micro-arcsecond resolution is essential</li>
+  <li><strong>Target list:</strong> Source names, coordinates, expected brightness, and spectral index</li>
+  <li><strong>Frequency selection:</strong> Required frequency band(s) and rationale</li>
+  <li><strong>Array configuration:</strong> Desired baseline distribution and international partners</li>
+  <li><strong>Sensitivity requirements:</strong> Expected image rms noise and time on source</li>
+  <li><strong>Data handling:</strong> Data transmission method (real-time or playback) and correlation site</li>
+  <li><strong>Feasibility statement:</strong> Confirmation of compatibility with SKA-Mid VLBI capabilities (check with SKA User Support)</li>
+</ul>
+
+<h2>Coordination with SKA Operations</h2>
+
+<p>
+  VLBI observations require coordination between:
+</p>
+
+<ul>
+  <li><strong>SKA operations:</strong> Scheduling and array configuration</li>
+  <li><strong>International VLBI networks:</strong> Network scheduling and data transport</li>
+  <li><strong>Correlation facility:</strong> Data correlation and imaging</li>
+  <li><strong>Science teams:</strong> Target selection and calibration strategy</li>
+</ul>
+
+<p>
+  Early contact with the SKA User Support team is recommended when planning VLBI proposals to ensure feasibility and coordination.
+</p>
+
+<ac:structured-macro ac:name="note">
+  <ac:parameter ac:name="title">VLBI Observing Cycles</ac:parameter>
+  <ac:rich-text-body>
+    <p>
+      Full VLBI capability (real-time electronic transmission and playback recording) is expected during operational cycle 2 onwards. Early-cycle VLBI observations may be limited in scope or available only through collaborative arrangements with specific networks. Check the SKA Cycle Announcement for current VLBI capabilities.
+    </p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+
+<h2>Learn More</h2>
+
+<ul>
+  <li><strong>SKA VLBI Science Book:</strong> Comprehensive overview of SKA VLBI science cases and technical specifications</li>
+  <li><strong>EVN User Guide:</strong> Guidance for submitting proposals to the European VLBI Network (www.evlbi.org)</li>
+  <li><strong>VLBA User Guide:</strong> Information on VLBA observations and the proposal system (www.vlba.nrao.edu)</li>
+  <li><strong>SKA User Support:</strong> Contact for coordination and feasibility advice on VLBI proposals</li>
+</ul>
+
+<ac:structured-macro ac:name="tip">
+  <ac:parameter ac:name="title">VLBI Community</ac:parameter>
+  <ac:rich-text-body>
+    <p>
+      The SKA VLBI community is active and collaborative. Joining the <strong>SKA VLBI Science Working Group</strong> is an excellent way to stay informed about opportunities and connect with other VLBI researchers planning observations with the SKA.
+    </p>
+  </ac:rich-text-body>
+</ac:structured-macro>

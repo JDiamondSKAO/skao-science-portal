@@ -1,0 +1,237 @@
+<ac:structured-macro ac:name="excerpt">
+  <ac:parameter ac:name="atlassian-macro-output-type">BLOCK</ac:parameter>
+  <ac:rich-text-body>
+    <p>The SKA comprises two complementary arrays: SKA-Low for low-frequency observations (50–350 MHz) in Western Australia, and SKA-Mid for mid-frequency observations (0.35–15.4 GHz) in South Africa.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+
+<h2>SKA-Low — Low-Frequency Array</h2>
+
+<ac:structured-macro ac:name="info">
+  <ac:rich-text-body>
+    <p><strong>Location:</strong> Inyarrimanha Ilgari Bundara, Murchison Radio-Astronomy Observatory, Western Australia | <strong>Frequency:</strong> 50–350 MHz | <strong>Antennas:</strong> 131,072 dipoles across 512 stations</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+
+<table>
+  <colgroup><col /><col /></colgroup>
+  <tbody>
+    <tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>Frequency Range</td>
+      <td>50–350 MHz</td>
+    </tr>
+    <tr>
+      <td>Antenna Type</td>
+      <td>Log-periodic dipole antennas</td>
+    </tr>
+    <tr>
+      <td>Total Dipoles</td>
+      <td>131,072 across 512 stations (256 antennas per station)</td>
+    </tr>
+    <tr>
+      <td>Core Configuration</td>
+      <td>~50% of stations within 1 km diameter core</td>
+    </tr>
+    <tr>
+      <td>Extended Array</td>
+      <td>Remaining stations in clusters of 6, logarithmically spaced on 3 spiral arms</td>
+    </tr>
+    <tr>
+      <td>Maximum Baseline</td>
+      <td>~74 km</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Signal Processing</h3>
+
+<ac:structured-macro ac:name="expand">
+  <ac:parameter ac:name="title">Signal Processing Pipeline</ac:parameter>
+  <ac:rich-text-body>
+    <ul>
+      <li>Bandwidth: 300 MHz</li>
+      <li>Frequency Channels: 55,000+</li>
+      <li>Architecture: Two-stage polyphase filterbank</li>
+      <li>Correlator Output: 500,000 visibilities</li>
+      <li>Processing Rate: Exceeds 10 PetaOps/s</li>
+      <li>Input Data Rate: Up to 66 Tb/s</li>
+    </ul>
+  </ac:rich-text-body>
+</ac:structured-macro>
+
+<h3>Performance vs Existing Facilities</h3>
+
+<ac:structured-macro ac:name="tip">
+  <ac:rich-text-body>
+    <p>SKA-Low delivers <strong>25% better angular resolution than LOFAR</strong>, <strong>8× greater sensitivity</strong>, and <strong>135× faster survey speed</strong>.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+
+<h2>SKA-Mid — Mid-Frequency Array</h2>
+
+<ac:structured-macro ac:name="info">
+  <ac:rich-text-body>
+    <p><strong>Location:</strong> Karoo Radio Astronomy Reserve, Northern Cape, South Africa | <strong>Frequency:</strong> 0.35–15.4 GHz | <strong>Dishes:</strong> 133 SKA + 64 MeerKAT (197 total)</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+
+<table>
+  <colgroup><col /><col /></colgroup>
+  <tbody>
+    <tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>Frequency Range</td>
+      <td>0.35–15.4 GHz</td>
+    </tr>
+    <tr>
+      <td>Dish Type</td>
+      <td>Offset Gregorian 15-metre dishes (SKA)</td>
+    </tr>
+    <tr>
+      <td>SKA Dishes</td>
+      <td>133 × 15 m</td>
+    </tr>
+    <tr>
+      <td>MeerKAT Integration</td>
+      <td>64 × 13.5 m dishes (existing array)</td>
+    </tr>
+    <tr>
+      <td>Total Array</td>
+      <td>197 dishes</td>
+    </tr>
+    <tr>
+      <td>Core Configuration</td>
+      <td>~50% of dishes randomly distributed within 2 km core</td>
+    </tr>
+    <tr>
+      <td>Extended Array</td>
+      <td>Remaining dishes logarithmically spaced on 3 spiral arms</td>
+    </tr>
+    <tr>
+      <td>Maximum Baseline</td>
+      <td>~150 km</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>MeerKAT Integration</h3>
+
+<ac:structured-macro ac:name="expand">
+  <ac:parameter ac:name="title">MeerKAT Array Integration</ac:parameter>
+  <ac:rich-text-body>
+    <p>SKA-Mid incorporates 64 existing 13.5-metre MeerKAT dishes into the unified array, enabling early science operations while SKA construction continues. The MeerKAT integration provides immediate observational capability and validates combined-array signal processing.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+
+<h2>Key Science Capabilities</h2>
+
+<table>
+  <colgroup><col /><col /><col /></colgroup>
+  <tbody>
+    <tr>
+      <th>Capability</th>
+      <th>SKA-Low</th>
+      <th>SKA-Mid</th>
+    </tr>
+    <tr>
+      <td>Survey Speed</td>
+      <td>Exceptional for large-area HI surveys</td>
+      <td>Rapid deep-field continuum surveys</td>
+    </tr>
+    <tr>
+      <td>Sensitivity</td>
+      <td>50–350 MHz, low-frequency regime</td>
+      <td>Sub-μJy at higher frequencies</td>
+    </tr>
+    <tr>
+      <td>Angular Resolution</td>
+      <td>Few arcsec at 350 MHz</td>
+      <td>Sub-arcsec at GHz frequencies</td>
+    </tr>
+    <tr>
+      <td>Frequency Coverage</td>
+      <td>50–350 MHz</td>
+      <td>0.35–15.4 GHz</td>
+    </tr>
+  </tbody>
+</table>
+
+<ac:structured-macro ac:name="note">
+  <ac:rich-text-body>
+    <p>Together, SKA-Low and SKA-Mid provide continuous frequency coverage from 50 MHz to 14 GHz, enabling complementary science across the full SKA portfolio.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+
+<h2>Signal Processing Pipeline</h2>
+
+<p>The SKA processes incoming radio signals through a multi-stage pipeline:</p>
+
+<ol>
+  <li><strong>Correlation:</strong> Raw antenna signals from distributed stations/dishes are cross-correlated to produce visibility data. SKA-Low's correlator generates 500,000 visibilities at processing rates exceeding 10 PetaOps/s.</li>
+  <li><strong>Science Data Processor (SDP):</strong> Visibility data undergoes calibration, flagging, and imaging to produce science-ready products.</li>
+  <li><strong>Data Products:</strong> Output includes continuum images (total-intensity maps), spectral-line cubes (3D intensity maps across frequency), and derived catalogues.</li>
+  <li><strong>Data Rates:</strong> SKA-Low input rates reach 66 Tb/s; output science data is compressed and managed for archival and distribution.</li>
+</ol>
+
+<ac:structured-macro ac:name="warning">
+  <ac:rich-text-body>
+    <p>Signal processing represents a significant computational and storage challenge. Real-time processing and data management strategies are essential for SKA operations.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+
+<h2>Comparison with Existing Facilities</h2>
+
+<table>
+  <colgroup><col /><col /><col /><col /></colgroup>
+  <tbody>
+    <tr>
+      <th>Facility</th>
+      <th>Frequency</th>
+      <th>Dishes/Antennas</th>
+      <th>Key Advantage vs SKA</th>
+    </tr>
+    <tr>
+      <td><strong>SKA-Low</strong></td>
+      <td>50–350 MHz</td>
+      <td>131,072 dipoles (512 stations)</td>
+      <td>Vastly superior survey speed and sensitivity for low-frequency science</td>
+    </tr>
+    <tr>
+      <td>LOFAR</td>
+      <td>10–240 MHz</td>
+      <td>~100,000 dipoles</td>
+      <td>Established low-frequency pathfinder; SKA-Low achieves 25% better resolution, 8× sensitivity, 135× survey speed</td>
+    </tr>
+    <tr>
+      <td><strong>SKA-Mid</strong></td>
+      <td>0.35–15.4 GHz</td>
+      <td>197 dishes (133 SKA + 64 MeerKAT)</td>
+      <td>Next-generation mid-frequency facility with exceptional sensitivity and angular resolution</td>
+    </tr>
+    <tr>
+      <td>VLA</td>
+      <td>1–50 GHz</td>
+      <td>27 dishes</td>
+      <td>Proven mid-frequency observatory; SKA-Mid offers 7× more collecting area and wider frequency coverage</td>
+    </tr>
+    <tr>
+      <td>MeerKAT</td>
+      <td>0.58–14.5 GHz</td>
+      <td>64 dishes (13.5 m)</td>
+      <td>Cutting-edge African facility now integrated into SKA-Mid; SKA-Mid adds 133 additional 15 m dishes for enhanced sensitivity</td>
+    </tr>
+  </tbody>
+</table>
+
+<ac:structured-macro ac:name="tip">
+  <ac:rich-text-body>
+    <p>For construction timelines and deployment phases, see the SKA Staged Delivery and Array Assemblies page.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>

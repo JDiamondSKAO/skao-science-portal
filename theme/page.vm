@@ -9,6 +9,7 @@
 
     <script>
         var contextPath = '$contextPath';
+        var pageId = '$page.id';
         ## $page.space.key may not exist in all Viewport versions — fallback to SPK
         #if($page.space && $page.space.key)
             var spaceKey = '$page.space.key';
@@ -55,6 +56,12 @@
     #set($checkTitle = $page.title.toLowerCase().trim())
     #if($checkTitle == "not found" || $checkTitle == "page not found" || $checkTitle == "404")
     <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js" defer></script>
+    #end
+
+    ## Sensitivity Calculator — load CSS + JS only on calculator pages
+    #set($isCalculatorPage = ($checkTitle.contains("sensitivity calculator")))
+    #if($isCalculatorPage)
+    <link rel="stylesheet" href="${theme.baseUrl}/css/calculator.css">
     #end
 
     ## Prevent flash of wrong theme — runs before body renders
@@ -644,7 +651,7 @@
                                 <p class="fac-location">Murchison, Australia</p>
                             </div>
                         </a>
-                        <a href="https://www.skao.int/en/explore/skao-global-headquarters" target="_blank" rel="noopener" class="fac-card fac-hq">
+                        <a href="https://www.skao.int/en/about-us/our-locations" target="_blank" rel="noopener" class="fac-card fac-hq">
                             <div class="fac-overlay"></div>
                             <div class="fac-info">
                                 <h3 class="fac-name">SKAO HQ</h3>
@@ -730,61 +737,277 @@
                                     <span class="version-badge">${label.name.replace("version-", "v")}</span>
                                 #end
                             #end
+                            <span class="article-meta-sep">·</span>
+                            <button class="watch-btn" id="watchPageBtn" aria-label="Watch this page for updates">
+                                <svg class="watch-icon watch-icon-off" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                                <svg class="watch-icon watch-icon-on" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" style="display:none"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                                <span class="watch-label">Watch</span>
+                            </button>
                         </div>
-                        #if($page.content && $page.content.toString().trim().length() > 0)
-                        <div class="content-body">
-                            $page.content
-                        </div>
-                        #end
-
-                            ## For section pages, render a list of child pages
-                            #if($isSectionPage)
-                                <div class="section-children">
-                                    <p>This section contains the following pages:</p>
-                                    <div class="section-children-grid">
-                                        #foreach($childPage in $pageChildren)
-                                            <a href="$childPage.absoluteLink" class="section-child-card">
-                                                <span class="section-child-title">$childPage.title</span>
-                                                <span class="section-child-arrow">
-                                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
-                                                </span>
-                                            </a>
-                                        #end
-                                    </div>
-                                </div>
+                        #if($isSectionPage)
+                            ## Section page: optional content + child page listing
+                            #if($page.content && $page.content.toString().trim().length() > 0)
+                            <div class="content-body">
+                                $page.content
+                            </div>
                             #end
-
-                            ## "Was this helpful?" feedback widget — always at the bottom
-                            <div class="page-feedback" id="pageFeedback">
-                                <div class="pf-question">
-                                    <span class="pf-label">Was this page helpful?</span>
-                                    <div class="pf-buttons">
-                                        <button class="pf-btn pf-btn-yes" data-vote="yes" aria-label="Yes, helpful">
-                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z"/><path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
-                                            Yes
-                                        </button>
-                                        <button class="pf-btn pf-btn-no" data-vote="no" aria-label="No, not helpful">
-                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3H10z"/><path d="M17 2h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3"/></svg>
-                                            No
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="pf-form" id="pfForm" style="display:none;">
-                                    <textarea class="pf-textarea" id="pfComment" placeholder="Any suggestions for improvement? (optional)" rows="3"></textarea>
-                                    <div class="pf-form-actions">
-                                        <button class="pf-submit" id="pfSubmit">Send Feedback</button>
-                                        <button class="pf-skip" id="pfSkip">Skip</button>
-                                    </div>
-                                </div>
-                                <div class="pf-thanks" id="pfThanks" style="display:none;">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                                    <span>Thank you for your feedback!</span>
+                            <div class="section-children">
+                                <p>Explore the pages in this section:</p>
+                                <div class="section-children-grid">
+                                    #foreach($childPage in $pageChildren)
+                                        <a href="$childPage.absoluteLink" class="section-child-card">
+                                            <div class="section-child-text">
+                                                <span class="section-child-title">$childPage.title</span>
+                                                #if($childPage.excerpt && $childPage.excerpt.toString().trim().length() > 0)
+                                                    <span class="section-child-desc">$childPage.excerpt</span>
+                                                #end
+                                            </div>
+                                            <span class="section-child-arrow">
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                                            </span>
+                                        </a>
+                                    #end
                                 </div>
                             </div>
+                        #else
+                            ## Leaf page: content + feedback widget inside same container
+                            <div class="content-body">
+                                #if($page.content && $page.content.toString().trim().length() > 0)
+                                    $page.content
+                                #end
+
+                                ## ---- Sensitivity Calculator injection ----
+                                #if($isCalculatorPage)
+                                <div class="ska-calc">
+                                    <div class="calc-card">
+                                        <div class="calc-notice">
+                                            This calculator uses the SKA Observatory Sensitivity Calculator API. Results are indicative estimates.
+                                            <br><strong>Note:</strong> This tool requires access to the SKAO network. If calculations fail, you may need to use the
+                                            <a href="https://sensitivity-calculator.skao.int" target="_blank">official calculator</a>.
+                                        </div>
+
+                                        <!-- Telescope Selector -->
+                                        <div class="form-section">
+                                            <h3>Telescope</h3>
+                                            <div class="toggle-group">
+                                                <button type="button" class="toggle-btn active" data-telescope="mid">SKA-Mid</button>
+                                                <button type="button" class="toggle-btn" data-telescope="low">SKA-Low</button>
+                                            </div>
+                                        </div>
+
+                                        <!-- Mode Selector -->
+                                        <div class="form-section">
+                                            <h3>Observation Mode</h3>
+                                            <div class="toggle-group">
+                                                <button type="button" class="toggle-btn active" data-mode="continuum">Continuum</button>
+                                                <button type="button" class="toggle-btn" data-mode="spectral">Spectral Line (Zoom)</button>
+                                            </div>
+                                        </div>
+
+                                        <!-- Configuration -->
+                                        <div class="form-section">
+                                            <h3>Configuration</h3>
+                                            <div class="form-row">
+                                                <div class="form-group">
+                                                    <label for="array-config">Array Assembly</label>
+                                                    <select id="array-config">
+                                                        <option value="AA4">AA4 (Full Array)</option>
+                                                        <option value="AA*">AA* (Optimized)</option>
+                                                        <option value="AA2">AA2 (Quarter Array)</option>
+                                                        <option value="AA1">AA1 (Eighth Array)</option>
+                                                        <option value="AA0.5">AA0.5 (Sixteenth Array)</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group" id="receiver-band-group">
+                                                    <label for="receiver-band">Receiver Band (MID)</label>
+                                                    <select id="receiver-band">
+                                                        <option value="Band_1">Band 1 (0.35–1.05 GHz)</option>
+                                                        <option value="Band_2">Band 2 (0.9–1.67 GHz)</option>
+                                                        <option value="Band_5a">Band 5a (4.6–8.5 GHz)</option>
+                                                        <option value="Band_5b">Band 5b (7–14.5 GHz)</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group" id="num-stations-group" style="display: none;">
+                                                    <label for="num-stations">Number of Stations (LOW)</label>
+                                                    <input type="number" id="num-stations" min="1" max="512" value="512">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Observation Parameters -->
+                                        <div class="form-section">
+                                            <h3>Observation Parameters</h3>
+                                            <div class="form-row">
+                                                <div class="form-group">
+                                                    <label>Central Frequency</label>
+                                                    <div class="unit-group">
+                                                        <input type="number" id="freq-value" placeholder="0" step="0.001">
+                                                        <div class="unit-selector">
+                                                            <button type="button" class="unit-btn active" data-freq-unit="GHz">GHz</button>
+                                                            <button type="button" class="unit-btn" data-freq-unit="MHz">MHz</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Bandwidth</label>
+                                                    <div class="unit-group">
+                                                        <input type="number" id="bandwidth-value" placeholder="0" step="0.001">
+                                                        <div class="unit-selector">
+                                                            <button type="button" class="unit-btn active" data-bw-unit="GHz">GHz</button>
+                                                            <button type="button" class="unit-btn" data-bw-unit="MHz">MHz</button>
+                                                            <button type="button" class="unit-btn" data-bw-unit="kHz">kHz</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="form-group">
+                                                    <label for="ra">Pointing Centre - RA</label>
+                                                    <input type="text" id="ra" placeholder="HH:MM:SS">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="dec">Pointing Centre - Dec</label>
+                                                    <input type="text" id="dec" placeholder="DD:MM:SS">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="elevation">Elevation Limit (degrees)</label>
+                                                    <input type="number" id="elevation" value="15" min="0" max="90">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Calculation Mode -->
+                                        <div class="form-section">
+                                            <h3>Calculation</h3>
+                                            <div class="radio-group">
+                                                <div class="radio-option">
+                                                    <input type="radio" id="calc-sensitivity" name="calc-mode" value="sensitivity" checked>
+                                                    <label for="calc-sensitivity">Calculate Sensitivity</label>
+                                                </div>
+                                                <div class="radio-option">
+                                                    <input type="radio" id="calc-integration" name="calc-mode" value="integration">
+                                                    <label for="calc-integration">Calculate Integration Time</label>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="form-group" id="integration-group">
+                                                    <label>Integration Time</label>
+                                                    <div class="unit-group">
+                                                        <input type="number" id="integration-value" placeholder="0" step="0.1">
+                                                        <div class="unit-selector">
+                                                            <button type="button" class="unit-btn active" data-int-unit="s">s</button>
+                                                            <button type="button" class="unit-btn" data-int-unit="min">min</button>
+                                                            <button type="button" class="unit-btn" data-int-unit="h">h</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group" id="sensitivity-group" style="display: none;">
+                                                    <label>Target Sensitivity</label>
+                                                    <div class="unit-group">
+                                                        <input type="number" id="sensitivity-value" placeholder="0" step="0.1">
+                                                        <div class="unit-selector">
+                                                            <button type="button" class="unit-btn" data-sens-unit="Jy">Jy</button>
+                                                            <button type="button" class="unit-btn active" data-sens-unit="mJy">mJy</button>
+                                                            <button type="button" class="unit-btn" data-sens-unit="μJy">μJy</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Error Panel -->
+                                        <div class="error-panel" id="error-panel"></div>
+
+                                        <!-- Buttons -->
+                                        <div class="button-group">
+                                            <button type="button" class="btn-primary" id="calculate-btn">Calculate</button>
+                                            <button type="button" class="btn-secondary" id="reset-btn">Reset Form</button>
+                                        </div>
+
+                                        <!-- Results -->
+                                        <div class="results-panel" id="results-panel">
+                                            <h3>Results</h3>
+                                            <div id="results-content"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <script src="${theme.baseUrl}/js/calculator.js"></script>
+                                #end
+                                ## ---- /Sensitivity Calculator ----
+                                <div class="page-feedback" id="pageFeedback">
+                                    <div class="pf-question">
+                                        <span class="pf-label">Was this page helpful?</span>
+                                        <div class="pf-buttons">
+                                            <button class="pf-btn pf-btn-yes" data-vote="yes" aria-label="Yes, helpful">
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z"/><path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
+                                                Yes
+                                            </button>
+                                            <button class="pf-btn pf-btn-no" data-vote="no" aria-label="No, not helpful">
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3H10z"/><path d="M17 2h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3"/></svg>
+                                                No
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="pf-form" id="pfForm" style="display:none;">
+                                        <textarea class="pf-textarea" id="pfComment" placeholder="Any suggestions for improvement? (optional)" rows="3"></textarea>
+                                        <div class="pf-form-actions">
+                                            <button class="pf-submit" id="pfSubmit">Send Feedback</button>
+                                            <button class="pf-skip" id="pfSkip">Skip</button>
+                                        </div>
+                                    </div>
+                                    <div class="pf-thanks" id="pfThanks" style="display:none;">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                        <span>Thank you for your feedback!</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            ## Previous / Next navigation (leaf pages only)
+                            #if($page.parent && $page.parent.children && $page.parent.children.size() > 1)
+                                #set($siblings = $page.parent.children)
+                                #set($prevPage = false)
+                                #set($nextPage = false)
+                                #set($foundCurrent = false)
+                                #foreach($sib in $siblings)
+                                    #if($foundCurrent && !$nextPage)
+                                        #set($nextPage = $sib)
+                                    #end
+                                    #if($page.title == $sib.title)
+                                        #set($foundCurrent = true)
+                                    #end
+                                    #if(!$foundCurrent)
+                                        #set($prevPage = $sib)
+                                    #end
+                                #end
+                                <nav class="prev-next-nav" aria-label="Page navigation">
+                                    #if($prevPage)
+                                        <a href="$prevPage.absoluteLink" class="prev-next-link prev-next-prev">
+                                            <span class="prev-next-label">
+                                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                                                Previous
+                                            </span>
+                                            <span class="prev-next-title">$prevPage.title</span>
+                                        </a>
+                                    #else
+                                        <span></span>
+                                    #end
+                                    #if($nextPage)
+                                        <a href="$nextPage.absoluteLink" class="prev-next-link prev-next-next">
+                                            <span class="prev-next-label">
+                                                Next
+                                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                                            </span>
+                                            <span class="prev-next-title">$nextPage.title</span>
+                                        </a>
+                                    #end
+                                </nav>
+                            #end
+                        #end
                     </article>
 
-                    ## Sidebar: show children for section pages, siblings for leaf pages
+                    ## Sidebar
                     #if($isSectionPage)
+                        ## Section page: show child pages in sidebar
                         <aside class="sidebar">
                             <div class="sidebar-inner">
                                 <h4 class="sidebar-title">$page.title</h4>
@@ -797,17 +1020,24 @@
                                 </ul>
                             </div>
                         </aside>
-                    #elseif($page.parent && $page.parent.children && $page.parent.children.size() > 1)
+                    #else
+                        ## Leaf page: sidebar with TOC (injected by JS) + section siblings
                         <aside class="sidebar">
                             <div class="sidebar-inner">
-                                <h4 class="sidebar-title">$page.parent.title</h4>
-                                <ul class="sidebar-nav">
-                                    #foreach($sibling in $page.parent.children)
-                                        <li>
-                                            <a href="$sibling.absoluteLink" class="sidebar-link #if($page.title == $sibling.title)sidebar-active#end">$sibling.title</a>
-                                        </li>
-                                    #end
-                                </ul>
+                                ## JS injects "On this page" TOC here as first child
+                                ## Then section siblings below
+                                #if($page.parent && $page.parent.children && $page.parent.children.size() > 1)
+                                <div class="sidebar-section-nav">
+                                    <h4 class="sidebar-title sidebar-section-title">In this section</h4>
+                                    <ul class="sidebar-nav">
+                                        #foreach($sibling in $page.parent.children)
+                                            <li>
+                                                <a href="$sibling.absoluteLink" class="sidebar-link #if($page.title == $sibling.title)sidebar-link-active#end">$sibling.title</a>
+                                            </li>
+                                        #end
+                                    </ul>
+                                </div>
+                                #end
                             </div>
                         </aside>
                     #end
@@ -878,6 +1108,7 @@
             <div class="footer-bottom">
                 <p>&copy; 2026 Square Kilometre Array Observatory (SKAO). All rights reserved.</p>
                 <p class="footer-tagline">Building the world's largest radio telescope</p>
+                <p class="footer-reset-ee"><a href="#" id="resetEasterEggs" title="Re-enable hidden discoveries">&#9734;</a></p>
             </div>
         </div>
     </footer>

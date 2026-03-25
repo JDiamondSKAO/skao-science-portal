@@ -1,0 +1,138 @@
+<ac:structured-macro ac:name="excerpt">
+  <ac:parameter ac:name="atlassian-macro-output-type">BLOCK</ac:parameter>
+  <ac:rich-text-body>
+    <p>Flowthrough Archive data is a subset of calibrated visibility data archived continuously for re-processing and serendipitous science discovery.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+<h2>What is Flowthrough Archive Data?</h2>
+<p>Flowthrough Archive (FTA) data is an Observatory Data Product consisting of a reduced-resolution subset of calibrated interferometric visibilities archived continuously during SKA observations. Unlike full visibility data, which may be prohibitively large to store permanently, FTA data provides a balanced approach: permanent archival of scientifically valuable raw data while managing storage constraints.</p>
+<h2>Purpose and Scientific Rationale</h2>
+<p>The Flowthrough Archive serves multiple scientific goals:</p>
+<ul>
+  <li><strong>Re-processing Capability:</strong> Enable researchers to re-process observations with improved algorithms or different parameters without requiring the original observing time</li>
+  <li><strong>Serendipitous Discovery:</strong> Enable detection of unexpected scientific phenomena in data collected for different primary purposes</li>
+  <li><strong>Long-term Preservation:</strong> Ensure that raw data supporting published science remain available for independent verification and reanalysis</li>
+  <li><strong>Archive Completeness:</strong> Build a comprehensive record of SKA observations for the astronomical community</li>
+</ul>
+<h2>Data Characteristics</h2>
+<h3>What is Archived</h3>
+<p>FTA data includes:</p>
+<ul>
+  <li><strong>Visibility Data:</strong> Complex-valued Fourier-space measurements (real and imaginary components)</li>
+  <li><strong>Calibration:</strong> Applied gain, phase, and flux density calibration</li>
+  <li><strong>Metadata:</strong> Observation parameters, antenna positions, system temperatures, RFI flags</li>
+</ul>
+<h3>Resolution Trade-offs</h3>
+<p>To make permanent archival feasible, FTA data uses reduced spectral and temporal resolution compared to full visibility data:</p>
+<ul>
+  <li><strong>Frequency Resolution:</strong> Typically 10–100 times coarser than native pipeline resolution (channels combined via averaging)</li>
+  <li><strong>Time Resolution:</strong> Typically 1–10 second integrations instead of sub-second samples</li>
+  <li><strong>Baseline Information:</strong> All baselines preserved, enabling independent imaging and analysis</li>
+</ul>
+<p>These reductions yield approximately 10–100× data volume savings while retaining sufficient information for most re-processing and serendipitous science use cases.</p>
+<h3>Polarisation</h3>
+<p>FTA data preserves full polarisation information (XX, XY, YX, YY or equivalent) enabling Stokes parameter reconstruction and polarimetric analysis.</p>
+<h2>Archival Strategy and Retention</h2>
+<h3>Continuous Archival</h3>
+<p>Unlike higher-level data products (images, catalogues) that may be selective, FTA data are archived continuously for all observations, ensuring:</p>
+<ul>
+  <li>No observation is excluded due to perceived quality or science priority</li>
+  <li>Unexpected or serendipitous discoveries are not hindered by selective archival policies</li>
+  <li>The scientific legacy of SKA observations is fully preserved</li>
+</ul>
+<h3>Storage and Access Policy</h3>
+<ul>
+  <li><strong>Retention:</strong> All FTA data are retained indefinitely in the SKA Archive</li>
+  <li><strong>Tiering:</strong> Data may be moved from fast access (disk) to slower cold storage (tape) after a specified period, but remain accessible</li>
+  <li><strong>Redundancy:</strong> Multiple copies are maintained at geographically distributed archive sites</li>
+</ul>
+<h2>How FTA Differs from Full Visibility Data</h2>
+<p>The SKA produces two visibility-based products:</p>
+<table>
+  <colgroup><col /><col /></colgroup>
+  <tbody>
+    <tr>
+      <td><strong>Full Visibility Data (ODP)</strong></td>
+      <td><strong>Flowthrough Archive Data (ODP)</strong></td>
+    </tr>
+    <tr>
+      <td>Full spectral and temporal resolution</td>
+      <td>Reduced spectral and temporal resolution</td>
+    </tr>
+    <tr>
+      <td>May not be permanently archived for all observations</td>
+      <td>Continuously archived for all observations</td>
+    </tr>
+    <tr>
+      <td>Very large volume (100 TB to multi-PB per observation hour)</td>
+      <td>Smaller volume (1–10 TB per observation hour)</td>
+    </tr>
+    <tr>
+      <td>Optimal for targeted re-processing and sensitivity-limited science</td>
+      <td>Suitable for general re-processing and serendipitous analysis</td>
+    </tr>
+  </tbody>
+</table>
+<h2>Use Cases</h2>
+<h3>Re-processing and Alternative Algorithms</h3>
+<p>FTA data enables researchers to:</p>
+<ul>
+  <li>Apply custom calibration and imaging algorithms to archived observations</li>
+  <li>Investigate systematic effects or improve known sources with new techniques</li>
+  <li>Test hypothetical observing strategies or data reduction approaches</li>
+</ul>
+<h3>Serendipitous Science</h3>
+<p>Examples of serendipitous discoveries enabled by FTA archival:</p>
+<ul>
+  <li>Detection of unexpected transients in survey data collected for other purposes</li>
+  <li>Identification of new bright sources or unusual objects in archival datasets</li>
+  <li>Population studies enabled by mining large archival samples</li>
+</ul>
+<h3>Cross-Survey Correlation</h3>
+<p>FTA data enable researchers to correlate transient detections or variability across multiple observation epochs, even when original observations targeted different fields or science goals.</p>
+<h2>Access and Discovery</h2>
+<h3>Searching FTA Data</h3>
+<p>The SKA Archive provides search and filtering for FTA data by:</p>
+<ul>
+  <li>Date and time of observation</li>
+  <li>Sky coordinates (RA/Dec) and field size</li>
+  <li>Frequency coverage and resolution</li>
+  <li>Integration time</li>
+  <li>Observation metadata (observer, project, science category)</li>
+</ul>
+<h3>Data Access Methods</h3>
+<ul>
+  <li><strong>Direct download:</strong> Download FTA datasets via the Archive portal or command-line tools</li>
+  <li><strong>Streaming:</strong> Access subsets of large files without full download (e.g., specific frequency range or time window)</li>
+  <li><strong>Cloud access:</strong> Analyse FTA data in situ using SKA computational services</li>
+</ul>
+<h3>Data Format and Compatibility</h3>
+<p>FTA data are provided in standard radio astronomy formats (MS, FITS, HDF5) compatible with common analysis software including CASA, AIPS, and custom pipelines.</p>
+<h2>Processing and Re-analysis</h2>
+<h3>Typical Re-processing Workflow</h3>
+<ol>
+  <li>Discover relevant FTA observation(s) via Archive search</li>
+  <li>Download or stream FTA visibility data</li>
+  <li>Apply calibration and imaging algorithms using CASA, AIPS, or custom scripts</li>
+  <li>Validate results against published ODPs or alternative processing</li>
+  <li>Publish results or advanced data products derived from FTA re-processing</li>
+</ol>
+<h3>Computational Requirements</h3>
+<p>FTA data volumes are manageable for re-processing on modest computational resources:</p>
+<ul>
+  <li>Single-machine processing possible for typical observations (disk-based or cloud)</li>
+  <li>Large surveys may benefit from distributed computing via cloud services</li>
+  <li>Example Jupyter notebooks and container images provided to accelerate analysis</li>
+</ul>
+<ac:structured-macro ac:name="warning">
+  <ac:parameter ac:name="title">Resolution Limitations</ac:parameter>
+  <ac:rich-text-body>
+    <p>FTA data's reduced resolution may not be suitable for all science cases. Researchers requiring full spectral or temporal resolution should consult the Archive documentation on full visibility data availability.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+<ac:structured-macro ac:name="note">
+  <ac:parameter ac:name="title">Related Products</ac:parameter>
+  <ac:rich-text-body>
+    <p>See <ac:link><ac:plain-text-link-body>Introduction to Observatory Data Products and Advanced Data Products</ac:plain-text-link-body></ac:link> for an overview of the complete ODP suite.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>

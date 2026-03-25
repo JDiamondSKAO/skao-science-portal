@@ -1,0 +1,159 @@
+<ac:structured-macro ac:name="excerpt">
+  <ac:parameter ac:name="atlassian-macro-output-type">BLOCK</ac:parameter>
+  <ac:rich-text-body>
+    <p>
+      <strong>Commensal Observing with the SKA</strong>
+    </p>
+    <p>
+      Commensal observing allows multiple science programmes to observe simultaneously by sharing the same underlying data stream. This approach maximizes the scientific return of each observation and enables diverse science to be conducted without dedicated telescope time.
+    </p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+
+<h2>What is Commensal Observing?</h2>
+
+<p>
+  Commensal observing is a technique in which two or more science programmes access and process the same raw data stream from the telescope in parallel. The primary observing programme (host) drives the telescope's pointing and backend configuration, while secondary programmes (commensals) extract science from the same data without requiring additional telescope time or significantly impacting the host's observations.
+</p>
+
+<p>
+  <strong>Key benefit:</strong> This approach increases science productivity by enabling multiple science goals to be achieved simultaneously, particularly valuable for surveys and long-duration observations.
+</p>
+
+<h2>How Commensal Observing Works</h2>
+
+<p>
+  The SKA's digital architecture supports commensal observing through:
+</p>
+
+<ul>
+  <li><strong>High-bandwidth data stream:</strong> The correlator or beamformer produces a raw or calibrated data stream</li>
+  <li><strong>Data distribution:</strong> Multiple independent processing pipelines can receive the same data in real-time or near-real-time</li>
+  <li><strong>Independent analysis:</strong> Each programme applies its own science pipeline (e.g., pulsar dedispersion, continuum imaging, transient filtering)</li>
+  <li><strong>Metadata harmonization:</strong> Calibration solutions and observing parameters are shared across all commensals</li>
+</ul>
+
+<p>
+  The host programme defines:
+</p>
+
+<ul>
+  <li>Pointing direction(s)</li>
+  <li>Frequency selection</li>
+  <li>Integration time and spectral resolution</li>
+  <li>Polarization products</li>
+  <li>Data rate and storage allocations</li>
+</ul>
+
+<p>
+  Commensal programmes must be compatible with these parameters but can apply independent further processing.
+</p>
+
+<h2>Commensal Modes Available</h2>
+
+<ac:structured-macro ac:name="tip">
+  <ac:parameter ac:name="title">Common Commensal Configurations</ac:parameter>
+  <ac:rich-text-body>
+    <table>
+      <colgroup><col /></colgroup>
+      <tbody>
+        <tr>
+          <th>Host Programme</th>
+          <th>Typical Commensal Programmes</th>
+          <th>Telescope</th>
+        </tr>
+        <tr>
+          <td>Continuum Imaging Survey</td>
+          <td>Pulsar search, transient detection, spectral-line (if overlapping frequencies)</td>
+          <td>SKA-Low or SKA-Mid</td>
+        </tr>
+        <tr>
+          <td>HI Galaxy Survey</td>
+          <td>OH maser search, pulsar timing, RFI monitoring</td>
+          <td>SKA-Low</td>
+        </tr>
+        <tr>
+          <td>Pulsar Timing Array</td>
+          <td>Pulsar search, continuum imaging</td>
+          <td>SKA-Low or SKA-Mid</td>
+        </tr>
+        <tr>
+          <td>Molecular-Line Survey (CO)</td>
+          <td>Continuum imaging, transient detection, recombination lines</td>
+          <td>SKA-Mid</td>
+        </tr>
+      </tbody>
+    </table>
+  </ac:rich-text-body>
+</ac:structured-macro>
+
+<h2>Data Sharing Policies</h2>
+
+<p>
+  Commensal observing is governed by clear policies to ensure fairness and transparency:
+</p>
+
+<ul>
+  <li><strong>Proprietary periods:</strong> Commensals typically honour the host's proprietary data rights. Data released by the host becomes available to commensals at the same time.</li>
+  <li><strong>Credit and attribution:</strong> All programmes sharing data must acknowledge one another in publications. Host and commensal contributions are clearly identified.</li>
+  <li><strong>Conflict resolution:</strong> The host programme has priority in science publication and data use. Commensals coordinate timing and scope of publications to avoid direct conflicts.</li>
+  <li><strong>Calibration access:</strong> All commensals receive identical calibration solutions and metadata to ensure consistency.</li>
+  <li><strong>Data reduction:</strong> Host-generated calibration and imaging products are made available to commensals unless proprietary restrictions apply.</li>
+</ul>
+
+<h2>Scheduling Implications</h2>
+
+<p>
+  Commensal observing affects scheduling in several ways:
+</p>
+
+<ul>
+  <li><strong>Time accounting:</strong> Only the host programme consumes allocated observing time. Commensal programmes do not consume additional time slots.</li>
+  <li><strong>Flexibility:</strong> Host and commensal programmes may have different scheduling constraints (e.g., different lunar phases, seasonal limitations). The host's constraints typically drive the schedule.</li>
+  <li><strong>Coordination:</strong> Commensal science leads must be available for real-time collaboration during observation blocks to optimize data capture and handle unexpected issues.</li>
+  <li><strong>Array configuration:</strong> Both host and commensal must be compatible with the same subarray configuration and frequency setup.</li>
+</ul>
+
+<h2>How to Request Commensal Time</h2>
+
+<p>
+  To propose a commensal programme:
+</p>
+
+<ol>
+  <li><strong>Identify a host programme:</strong> Contact the SKA User Support office to identify compatible host observations. You may also approach host PIs directly if you have an established collaboration.</li>
+  <li><strong>Prepare a commensal proposal:</strong> Submit a brief proposal (typically 1–2 pages) outlining:
+    <ul>
+      <li>Science goals and expected discoveries</li>
+      <li>Compatibility with the proposed host configuration</li>
+      <li>Data processing and storage requirements</li>
+      <li>Publication and data release timeline</li>
+      <li>Coordination plan with the host team</li>
+    </ul>
+  </li>
+  <li><strong>Review and approval:</strong> The SKA Science Collaboration reviews commensal proposals alongside the host observation for mutual compatibility.</li>
+  <li><strong>Formalize agreement:</strong> Host and commensal PIs sign a Memorandum of Understanding (MOU) detailing roles, responsibilities, publication rights, and conflict resolution procedures.</li>
+</ol>
+
+<h2>Science Applications of Commensal Observing</h2>
+
+<p>
+  Commensal observing is particularly valuable for:
+</p>
+
+<ul>
+  <li><strong>Pulsar searches:</strong> Low-frequency surveys can commensally search for new pulsars while the primary science drives the observation parameters.</li>
+  <li><strong>Transient detection:</strong> Real-time pipelines monitoring for bursts, supernovae, and GRBs can exploit high-sensitivity survey data.</li>
+  <li><strong>RFI characterization:</strong> Dedicated pipelines can study radio-frequency interference and improve mitigation strategies in parallel with science observations.</li>
+  <li><strong>Long-term monitoring:</strong> Spectral monitoring and time-domain studies can be conducted alongside primary imaging programmes.</li>
+  <li><strong>Serendipitous discoveries:</strong> Unexpected sources and phenomena can be detected post-observation without requiring dedicated observing time.</li>
+</ul>
+
+<ac:structured-macro ac:name="note">
+  <ac:parameter ac:name="title">Commensal Partnerships</ac:parameter>
+  <ac:rich-text-body>
+    <p>
+      Successful commensal observing depends on strong collaboration and clear communication between host and commensal teams. Early coordination and transparent data-sharing agreements are essential for maximizing the scientific return.
+    </p>
+  </ac:rich-text-body>
+</ac:structured-macro>

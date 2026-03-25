@@ -1,0 +1,135 @@
+<ac:structured-macro ac:name="excerpt">
+  <ac:parameter ac:name="atlassian-macro-output-type">BLOCK</ac:parameter>
+  <ac:rich-text-body>
+    <p>
+      The <strong>SKA Set Up Validator</strong> checks your observation parameters for feasibility before proposal submission. It validates telescope configuration, frequency settings, bandwidth, and pointing constraints against the capabilities of SKA-Mid and SKA-Low in the requested Array Assembly stage.
+    </p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+<h2>What the Validator Does</h2>
+<p>The Set Up Validator is an automated quality-assurance tool that:</p>
+<ul>
+  <li><strong>Checks Parameter Validity:</strong> Ensures frequencies, bandwidths, and integration times are within permitted ranges</li>
+  <li><strong>Verifies Array Compatibility:</strong> Confirms that your requested configuration is available in the selected Array Assembly stage</li>
+  <li><strong>Validates Pointing Constraints:</strong> Checks that target coordinates and elevation limits are physically feasible</li>
+  <li><strong>Identifies Conflicts:</strong> Warns of incompatible parameter combinations (e.g., requested frequency outside receiver passband)</li>
+  <li><strong>Suggests Corrections:</strong> Provides guidance on fixing invalid configurations</li>
+</ul>
+<p>By catching errors early, the validator saves time during proposal review and reduces the likelihood of unfeasible observations being scheduled.</p>
+<h2>Validation Scope</h2>
+<h3>Telescope Configuration</h3>
+<ul>
+  <li>Telescope selection (SKA-Mid or SKA-Low)</li>
+  <li>Array Assembly stage (AA1, AA2, AA*, AA4)</li>
+  <li>Subarray assignment (if applicable)</li>
+  <li>Number of available dishes/stations in the requested stage</li>
+</ul>
+<h3>Frequency &amp; Bandwidth</h3>
+<ul>
+  <li>Centre frequency within receiver passband</li>
+  <li>Requested bandwidth does not exceed receiver bandwidth</li>
+  <li>Spectral-line zoom sub-band is within the full receiver band</li>
+  <li>No overlap with protected frequency allocations or RFI avoidance bands</li>
+</ul>
+<h3>Pointing &amp; Elevation</h3>
+<ul>
+  <li>Target declination is observable from array latitude</li>
+  <li>Specified elevation limit is greater than minimum tracking elevation</li>
+  <li>Right Ascension and Declination are valid (0–24h RA, ±90° Dec)</li>
+  <li>Transit altitude at culmination is above elevation limit</li>
+</ul>
+<h3>Correlator &amp; Data Rate</h3>
+<ul>
+  <li>Requested spectral resolution matches correlator capabilities</li>
+  <li>Polyphase filterbank configuration is feasible</li>
+  <li>Data rate does not exceed storage pipeline capacity</li>
+</ul>
+<h2>Integration with the Proposal Handling Tool (PHT)</h2>
+<p>The Set Up Validator is tightly integrated with the <a href="https://pht.skao.int/">SKA Proposal Handling Tool (PHT)</a>:</p>
+<ul>
+  <li><strong>Real-Time Validation:</strong> As you configure observations in PHT, the validator runs automatically and highlights issues in real time</li>
+  <li><strong>Inline Error Reporting:</strong> Invalid fields show warnings with explanations and suggested corrections</li>
+  <li><strong>Submission Blocks:</strong> PHT will not permit submission of proposals containing unresolved validation errors</li>
+  <li><strong>Expert Override:</strong> For edge cases or special circumstances, proposers can request validation waivers through the PHT interface (subject to Observatory approval)</li>
+</ul>
+<h2>How to Use the Validator</h2>
+<h3>Step 1: Configure Your Observation in PHT</h3>
+<p>Enter your observation parameters in the PHT observation editor: telescope, array stage, frequency, bandwidth, pointing centre, etc.</p>
+<h3>Step 2: Review Validation Results</h3>
+<p>The validator automatically checks your configuration and displays results:</p>
+<ul>
+  <li><ac:structured-macro ac:name="lozenges"><ac:parameter ac:name="color">Green</ac:parameter><ac:rich-text-body>Valid</ac:rich-text-body></ac:structured-macro> — Configuration is feasible and will proceed to review</li>
+  <li><ac:structured-macro ac:name="lozenges"><ac:parameter ac:name="color">Yellow</ac:parameter><ac:rich-text-body>Warning</ac:rich-text-body></ac:structured-macro> — Non-ideal but acceptable (e.g., high elevation limit reducing observing time)</li>
+  <li><ac:structured-macro ac:name="lozenges"><ac:parameter ac:name="color">Red</ac:parameter><ac:rich-text-body>Error</ac:rich-text-body></ac:structured-macro> — Configuration is not feasible and must be corrected</li>
+</ul>
+<h3>Step 3: Fix Issues</h3>
+<p>For each error or warning, the validator provides guidance:</p>
+<ul>
+  <li><strong>Problem Description:</strong> What is invalid or suboptimal</li>
+  <li><strong>Reason:</strong> Why it fails (e.g., "frequency 500 MHz is below SKA-Low minimum of 50 MHz")</li>
+  <li><strong>Suggested Fix:</strong> Recommended adjustment (e.g., "increase frequency to ≥ 50 MHz")</li>
+  <li><strong>Alternative Options:</strong> Feasible configurations that achieve similar science goals</li>
+</ul>
+<h3>Step 4: Revalidate &amp; Submit</h3>
+<p>After making corrections, the validator re-checks automatically. Once all errors are resolved, you can submit your proposal.</p>
+<h2>Common Validation Issues &amp; Solutions</h2>
+<ac:structured-macro ac:name="expand">
+  <ac:parameter ac:name="title">Frequency Out of Range</ac:parameter>
+  <ac:rich-text-body>
+    <p><strong>Error:</strong> "Frequency 10.5 GHz is above SKA-Mid maximum of 14 GHz."</p>
+    <p><strong>Solution:</strong> Reduce frequency to ≤ 14 GHz, or select SKA-Low (if science permits). For multi-band campaigns, split observations across compatible frequency ranges.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+<ac:structured-macro ac:name="expand">
+  <ac:parameter ac:name="title">Insufficient Array in Selected Stage</ac:parameter>
+  <ac:rich-text-body>
+    <p><strong>Error:</strong> "AA1 stage has only 56 dishes; your observation requires 100 dishes."</p>
+    <p><strong>Solution:</strong> Select a later Array Assembly stage (AA2, AA*, or AA4), or adjust science requirements. You can schedule observations across multiple deployment phases with different array configurations.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+<ac:structured-macro ac:name="expand">
+  <ac:parameter ac:name="title">Target Unreachable at Elevation Limit</ac:parameter>
+  <ac:rich-text-body>
+    <p><strong>Error:</strong> "Target at δ = +70° reaches only 45° above horizon; your minimum elevation is 50°."</p>
+    <p><strong>Solution:</strong> Lower the elevation limit (accept poorer sensitivity and higher system temperature), or select a different target. High-declination sources are better observed with SKA-Low at low frequencies.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+<ac:structured-macro ac:name="expand">
+  <ac:parameter ac:name="title">Data Rate Exceeds Capacity</ac:parameter>
+  <ac:rich-text-body>
+    <p><strong>Error:</strong> "Requested data rate 400 Gbps exceeds pipeline capacity of 300 Gbps in AA1."</p>
+    <p><strong>Solution:</strong> Reduce number of subarrays, use coarser spectral channels, or split observation across multiple epochs. Contact the Observatory for custom data rate discussions.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+<h2>Supported Configurations</h2>
+<h3>SKA-Mid</h3>
+<ul>
+  <li><strong>Frequency Range:</strong> 250 MHz – 14 GHz</li>
+  <li><strong>Array Stages:</strong> AA1 (56 dishes), AA2 (133 dishes), AA* (133 dishes with MID2 hardware), AA4 (197 dishes)</li>
+  <li><strong>Maximum Bandwidth:</strong> Limited by receiver passband (typically 2–8 GHz at high frequencies)</li>
+  <li><strong>Subarrays:</strong> Up to 4 simultaneous subarrays in AA4; fewer in earlier stages</li>
+</ul>
+<h3>SKA-Low</h3>
+<ul>
+  <li><strong>Frequency Range:</strong> 50 – 350 MHz</li>
+  <li><strong>Array Stages:</strong> AA1 (~50,000 antennas), AA2 (~100,000 antennas), AA* (~130,000 antennas), AA4 (~130,000+ antennas with band 1/2 upgrade)</li>
+  <li><strong>Maximum Bandwidth:</strong> Full receiver bandwidth (300 MHz typical)</li>
+  <li><strong>Subarrays:</strong> Limited subarray capability; most observations use full array or defined core/extended regions</li>
+</ul>
+<ac:structured-macro ac:name="tip">
+  <ac:parameter ac:name="title">Validation Best Practices</ac:parameter>
+  <ac:rich-text-body>
+    <ul>
+      <li>Run validation frequently as you edit your observation to catch errors early</li>
+      <li>Use the Sensitivity Calculator alongside the Validator to ensure your parameters are both feasible and sufficient for your science goals</li>
+      <li>If you receive a warning, read it carefully—it may indicate suboptimal choices that could affect your results</li>
+      <li>For complex multi-epoch or multi-configuration campaigns, validate each observation separately</li>
+    </ul>
+  </ac:rich-text-body>
+</ac:structured-macro>
+<ac:structured-macro ac:name="note">
+  <ac:parameter ac:name="title">Contact Observing Support</ac:parameter>
+  <ac:rich-text-body>
+    <p>If the validator reports an error you believe is incorrect, or if you need a waiver for a special configuration, contact the SKA Observatory observing support team via the PHT help system.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>

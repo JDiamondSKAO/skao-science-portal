@@ -1,0 +1,119 @@
+<ac:structured-macro ac:name="excerpt">
+  <ac:parameter ac:name="atlassian-macro-output-type">BLOCK</ac:parameter>
+  <ac:rich-text-body>
+    <p>The SKA Regional Centre Network is a collaborative global infrastructure providing interoperable access to SKA data and computational resources through a computation-to-data model.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+
+<h2>What is the SRCnet?</h2>
+<p>The SKA Regional Centre Network (SRCnet) is a distributed global infrastructure of regional centres established across SKA member states. Each centre provides scientists with coordinated, interoperable access to SKA data and computational resources. Rather than downloading petabyte-scale datasets to local facilities, the network operates on a <strong>computation-to-data model</strong>—scientists submit analysis workflows to the regional centres where data is stored, ensuring efficient processing of the Observatory's massive data streams.</p>
+
+<h2>The Data Challenge</h2>
+<ac:structured-macro ac:name="info">
+  <ac:rich-text-body>
+    <p><strong>Scale and Volume.</strong><br />The SKA will generate over <strong>700 petabytes of data annually</strong>, with aggregate network egress peaking at several petabytes per day. Data management across the network leverages the Rucio system with distribution policies ensuring at least 2 replicas of critical datasets. This architecture enables rapid access while maintaining data resilience and minimizing network congestion.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+
+<h2>Participating Centres</h2>
+<p>Regional centres operate or are in development across the following member states and partner regions:</p>
+<table>
+  <colgroup><col /><col /></colgroup>
+  <tbody>
+    <tr>
+      <th>Region/Country</th>
+      <th>Status</th>
+    </tr>
+    <tr>
+      <td>Australia</td>
+      <td><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Green</ac:parameter><ac:parameter ac:name="title">Operational</ac:parameter></ac:structured-macro></td>
+    </tr>
+    <tr>
+      <td>Canada</td>
+      <td><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Yellow</ac:parameter><ac:parameter ac:name="title">In Development</ac:parameter></ac:structured-macro></td>
+    </tr>
+    <tr>
+      <td>China</td>
+      <td><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Yellow</ac:parameter><ac:parameter ac:name="title">In Development</ac:parameter></ac:structured-macro></td>
+    </tr>
+    <tr>
+      <td>France</td>
+      <td><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Green</ac:parameter><ac:parameter ac:name="title">Operational</ac:parameter></ac:structured-macro></td>
+    </tr>
+    <tr>
+      <td>Germany</td>
+      <td><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Green</ac:parameter><ac:parameter ac:name="title">Operational</ac:parameter></ac:structured-macro></td>
+    </tr>
+    <tr>
+      <td>India</td>
+      <td><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Yellow</ac:parameter><ac:parameter ac:name="title">In Development</ac:parameter></ac:structured-macro></td>
+    </tr>
+    <tr>
+      <td>Italy</td>
+      <td><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Green</ac:parameter><ac:parameter ac:name="title">Operational</ac:parameter></ac:structured-macro></td>
+    </tr>
+    <tr>
+      <td>Japan</td>
+      <td><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Yellow</ac:parameter><ac:parameter ac:name="title">In Development</ac:parameter></ac:structured-macro></td>
+    </tr>
+    <tr>
+      <td>Netherlands</td>
+      <td><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Green</ac:parameter><ac:parameter ac:name="title">Operational</ac:parameter></ac:structured-macro></td>
+    </tr>
+    <tr>
+      <td>Portugal</td>
+      <td><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Yellow</ac:parameter><ac:parameter ac:name="title">In Development</ac:parameter></ac:structured-macro></td>
+    </tr>
+    <tr>
+      <td>South Africa</td>
+      <td><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Green</ac:parameter><ac:parameter ac:name="title">Operational</ac:parameter></ac:structured-macro></td>
+    </tr>
+    <tr>
+      <td>South Korea</td>
+      <td><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Yellow</ac:parameter><ac:parameter ac:name="title">In Development</ac:parameter></ac:structured-macro></td>
+    </tr>
+    <tr>
+      <td>Spain</td>
+      <td><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Green</ac:parameter><ac:parameter ac:name="title">Operational</ac:parameter></ac:structured-macro></td>
+    </tr>
+    <tr>
+      <td>Sweden</td>
+      <td><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Yellow</ac:parameter><ac:parameter ac:name="title">In Development</ac:parameter></ac:structured-macro></td>
+    </tr>
+    <tr>
+      <td>Switzerland</td>
+      <td><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Yellow</ac:parameter><ac:parameter ac:name="title">In Development</ac:parameter></ac:structured-macro></td>
+    </tr>
+    <tr>
+      <td>United Kingdom</td>
+      <td><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Green</ac:parameter><ac:parameter ac:name="title">Operational</ac:parameter></ac:structured-macro></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>How Scientists Access Data</h2>
+
+<h3>SKA Observatory Users</h3>
+<p>Scientists with allocated observation time access proprietary data from their own SKA projects. This includes raw visibility data, calibrated datasets, and processed data products generated from their observations. Access is restricted to the project team for a proprietary period before data enters the public archive.</p>
+
+<h3>Archive Users</h3>
+<p>After the proprietary period expires, datasets become available to the broader scientific community as public data in the SKA archive. This open data model promotes scientific discovery and maximizes the scientific return on the Observatory's investment. Users can discover and access public datasets through the archive portal.</p>
+
+<h3>Analysis Platform</h3>
+<p>Rather than moving data, scientists submit computational workflows directly to the regional centres for execution. Each centre provides advanced analysis tools, specialised algorithms, and dedicated computational resources. This approach eliminates the bottleneck of network bandwidth and enables rapid turnaround on complex analyses of massive datasets.</p>
+
+<h2>Key Services</h2>
+<p>The SRCnet provides integrated services across all participating centres:</p>
+<ul>
+  <li><strong>Data Distribution</strong> — Coordinated replication and distribution of SKA datasets across the network using Rucio, with redundancy policies ensuring data availability and resilience.</li>
+  <li><strong>Processing Platforms</strong> — Standardised computational environments at each centre, enabling consistent execution of workflows regardless of location.</li>
+  <li><strong>User Support and Training</strong> — Documentation, tutorials, and support services to help scientists effectively use the network and access data.</li>
+  <li><strong>Data Curation</strong> — Quality assurance, metadata management, and archival stewardship to maintain the long-term value and discoverability of datasets.</li>
+</ul>
+
+<h2>Current Status</h2>
+<ac:structured-macro ac:name="note">
+  <ac:rich-text-body>
+    <p><strong>Development Phase.</strong> The SRCnet is currently in active development, with several centres operational and others ramping up infrastructure. Operational readiness is aligned with SKA telescope commissioning milestones, ensuring that centres and the network are fully capable when science operations begin.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>

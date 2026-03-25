@@ -1,0 +1,128 @@
+<ac:structured-macro ac:name="excerpt">
+  <ac:parameter ac:name="atlassian-macro-output-type">BLOCK</ac:parameter>
+  <ac:rich-text-body>
+    <p>
+      The <strong>SKA Sensitivity Calculator</strong> is an online tool for estimating observational sensitivity and planning SKA observations. It computes the noise level, beam properties, and required integration time for continuum and spectral-line observations with SKA-Mid and SKA-Low.
+    </p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+<h2>About the Sensitivity Calculator</h2>
+<p>The Sensitivity Calculator helps astronomers plan SKA observations by predicting the sensitivity achievable under specific observing conditions. You can:</p>
+<ul>
+  <li>Calculate the minimum detectable flux density (sensitivity in Jy) for a given integration time</li>
+  <li>Estimate the integration time needed to reach a target sensitivity level</li>
+  <li>Predict beam sizes and shape at your desired frequency</li>
+  <li>Assess surface brightness sensitivity and confusion limits</li>
+  <li>Optimise array configuration choices (frequency band, bandwidth, etc.)</li>
+</ul>
+<p>Results account for real receiver parameters, baseline distributions, atmospheric effects, and RFI mitigation strategies for each Array Assembly stage of SKA-Mid and SKA-Low.</p>
+<h2>Supported Telescopes</h2>
+<p>The calculator supports both SKA telescope configurations:</p>
+<ul>
+  <li><strong>SKA-Mid:</strong> Mid-frequency array (250 MHz – 14 GHz) composed of 197 13.5-metre dishes in South Africa</li>
+  <li><strong>SKA-Low:</strong> Low-frequency array (50 – 350 MHz) composed of ~130,000 log-periodic antennas in Australia</li>
+</ul>
+<p>Both telescopes are available in all Array Assembly stages (AA1, AA2, AA*, AA4) to match your proposal timeline.</p>
+<h2>Supported Observation Modes</h2>
+<h3>Continuum Observations</h3>
+<p>Wideband continuum mode with full bandwidth for continuum surveys, extragalactic science, and pulsar timing. The calculator uses standard receiver bandwidths for each frequency band.</p>
+<h3>Spectral Line (Zoom) Observations</h3>
+<p>High-resolution spectral-line mode with zoom capability. Allows selection of narrower sub-bands within the receiver passband for targeted spectroscopy, HI surveys, or molecular line studies. Spectral resolution is selectable in steps typical of correlator configuration.</p>
+<h2>Key Input Parameters</h2>
+<p>When using the calculator, you specify:</p>
+<table>
+  <colgroup>
+    <col />
+    <col />
+  </colgroup>
+  <tbody>
+    <tr>
+      <th>Parameter</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td><strong>Telescope</strong></td>
+      <td>SKA-Mid or SKA-Low</td>
+    </tr>
+    <tr>
+      <td><strong>Array Assembly Stage</strong></td>
+      <td>AA1, AA2, AA*, or AA4 (determines number of active elements)</td>
+    </tr>
+    <tr>
+      <td><strong>Frequency</strong></td>
+      <td>Centre frequency of observation (MHz or GHz)</td>
+    </tr>
+    <tr>
+      <td><strong>Bandwidth</strong></td>
+      <td>For continuum, receiver bandwidth; for zoom, selected sub-band width</td>
+    </tr>
+    <tr>
+      <td><strong>Pointing Centre</strong></td>
+      <td>Right Ascension and Declination (for parallactic angle and elevation corrections)</td>
+    </tr>
+    <tr>
+      <td><strong>Elevation Limit</strong></td>
+      <td>Minimum elevation above horizon (typically 15–30°)</td>
+    </tr>
+    <tr>
+      <td><strong>Integration Time</strong></td>
+      <td><em>OR</em> Target Sensitivity (choose one)</td>
+    </tr>
+  </tbody>
+</table>
+<h2>Output Parameters</h2>
+<p>The calculator reports:</p>
+<ul>
+  <li><strong>Sensitivity (Jy):</strong> 1-sigma thermal noise in image plane</li>
+  <li><strong>Beam Size:</strong> Full-width half-maximum (major and minor axes) in arcseconds</li>
+  <li><strong>Beam Position Angle:</strong> Orientation on the sky</li>
+  <li><strong>Surface Brightness Sensitivity:</strong> Sensitivity to extended emission (mJy/beam)</li>
+  <li><strong>Confusion Noise:</strong> Brightness fluctuation limit from unresolved sources</li>
+  <li><strong>Integration Time:</strong> (If target sensitivity was specified instead)</li>
+</ul>
+<ac:structured-macro ac:name="info">
+  <ac:parameter ac:name="title">Interactive Calculator</ac:parameter>
+  <ac:rich-text-body>
+    <p>The calculator tool is embedded below. Enter your parameters and click "Calculate" to see results in real time. Hover over parameter labels for detailed explanations.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+<div class="viewport-placeholder" data-component="sensitivity-calculator"></div>
+<h2>Using the Calculator for Proposal Planning</h2>
+<ac:structured-macro ac:name="expand">
+  <ac:parameter ac:name="title">Quick Survey Estimate</ac:parameter>
+  <ac:rich-text-body>
+    <p>To estimate time needed for a survey: select your target frequency, desired sensitivity, field size, and array stage. The calculator will show required integration time. Remember to factor in slew time, calibration overheads, and observing efficiency (~80%).</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+<ac:structured-macro ac:name="expand">
+  <ac:parameter ac:name="title">Comparing Frequency Bands</ac:parameter>
+  <ac:rich-text-body>
+    <p>Try the same integration time at different frequencies to see how sensitivity scales with frequency and how beam size improves at higher frequencies. This helps prioritise science objectives.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+<ac:structured-macro ac:name="expand">
+  <ac:parameter ac:name="title">Array Stage Comparisons</ac:parameter>
+  <ac:rich-text-body>
+    <p>Compare sensitivity at different Array Assembly stages (AA1 vs AA*) to understand when your science becomes feasible, and to decide whether to split observations across deployment phases.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+<h2>Standalone Calculator</h2>
+<p>For scripting, batch calculations, or offline use, the full <strong>SKA Sensitivity Calculator</strong> is available as a standalone web service at:</p>
+<p><a href="https://sensitivity-calculator.skao.int">https://sensitivity-calculator.skao.int</a></p>
+<p>This standalone instance provides the same calculation engine with additional options for advanced users and programmatic access.</p>
+<h2>Open-Source Software</h2>
+<p>The Sensitivity Calculator is built on open-source software released under the <strong>BSD-3-Clause License</strong>. The source code is available on the SKA Observatory GitLab repository:</p>
+<p><a href="https://gitlab.com/ska-telescope/ska-sensitivity-calculator">https://gitlab.com/ska-telescope/ska-sensitivity-calculator</a></p>
+<p>You can fork the code to customise calculations for your own studies or contribute improvements back to the project.</p>
+<ac:structured-macro ac:name="note">
+  <ac:parameter ac:name="title">Assumptions &amp; Limitations</ac:parameter>
+  <ac:rich-text-body>
+    <ul>
+      <li>Calculations assume ideal receivers with specified noise temperatures (may be optimistic for early Array Assembly stages)</li>
+      <li>RFI environment is assumed to be as designed (actual RFI may reduce sensitivity at some frequencies)</li>
+      <li>Confusion limits are estimated from source counts; actual values depend on source spectral properties</li>
+      <li>Beam sidelobe effects are not detailed; see the full technical documentation for sidelobe predictions</li>
+      <li>Correlator channel count is rounded to standard configurations; non-standard setups require proposal discussion</li>
+    </ul>
+  </ac:rich-text-body>
+</ac:structured-macro>

@@ -1,0 +1,197 @@
+<ac:structured-macro ac:name="excerpt">
+  <ac:parameter ac:name="atlassian-macro-output-type">BLOCK</ac:parameter>
+  <ac:rich-text-body>
+    <p>
+      <strong>SKA-Low Substations</strong>
+    </p>
+    <p>
+      SKA-Low uses a hierarchical array architecture in which 512 stations are distributed across the Western Australian landscape. Each station is itself subdivided into substations, which are phased-array groupings of antennas that generate independent, steerable beams.
+    </p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+
+<h2>Station and Substation Architecture</h2>
+
+<p>
+  <strong>SKA-Low Design:</strong>
+</p>
+
+<ul>
+  <li><strong>512 Stations</strong> distributed across Western Australia</li>
+  <li><strong>256 Dipole Antennas per station</strong></li>
+  <li><strong>Substations within each station:</strong> Groups of antennas (typically 16–64 dipoles per substation) that can be independently phased to form coherent beams</li>
+</ul>
+
+<p>
+  This hierarchical structure provides flexibility in beamforming and allows substations to be configured for different science goals within the same station footprint.
+</p>
+
+<h2>What is a Substation?</h2>
+
+<p>
+  A substation is a logical and/or physical grouping of antennas within a station that shares front-end electronics and can form independent phased-array beams. Key characteristics:
+</p>
+
+<ul>
+  <li><strong>Phased-array beamforming:</strong> Antennas within a substation have their signals combined with controlled phase delays, allowing the beam to be steered in any direction within a wide field of view (~30–50 degrees depending on frequency)</li>
+  <li><strong>Independent beams:</strong> Each substation can form one primary beam. Multiple substations within a station can simultaneously form beams in different directions.</li>
+  <li><strong>Tied-array mode:</strong> Substations can combine their outputs coherently for ultra-high sensitivity observations (see Tied-Array Beams section)</li>
+  <li><strong>Station-level combination:</strong> Outputs from all substations within a station are coherently combined to form the station's contribution to the full interferometer</li>
+</ul>
+
+<h2>Beamforming at Substation Level</h2>
+
+<p>
+  <strong>How substation beamforming works:</strong>
+</p>
+
+<ol>
+  <li><strong>Signal capture:</strong> All 256 dipoles in a station receive the sky signal</li>
+  <li><strong>Grouping:</strong> Dipoles are assigned to substations (e.g., four substations of 64 dipoles each, or eight substations of 32 dipoles each)</li>
+  <li><strong>Phasing:</strong> Each substation applies frequency-dependent phase corrections to align signals from its antennas in a chosen direction. The phase pattern is updated in real-time to track a target or steer across the sky.</li>
+  <li><strong>Beam combination:</strong> Each substation's phased output is digitized and sent to the correlator/beamformer back-end</li>
+  <li><strong>Station synthesis:</strong> The correlator coherently combines all substation beams from a station, treating each substation as a virtual "antenna" in the interferometer</li>
+</ol>
+
+<p>
+  The result is a station-level beam that reflects the combined sensitivity of all 256 dipoles but with flexibility to partially steer different substation beams within the station's instantaneous field of view.
+</p>
+
+<h2>Station-Level Beam Synthesis</h2>
+
+<p>
+  Each station acts as a phased-array antenna in the SKA-Low interferometer. The contribution of each station is:
+</p>
+
+<ul>
+  <li><strong>Formed by combining outputs from its substations</strong></li>
+  <li><strong>Pointed at a common direction</strong> (or multiple directions via commensals)</li>
+  <li><strong>Characterized by a station beam pattern</strong> with:
+    <ul>
+      <li>Primary beam (main lobe) ~10 degrees diameter at 50 MHz, narrowing to ~1 degree at 350 MHz</li>
+      <li>Sidelobe patterns determined by substation geometry</li>
+    </ul>
+  </li>
+</ul>
+
+<p>
+  The full SKA-Low image is formed by correlating signals from all 512 station beams. This two-level hierarchy (substations → stations → interferometer) provides computational efficiency and operational flexibility.
+</p>
+
+<h2>Substation Technical Parameters</h2>
+
+<ac:structured-macro ac:name="info">
+  <ac:parameter ac:name="title">Typical SKA-Low Substation Parameters</ac:parameter>
+  <ac:rich-text-body>
+    <table>
+      <colgroup><col /></colgroup>
+      <tbody>
+        <tr>
+          <th>Parameter</th>
+          <th>Typical Value(s)</th>
+        </tr>
+        <tr>
+          <td>Antennas per substation</td>
+          <td>16–64 dipoles (depends on substation configuration)</td>
+        </tr>
+        <tr>
+          <td>Number of substations per station</td>
+          <td>4–16 (typically 4 or 8)</td>
+        </tr>
+        <tr>
+          <td>Primary beam FWHM @ 50 MHz</td>
+          <td>~10 degrees</td>
+        </tr>
+        <tr>
+          <td>Primary beam FWHM @ 350 MHz</td>
+          <td>~1 degree</td>
+        </tr>
+        <tr>
+          <td>Instantaneous FoV per substation</td>
+          <td>30–50 degrees (limited by dipole patterns)</td>
+        </tr>
+        <tr>
+          <td>Beam steering rate</td>
+          <td>Real-time (electronically steerable)</td>
+        </tr>
+        <tr>
+          <td>Frequency resolution (phasing)</td>
+          <td>Typically 1 MHz to full bandwidth</td>
+        </tr>
+        <tr>
+          <td>Coherence time</td>
+          <td>Seconds to minutes (depends on ionospheric conditions)</td>
+        </tr>
+      </tbody>
+    </table>
+  </ac:rich-text-body>
+</ac:structured-macro>
+
+<h2>Why Substations Matter for Science</h2>
+
+<p>
+  <strong>Flexibility:</strong> Substation partitioning allows observers to tailor array performance to their science needs:
+</p>
+
+<ul>
+  <li><strong>Many substations (small size):</strong> High-resolution beams, large instantaneous field of view, good for survey observations and wide-field monitoring</li>
+  <li><strong>Few substations (large size):</strong> Lower computation overhead, simplified phasing, good for deep, narrow-field observations</li>
+</ul>
+
+<p>
+  <strong>Pulsar timing and search:</strong> Tied-array modes combine substations coherently for maximum sensitivity to pulsars and other point sources.
+</p>
+
+<p>
+  <strong>Calibration:</strong> Substation geometry directly impacts the station beam pattern and must be precisely characterized for accurate calibration and image reconstruction.
+</p>
+
+<h2>Substation Configuration in Proposals</h2>
+
+<p>
+  When planning SKA-Low observations, you may specify:
+</p>
+
+<ul>
+  <li><strong>Desired substation configuration:</strong> Number and size of substations (subject to hardware constraints and operational feasibility)</li>
+  <li><strong>Beamforming mode:</strong> Tied-array (maximum coherence), phased-array (flexible steering), or hybrid modes</li>
+  <li><strong>Field of view requirement:</strong> Determines the smallest viable substation size</li>
+</ul>
+
+<p>
+  The SKA commissioning team and User Support will advise on achievable configurations during proposal development.
+</p>
+
+<ac:structured-macro ac:name="note">
+  <ac:parameter ac:name="title">Ionospheric Effects on Low-Frequency Beamforming</ac:parameter>
+  <ac:rich-text-body>
+    <p>
+      At SKA-Low frequencies (50–350 MHz), the ionosphere introduces phase distortions that degrade coherence over timescales of seconds to minutes. Real-time phase correction (using calibration sources) is essential for maintaining beam quality and coherence in tied-array and correlator modes. Observers should budget observing time for calibration cycles.
+    </p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+
+<h2>Substation Upgrades and Future Flexibility</h2>
+
+<p>
+  The SKA-Low substation architecture is designed for future upgrades:
+</p>
+
+<ul>
+  <li><strong>Digital back-ends:</strong> Firmware updates can enable new beamforming modes and configurations without hardware changes</li>
+  <li><strong>Receiver improvements:</strong> Substation receiver chains can be enhanced over time to reduce noise and extend frequency coverage</li>
+  <li><strong>Computational upgrades:</strong> Additional processing capacity allows more simultaneous substation beams or higher data rates</li>
+</ul>
+
+<p>
+  Proposals can request new modes during early operational cycles; feasibility will be evaluated by the commissioning team.
+</p>
+
+<ac:structured-macro ac:name="tip">
+  <ac:parameter ac:name="title">Learning More</ac:parameter>
+  <ac:rich-text-body>
+    <p>
+      For detailed technical specifications of substations, see the <strong>SKA System Specifications</strong> documents. For questions about substation configurations for your science, contact the SKA User Support team.
+    </p>
+  </ac:rich-text-body>
+</ac:structured-macro>

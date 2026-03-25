@@ -1,0 +1,98 @@
+<ac:structured-macro ac:name="excerpt">
+  <ac:parameter ac:name="atlassian-macro-output-type">BLOCK</ac:parameter>
+  <ac:rich-text-body>
+    <p>Overview of observing time allocation, project types, and access policies for SKA science operations.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+
+<h2>Observing Time Allocation</h2>
+<p>Proposals are issued 6 months before each observing cycle. Time is allocated based on scientific merit and technical feasibility. The allocation process maintains proportionality to member state contributions to the Observatory.</p>
+
+<h2>Time Allocation Committee</h2>
+<p>The allocation process employs dual anonymous assessment combining distributed peer review with thematic panel review. This approach ensures fair and rigorous evaluation of all proposals.</p>
+
+<h2>Project Types</h2>
+
+<h3>Principal Investigator (PI) Projects</h3>
+<p>Standard observing projects available to the community. During Cycles 0 and 1, PI projects operate under "shared risk" with limited performance guarantees. From Cycle 2 onwards, they transition to standard operations with full guarantees.</p>
+
+<h3>Director's Discretionary Time (DDT)</h3>
+<p>Rapid-response observing time allocated by the Director for time-sensitive targets. DDT follows the same shared risk/standard operations timeline as PI projects, ensuring consistent operational readiness.</p>
+
+<h3>Key Science Projects (KSP)</h3>
+<p>The most ambitious observing programmes, requiring significantly more observing time distributed over multiple cycles. Key Science Projects are expected to commence from Cycle 3 onwards and represent strategic science priorities for the Observatory.</p>
+
+<h2>Operational Cycles</h2>
+
+<table>
+  <colgroup><col /><col /><col /><col /><col /></colgroup>
+  <tbody>
+    <tr>
+      <th>Cycle</th>
+      <th>SKA-Low</th>
+      <th>SKA-Mid</th>
+      <th>Mode</th>
+      <th>Project Types</th>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>2030</td>
+      <td>2032</td>
+      <td><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Yellow</ac:parameter><ac:parameter ac:name="title">Shared Risk</ac:parameter></ac:structured-macro></td>
+      <td>PI, DDT</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>TBD</td>
+      <td>TBD</td>
+      <td><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Yellow</ac:parameter><ac:parameter ac:name="title">Shared Risk</ac:parameter></ac:structured-macro></td>
+      <td>PI, DDT</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>TBD</td>
+      <td>TBD</td>
+      <td><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Green</ac:parameter><ac:parameter ac:name="title">Standard Ops</ac:parameter></ac:structured-macro></td>
+      <td>PI, DDT</td>
+    </tr>
+    <tr>
+      <td>3+</td>
+      <td>TBD</td>
+      <td>TBD</td>
+      <td><ac:structured-macro ac:name="status"><ac:parameter ac:name="colour">Green</ac:parameter><ac:parameter ac:name="title">Standard Ops</ac:parameter></ac:structured-macro></td>
+      <td>PI, DDT, KSP</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Science Operations Tools</h2>
+<p>The SKA provides an integrated suite of web-based and command-line tools to support proposal submission, observation execution, and scheduling:</p>
+<ul>
+  <li><strong>Proposal Handling Tool (PHT)</strong> — Web-based interface with dual views. The Submission Tool view is designed for astronomers preparing proposals; the Handling Tool view supports reviewers in the evaluation process.</li>
+  <li><strong>Observation Execution Tool</strong> — Manages the execution of approved observing programmes.</li>
+  <li><strong>Scheduling and Execution Tools</strong> — Coordinate observation scheduling with real-time execution support.</li>
+  <li><strong>Multiple User Interfaces</strong> — GUIs and CLIs available to support the workflows of different user roles, from casual observers to advanced power users.</li>
+</ul>
+
+<h2>Data Access Policy</h2>
+
+<h3>Proprietary Period</h3>
+<p>All observing data obtained through PI-led projects are subject to a standard proprietary period. During this time, the Principal Investigator has exclusive rights to the data for scientific publication and analysis.</p>
+
+<h3>Public Archive</h3>
+<p>Following the proprietary period, all data becomes part of the public archive and is made available to the broader community for scientific use.</p>
+
+<h3>Open Science</h3>
+<p>The SKA is committed to open science principles and ensures equality of access to archive data regardless of the researcher's location, institution, or member state affiliation.</p>
+
+<h2>Getting Started</h2>
+<ac:structured-macro ac:name="tip">
+  <ac:rich-text-body>
+    <p>For detailed information on data access procedures, computational resources, and user credentials, consult the About the SRCnet page.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+<ac:structured-macro ac:name="note">
+  <ac:rich-text-body>
+    <p>User support is available through regional centres. Contact your local centre for assistance with proposal preparation, observation planning, or data access.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>

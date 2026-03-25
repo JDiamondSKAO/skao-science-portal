@@ -1,0 +1,285 @@
+<ac:structured-macro ac:name="excerpt">
+  <ac:parameter ac:name="atlassian-macro-output-type">BLOCK</ac:parameter>
+  <ac:rich-text-body>
+    <p>
+      <strong>SKA Proposal Attributes</strong>
+    </p>
+    <p>
+      A successful SKA proposal articulates compelling science, specifies technical requirements, and provides all necessary metadata. This page describes the key attributes and information needed in every proposal.
+    </p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+
+<h2>Essential Proposal Information</h2>
+
+<p>
+  Every SKA proposal must include the following attributes and information:
+</p>
+
+<h3>Title and Abstract</h3>
+
+<ul>
+  <li><strong>Proposal Title:</strong> A concise, descriptive title (typically &lt;100 characters) conveying the primary science goal</li>
+  <li><strong>Abstract:</strong> A 200–500 word summary for non-expert readers. Must clearly convey:
+    <ul>
+      <li>The scientific question being addressed</li>
+      <li>Why the SKA is essential for answering it</li>
+      <li>Expected outcomes and impact</li>
+      <li>Accessibility to broad audience (avoid heavy jargon)</li>
+    </ul>
+  </li>
+</ul>
+
+<h3>Science Category</h3>
+
+<p>
+  All proposals are assigned to a primary science category (and optionally secondary categories). Categories include:
+</p>
+
+<ul>
+  <li><strong>Cosmology &amp; Large-Scale Structure</strong> — HI surveys, dark energy, reionization, galaxy evolution</li>
+  <li><strong>Compact Objects</strong> — Pulsars, black holes, neutron stars, magnetars</li>
+  <li><strong>Active Galaxies &amp; High-Energy Astrophysics</strong> — AGN, jets, X-ray binaries, TDE</li>
+  <li><strong>Stars &amp; Star Formation</strong> — Stellar masers, star-forming regions, protoplanetary disks</li>
+  <li><strong>Transient &amp; Time-Domain Astronomy</strong> — Supernovae, GRBs, FRBs, novae</li>
+  <li><strong>Galactic &amp; Extragalactic Surveys</strong> — Source catalogs, sky surveys</li>
+  <li><strong>Solar &amp; Ionospheric Physics</strong> — Solar radio bursts, space weather</li>
+  <li><strong>Fundamental Physics &amp; Cosmology</strong> — Pulsar timing arrays, gravitational waves, relativity tests</li>
+  <li><strong>Techniques &amp; Surveys</strong> — New observing modes, commissioning science, pilot surveys</li>
+</ul>
+
+<h2>Team Information</h2>
+
+<h3>Principal Investigator (PI)</h3>
+
+<ul>
+  <li><strong>Name and affiliation:</strong> Full details of lead scientist</li>
+  <li><strong>Contact information:</strong> Email and telephone for proposal correspondence</li>
+  <li><strong>Role statement:</strong> Brief description of PI's expertise and role in the project</li>
+</ul>
+
+<h3>Co-Investigators</h3>
+
+<ul>
+  <li><strong>Full list:</strong> All team members contributing to the science or observations</li>
+  <li><strong>Affiliations:</strong> Institutional home of each co-investigator</li>
+  <li><strong>Role descriptions:</strong> Specific contributions (e.g., "data analysis," "theoretical modeling," "target selection")</li>
+  <li><strong>Contact representatives:</strong> Designated contacts for specific aspects (e.g., correlator requirements, data processing)</li>
+</ul>
+
+<h3>Collaboration Framework (for large programmes)</h3>
+
+<ul>
+  <li><strong>Collaboration name:</strong> If part of a formal science collaboration or consortium</li>
+  <li><strong>Governance structure:</strong> How decisions are made, publication rules, proprietary period</li>
+  <li><strong>Co-investigator list:</strong> May be very large; summary statistics and organizational structure should be provided</li>
+</ul>
+
+<h2>Observing Requirements</h2>
+
+<h3>Telescope Selection</h3>
+
+<ul>
+  <li><strong>SKA-Low:</strong> Frequency range 50–350 MHz, primarily for HI and low-frequency spectral-line science</li>
+  <li><strong>SKA-Mid:</strong> Frequency range 0.35–15.4 GHz, for continuum, high-frequency lines, VLBI, pulsars</li>
+  <li><strong>Both telescopes:</strong> If science requires multi-frequency observations</li>
+</ul>
+
+<h3>Frequency Range and Mode</h3>
+
+<ul>
+  <li><strong>Frequency band(s):</strong> Specific frequency ranges within SKA-Low or SKA-Mid (e.g., "1.4 GHz band" for SKA-Mid)</li>
+  <li><strong>Bandwidth:</strong> Continuous bandwidth required (e.g., "Full 400 MHz bandwidth" or "Limited to 100 MHz")</li>
+  <li><strong>Observing mode:</strong> Continuum imaging, spectral-line, VLBI, pulsar search/timing, commensal, etc.</li>
+  <li><strong>Frequency switching or multi-band:</strong> If simultaneous observations in multiple bands needed</li>
+</ul>
+
+<h3>Time Request</h3>
+
+<ul>
+  <li><strong>Total observing time:</strong> Requested time on sky (in hours), separate for each telescope if multi-telescope proposal</li>
+  <li><strong>Justification:</strong> Sensitivity calculations or survey considerations explaining time requirement</li>
+  <li><strong>Time flexibility:</strong> Whether time is flexible (can be split across multiple observing runs) or must be contiguous</li>
+  <li><strong>Scheduling constraints:</strong> Any required timing (e.g., "must observe during new moon," "must include both summer and winter observations")</li>
+</ul>
+
+<h3>Subarray Configuration</h3>
+
+<ul>
+  <li><strong>Requested subarray size:</strong> Full array, large subarray, medium, small, or flexible</li>
+  <li><strong>Flexibility:</strong> Whether proposal is robust to smaller-than-requested subarray (important for scheduling)</li>
+  <li><strong>Specific dishes/stations:</strong> If particular array elements are required for VLBI or other specialized observations</li>
+</ul>
+
+<h2>Target List</h2>
+
+<ul>
+  <li><strong>Complete source/field list:</strong> Sky coordinates, object names, expected flux densities</li>
+  <li><strong>Required precision:</strong> Astrometric accuracy needed (e.g., "±5 arcsec" or "±0.1 arcsec")</li>
+  <li><strong>Expected properties:</strong> Flux density, spectral index, size, polarization (where relevant)</li>
+  <li><strong>Variability constraints:</strong> If targets must be observed within specific time windows (e.g., pulsar phase, orbital phase)</li>
+  <li><strong>Cadence:</strong> For multi-epoch programmes, specify epochs and time intervals</li>
+</ul>
+
+<h2>Technical Specifications</h2>
+
+<h3>Sensitivity and Data Products</h3>
+
+<ul>
+  <li><strong>Required image noise (RMS):</strong> Target sensitivity in µJy/beam or mJy/beam</li>
+  <li><strong>Dynamic range:</strong> Minimum brightness ratio that must be preserved in images (e.g., "1000:1")</li>
+  <li><strong>Required data products:</strong> Images, cubes, visibility data, catalog extracts, etc.</li>
+</ul>
+
+<h3>Angular Resolution</h3>
+
+<ul>
+  <li><strong>Required resolution:</strong> FWHM of synthesized beam (e.g., "1 arcsec" or "5 milliarcsec")</li>
+  <li><strong>Flexibility:</strong> Whether resolution can be degraded if time constraints require</li>
+</ul>
+
+<h3>Spectral Resolution (for spectral-line observations)</h3>
+
+<ul>
+  <li><strong>Channel width:</strong> Required frequency resolution (e.g., "1 kHz" or "1 km/s")</li>
+  <li><strong>Velocity resolution:</strong> For kinematic studies, specify required precision</li>
+  <li><strong>Frequency coverage:</strong> Continuous vs. targeted narrow bands</li>
+</ul>
+
+<h3>Polarization Products</h3>
+
+<ul>
+  <li><strong>Stokes parameters required:</strong> I (total intensity), Q, U, V (linear and circular polarization)</li>
+  <li><strong>Polarization sensitivity:</strong> Required fractional polarization measurement precision (e.g., "1% of point-source flux")</li>
+</ul>
+
+<h3>Time Resolution (for transient or pulsar observations)</h3>
+
+<ul>
+  <li><strong>Integration time:</strong> For correlator output (e.g., "1 second integration")</li>
+  <li><strong>Real-time processing:</strong> If online algorithms are required (e.g., pulsar dedispersion, RFI filtering)</li>
+</ul>
+
+<h2>Data Management Plan</h2>
+
+<h3>Data Storage and Availability</h3>
+
+<ul>
+  <li><strong>Proprietary period:</strong> Duration during which data is exclusive to the PI (typically 12–18 months)</li>
+  <li><strong>Data products to archive:</strong> Which data products will be preserved in the SKA archive (raw visibilities, calibrated images, catalogs)</li>
+  <li><strong>Long-term data access:</strong> Commitment to making data and results available to the community post-proprietary period</li>
+</ul>
+
+<h3>Data Rate and Computing Requirements</h3>
+
+<ul>
+  <li><strong>Predicted data rate:</strong> Total data volume per observation block (in TB or PB)</li>
+  <li><strong>Processing capability:</strong> Whether the team has infrastructure for rapid data processing or requires SKA compute resources</li>
+  <li><strong>Real-time reduction:</strong> If on-the-fly data reduction is needed (e.g., image production, source extraction)</li>
+</ul>
+
+<h2>Ethical Considerations</h2>
+
+<ul>
+  <li><strong>Sensitive targets:</strong> If observations of Earth's location are requested, justification for necessity</li>
+  <li><strong>Data privacy:</strong> Confirmation that no proprietary information from industrial or other parties is being obtained</li>
+  <li><strong>Dual-use technology:</strong> Disclosure if observations could be relevant to surveillance or other sensitive applications</li>
+</ul>
+
+<h2>Scheduling Constraints</h2>
+
+<ul>
+  <li><strong>Seasonal restrictions:</strong> If targets are only observable during certain seasons (e.g., rising in the southern hemisphere winter only)</li>
+  <li><strong>Lunar phase requirements:</strong> For observations sensitive to moon interference (e.g., observations near strong RFI sources)</li>
+  <li><strong>Array configuration:</strong> If specific extended vs. compact configurations are required</li>
+  <li><strong>Simultaneous multi-site observations:</strong> If SKA-Low and SKA-Mid must observe concurrently</li>
+  <li><strong>Rapid response urgency:</strong> For transient or ToO observations, expected response time (hours, days, weeks)</li>
+</ul>
+
+<h2>Proposal Justification</h2>
+
+<p>
+  In addition to attributes, every proposal requires:
+</p>
+
+<ul>
+  <li><strong>Scientific justification:</strong> Detailed explanation of the science question and why it requires SKA observations</li>
+  <li><strong>Technical feasibility:</strong> Discussion of how the requested parameters achieve the science goals</li>
+  <li><strong>Comparison with existing data:</strong> How SKA observations improve on current state of knowledge</li>
+  <li><strong>Expected impact:</strong> Broader implications for the field</li>
+</ul>
+
+<ac:structured-macro ac:name="tip">
+  <ac:parameter ac:name="title">Use the SKA Proposal Template</ac:parameter>
+  <ac:rich-text-body>
+    <p>
+      The SKA provides a standardized proposal template ensuring all required information is collected. The template includes guidance on filling each section and typical page limits for different proposal types. Use the template provided in the Cycle Call.
+    </p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+
+<h2>Summary Checklist</h2>
+
+<p>
+  Before submitting, verify your proposal includes:
+</p>
+
+<ac:task-list>
+  <ac:task>
+    <ac:task-status>incomplete</ac:task-status>
+    <ac:task-body>Title and abstract</ac:task-body>
+  </ac:task>
+  <ac:task>
+    <ac:task-status>incomplete</ac:task-status>
+    <ac:task-body>Science category assignment</ac:task-body>
+  </ac:task>
+  <ac:task>
+    <ac:task-status>incomplete</ac:task-status>
+    <ac:task-body>PI and co-investigator information</ac:task-body>
+  </ac:task>
+  <ac:task>
+    <ac:task-status>incomplete</ac:task-status>
+    <ac:task-body>Telescope selection (SKA-Low, SKA-Mid, or both)</ac:task-body>
+  </ac:task>
+  <ac:task>
+    <ac:task-status>incomplete</ac:task-status>
+    <ac:task-body>Frequency range and observing mode</ac:task-body>
+  </ac:task>
+  <ac:task>
+    <ac:task-status>incomplete</ac:task-status>
+    <ac:task-body>Requested observing time with justification</ac:task-body>
+  </ac:task>
+  <ac:task>
+    <ac:task-status>incomplete</ac:task-status>
+    <ac:task-body>Subarray configuration requirements</ac:task-body>
+  </ac:task>
+  <ac:task>
+    <ac:task-status>incomplete</ac:task-status>
+    <ac:task-body>Complete target list</ac:task-body>
+  </ac:task>
+  <ac:task>
+    <ac:task-status>incomplete</ac:task-status>
+    <ac:task-body>Technical specifications (sensitivity, resolution, spectral resolution)</ac:task-body>
+  </ac:task>
+  <ac:task>
+    <ac:task-status>incomplete</ac:task-status>
+    <ac:task-body>Data management plan and proprietary period</ac:task-body>
+  </ac:task>
+  <ac:task>
+    <ac:task-status>incomplete</ac:task-status>
+    <ac:task-body>Scheduling constraints and justification</ac:task-body>
+  </ac:task>
+  <ac:task>
+    <ac:task-status>incomplete</ac:task-status>
+    <ac:task-body>Ethical considerations disclosure</ac:task-body>
+  </ac:task>
+</ac:task-list>
+
+<ac:structured-macro ac:name="note">
+  <ac:parameter ac:name="title">Questions?</ac:parameter>
+  <ac:rich-text-body>
+    <p>
+      Contact the SKA User Support team if you have questions about proposal attributes or technical feasibility. Early contact during proposal preparation is encouraged and can save time during review.
+    </p>
+  </ac:rich-text-body>
+</ac:structured-macro>

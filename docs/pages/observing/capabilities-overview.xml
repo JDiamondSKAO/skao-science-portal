@@ -1,0 +1,173 @@
+<ac:structured-macro ac:name="excerpt">
+  <ac:parameter ac:name="atlassian-macro-output-type">BLOCK</ac:parameter>
+  <ac:rich-text-body>
+    <p>
+      <strong>Overview of SKA Observing Capabilities</strong>
+    </p>
+    <p>
+      The SKA is being built as a distributed array of radio telescopes across two sites: SKA-Low in Western Australia and SKA-Mid in South Africa. Each telescope provides complementary capabilities across a wide range of frequencies and offers multiple observing modes to support diverse science goals.
+    </p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+
+<h2>SKA-Low</h2>
+
+<p>
+  <strong>Location:</strong> Western Australia
+</p>
+
+<p>
+  <strong>Frequency Range:</strong> 50–350 MHz
+</p>
+
+<p>
+  <strong>Array Configuration:</strong> 512 stations, each comprising 256 phased-array dipoles. Stations are distributed across a region extending to ~65 km from the core.
+</p>
+
+<p>
+  <strong>Key Capabilities:</strong>
+</p>
+
+<ul>
+  <li>Continuum imaging across the low-frequency band</li>
+  <li>Spectral-line observations (HI, OH masers, recombination lines)</li>
+  <li>Transient detection and characterization</li>
+  <li>Pulsar searches and timing</li>
+  <li>Solar and ionospheric monitoring</li>
+  <li>Beamforming for tied-array pulsar observations</li>
+</ul>
+
+<h2>SKA-Mid</h2>
+
+<p>
+  <strong>Location:</strong> South Africa (Karoo region)
+</p>
+
+<p>
+  <strong>Frequency Range:</strong> 0.35–15.4 GHz
+</p>
+
+<p>
+  <strong>Array Configuration:</strong> 197 dishes distributed across multiple clusters. Core concentration at Karoo site; extended baseline to ~150 km.
+</p>
+
+<p>
+  <strong>Key Capabilities:</strong>
+</p>
+
+<ul>
+  <li>High-frequency continuum imaging with arcsecond to sub-arcsecond resolution</li>
+  <li>Spectral-line observations (CO, other molecular lines)</li>
+  <li>Pulsar timing and polarimetry</li>
+  <li>VLBI (Very Long Baseline Interferometry) for ultra-high angular resolution</li>
+  <li>Transient detection via imaging and commensal modes</li>
+  <li>Rapid target-of-opportunity observations</li>
+</ul>
+
+<h2>Observing Modes</h2>
+
+<p>
+  The SKA supports multiple simultaneous observing modes via <strong>commensal observing</strong>, where multiple science programmes can access the same data stream. Key modes include:
+</p>
+
+<ul>
+  <li><strong>Continuum Imaging:</strong> Maps of source intensity across frequency</li>
+  <li><strong>Spectral-Line Observations:</strong> High-resolution frequency studies of spectral features</li>
+  <li><strong>Pulsar Search:</strong> Detection of new pulsars via tied-array beams</li>
+  <li><strong>Pulsar Timing:</strong> Precision timing of known pulsars for gravitational-wave detection and tests of relativity</li>
+  <li><strong>Transient Detection:</strong> Rapid identification of variable and explosive sources</li>
+  <li><strong>VLBI:</strong> Ultra-high resolution observations in collaboration with global networks</li>
+</ul>
+
+<h2>SKA Capabilities Comparison</h2>
+
+<ac:structured-macro ac:name="info">
+  <ac:parameter ac:name="title">Table: SKA-Low vs SKA-Mid Capabilities</ac:parameter>
+  <ac:rich-text-body>
+    <table>
+      <colgroup><col /></colgroup>
+      <tbody>
+        <tr>
+          <th>Capability</th>
+          <th>SKA-Low</th>
+          <th>SKA-Mid</th>
+        </tr>
+        <tr>
+          <td>Frequency Range</td>
+          <td>50–350 MHz</td>
+          <td>0.35–15.4 GHz</td>
+        </tr>
+        <tr>
+          <td>Array Size</td>
+          <td>512 stations (256 dipoles each)</td>
+          <td>197 dishes</td>
+        </tr>
+        <tr>
+          <td>Longest Baseline</td>
+          <td>~65 km</td>
+          <td>~150 km</td>
+        </tr>
+        <tr>
+          <td>Angular Resolution</td>
+          <td>~10 arcsec (at highest frequencies)</td>
+          <td>Sub-arcsec (higher frequencies)</td>
+        </tr>
+        <tr>
+          <td>Continuum Imaging</td>
+          <td>Yes</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>Spectral-Line Observations</td>
+          <td>Yes (HI, OH, recombination)</td>
+          <td>Yes (CO, other molecular lines)</td>
+        </tr>
+        <tr>
+          <td>Pulsar Observations</td>
+          <td>Yes (search and timing via TABs)</td>
+          <td>Yes (search, timing, polarimetry)</td>
+        </tr>
+        <tr>
+          <td>VLBI</td>
+          <td>Limited (low frequency)</td>
+          <td>Yes (full VLBI capability)</td>
+        </tr>
+        <tr>
+          <td>Transient Detection</td>
+          <td>Yes</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>Commensal Observing</td>
+          <td>Yes</td>
+          <td>Yes</td>
+        </tr>
+      </tbody>
+    </table>
+  </ac:rich-text-body>
+</ac:structured-macro>
+
+<h2>Science Categories Supported</h2>
+
+<p>
+  The SKA's broad frequency coverage and multiple observing modes support research across all major radio astronomy disciplines:
+</p>
+
+<ul>
+  <li><strong>Cosmology &amp; Large-Scale Structure:</strong> HI surveys, dark energy, galaxy evolution</li>
+  <li><strong>Compact Objects:</strong> Pulsars, magnetars, black hole accretion</li>
+  <li><strong>Active Galaxies &amp; Jets:</strong> AGN, VLBI studies of jets and cores</li>
+  <li><strong>Stars &amp; Star Formation:</strong> Masers, OH emission, molecular lines</li>
+  <li><strong>Transient &amp; Time-Domain:</strong> Supernovae, GRBs, FRBs</li>
+  <li><strong>Solar &amp; Ionospheric Physics:</strong> Solar bursts, ionospheric disturbances</li>
+  <li><strong>Fundamental Physics:</strong> Pulsar timing arrays, tests of gravity</li>
+</ul>
+
+<ac:structured-macro ac:name="tip">
+  <ac:parameter ac:name="title">Planning Your Observations</ac:parameter>
+  <ac:rich-text-body>
+    <p>
+      The SKA's capabilities are extensive. When planning your proposal, consider which frequency range, observing mode, and sensitivity requirements best match your science goals. See the <strong>Proposing</strong> section for guidance on selecting the right telescope and mode for your project.
+    </p>
+  </ac:rich-text-body>
+</ac:structured-macro>

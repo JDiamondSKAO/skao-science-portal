@@ -1,0 +1,243 @@
+<ac:structured-macro ac:name="excerpt">
+  <ac:parameter ac:name="atlassian-macro-output-type">BLOCK</ac:parameter>
+  <ac:rich-text-body>
+    <p>Frequently asked questions about the SKA Science Operations Portal, data access, proposals, tools, and community resources.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+<h2>Getting Started</h2>
+<ac:structured-macro ac:name="expand">
+  <ac:parameter ac:name="title">How do I create an account on the Science Operations Portal?</ac:parameter>
+  <ac:rich-text-body>
+    <p>To create an account, visit the Portal registration page and provide your name, email, institution, and research interests. You will receive a confirmation email with a secure activation link. Once activated, your account provides access to proposal submission tools, data discovery, and community resources.</p>
+    <p>Account creation is free and open to researchers at all levels (undergraduate, graduate, postdoctoral, faculty) from institutions worldwide.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+<ac:structured-macro ac:name="expand">
+  <ac:parameter ac:name="title">Do I need an account to access SKA data?</ac:parameter>
+  <ac:rich-text-body>
+    <p>No. Public SKA data (released to the community) can be discovered and downloaded without an account via the SKA Archive portal. However, creating an account allows you to:</p>
+    <ul>
+      <li>Save searches and create custom data discovery workflows</li>
+      <li>Manage proprietary data access during embargo periods</li>
+      <li>Submit proposals and track their status</li>
+      <li>Upload and share Advanced Data Products</li>
+    </ul>
+    <p>An account is required to submit proposals.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+<ac:structured-macro ac:name="expand">
+  <ac:parameter ac:name="title">What are the first steps after registering?</ac:parameter>
+  <ac:rich-text-body>
+    <p>After registering and activating your account, we recommend:</p>
+    <ol>
+      <li>Complete your user profile with your research interests and institutional affiliation</li>
+      <li>Review the <ac:link><ac:plain-text-link-body>Introduction to Science Verification</ac:plain-text-link-body></ac:link> to understand SKA's readiness status</li>
+      <li>Explore the <ac:link><ac:plain-text-link-body>Introduction to Observatory Data Products and Advanced Data Products</ac:plain-text-link-body></ac:link> to learn about available data types</li>
+      <li>Visit the Archive portal and perform a test search in your science area</li>
+      <li>Consult the getting started tutorials for proposal submission or data analysis</li>
+    </ol>
+  </ac:rich-text-body>
+</ac:structured-macro>
+<h2>Proposals and Observing Time</h2>
+<ac:structured-macro ac:name="expand">
+  <ac:parameter ac:name="title">How do I submit a proposal?</ac:parameter>
+  <ac:rich-text-body>
+    <p>Log in to the Science Operations Portal with your account and navigate to the Proposal Submission page. The portal provides an interactive proposal editor with:</p>
+    <ul>
+      <li>Guided templates for different science categories</li>
+      <li>Real-time validation of technical specifications</li>
+      <li>Tools for estimating observation time and sensitivity using the SKA Exposure Calculator</li>
+      <li>Ability to add co-investigators and manage author roles</li>
+    </ul>
+    <p>Proposals must be submitted before the published deadline (typically ~3 months before observations). Submission information appears in the Portal's "Calls for Proposals" section.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+<ac:structured-macro ac:name="expand">
+  <ac:parameter ac:name="title">What is the proposal review process?</ac:parameter>
+  <ac:rich-text-body>
+    <p>SKA proposals undergo rigorous scientific review:</p>
+    <ol>
+      <li><strong>Initial Triage:</strong> Proposals are checked for completeness and technical feasibility</li>
+      <li><strong>Panel Review:</strong> Assigned to scientific panels matching the proposal's science category</li>
+      <li><strong>External Review:</strong> Independent reviewers provide detailed scientific assessment</li>
+      <li><strong>Ranking:</strong> Proposals are ranked by panel based on scientific merit and technical feasibility</li>
+      <li><strong>Time Allocation:</strong> Available observing time is allocated based on rankings, subject to scheduling constraints</li>
+    </ol>
+    <p>The review process typically takes 3–4 months. You will receive notification of the outcome and feedback from reviewers.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+<ac:structured-macro ac:name="expand">
+  <ac:parameter ac:name="title">When are observation proposals due?</ac:parameter>
+  <ac:rich-text-body>
+    <p>Proposal deadlines are announced approximately 6 months in advance and typically occur 2–3 times per year. The exact schedule and deadlines are posted on the Portal's "Calls for Proposals" page and in the Portal newsletter.</p>
+    <p>To stay informed, subscribe to Portal announcements or check the news section regularly.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+<ac:structured-macro ac:name="expand">
+  <ac:parameter ac:name="title">Can I submit a joint proposal with colleagues at other institutions?</ac:parameter>
+  <ac:rich-text-body>
+    <p>Yes. The proposal editor allows you to add co-investigators and collaborators from any institution. Designate one investigator as the Principal Investigator (PI) — this person is responsible for submitting the proposal and will be the primary contact for communication about the proposal's outcome.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+<h2>Data Access and Archive</h2>
+<ac:structured-macro ac:name="expand">
+  <ac:parameter ac:name="title">Where do I find SKA data?</ac:parameter>
+  <ac:rich-text-body>
+    <p>All publicly released SKA data are discoverable and accessible via the <strong>SKA Science Archive</strong>, integrated within the Science Operations Portal. Use the Archive's search interface to browse by:</p>
+    <ul>
+      <li>Sky coordinates (RA/Dec) or object names</li>
+      <li>Frequency band and bandwidth</li>
+      <li>Observation date or date range</li>
+      <li>Data product type (images, spectra, visibilities, timing data)</li>
+      <li>Observer name or project identifier</li>
+      <li>Quality metrics and processing flags</li>
+    </ul>
+  </ac:rich-text-body>
+</ac:structured-macro>
+<ac:structured-macro ac:name="expand">
+  <ac:parameter ac:name="title">What is a proprietary period?</ac:parameter>
+  <ac:rich-text-body>
+    <p>Data from observations have a proprietary period (typically 12 months) during which only the proposal team can access the data. This ensures the proposal team has time to conduct their primary science without competition.</p>
+    <p>After the proprietary period expires, data are released to the public and become discoverable in the Archive. You can view the proprietary period end date for any observation in the Archive metadata.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+<ac:structured-macro ac:name="expand">
+  <ac:parameter ac:name="title">How do I download SKA data?</ac:parameter>
+  <ac:rich-text-body>
+    <p>From the Archive, select the dataset(s) you wish to retrieve and click "Download." The Archive offers several access modes:</p>
+    <ul>
+      <li><strong>Direct download:</strong> Download full files to your local machine via HTTPS or rsync</li>
+      <li><strong>Streaming:</strong> Access subsets of large files without downloading everything (e.g., specific frequency ranges or time windows)</li>
+      <li><strong>Cloud compute:</strong> Analyse data in situ using SKA computational services without local download</li>
+    </ul>
+    <p>For very large datasets, cloud-based analysis is often more efficient than downloading terabytes locally.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+<ac:structured-macro ac:name="expand">
+  <ac:parameter ac:name="title">Can I access data during the proprietary period?</ac:parameter>
+  <ac:rich-text-body>
+    <p>Only the proposal team (PI and registered co-investigators) can access data during the proprietary period. Access is authenticated via your Portal account.</p>
+    <p>If you are not on the proposal team and need access to proprietary data, contact the PI to request data access or collaborative opportunities.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+<ac:structured-macro ac:name="expand">
+  <ac:parameter ac:name="title">What is SRCnet?</ac:parameter>
+  <ac:rich-text-body>
+    <p><strong>SRCnet</strong> (SKA Regional Computing Network) is a distributed computing infrastructure providing researchers with cloud-based access to SKA data and computational resources for large-scale analysis.</p>
+    <p>Rather than downloading multi-terabyte datasets, you can:</p>
+    <ul>
+      <li>Run analysis jobs directly on archive-hosted data</li>
+      <li>Access pre-installed analysis software and libraries</li>
+      <li>Scale computations across multiple nodes for faster processing</li>
+      <li>Store intermediate results in the cloud without local infrastructure</li>
+    </ul>
+    <p>SRCnet is free for academic researchers. Details and getting started guides are available in the Portal.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+<h2>Tools and Resources</h2>
+<ac:structured-macro ac:name="expand">
+  <ac:parameter ac:name="title">What is the SKA Exposure Calculator?</ac:parameter>
+  <ac:rich-text-body>
+    <p>The <strong>SKA Exposure Calculator</strong> (also called the Sensitivity Calculator) is an interactive tool that estimates:</p>
+    <ul>
+      <li>Observation time required to reach a target sensitivity</li>
+      <li>Expected sensitivity (noise level) for a given integration time</li>
+      <li>Array configuration effects on image quality and resolution</li>
+    </ul>
+    <p>The calculator is essential for proposal preparation, helping you justify requested observing time and validate that your science goals are achievable. It is accessible from the Portal's Tools section.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+<ac:structured-macro ac:name="expand">
+  <ac:parameter ac:name="title">What is the Proposal Handling Tool (PHT)?</ac:parameter>
+  <ac:rich-text-body>
+    <p>The <strong>Proposal Handling Tool (PHT)</strong> is the integrated proposal submission and management system within the Science Operations Portal. It provides:</p>
+    <ul>
+      <li>Step-by-step proposal editor with science-specific templates</li>
+      <li>Integration with the Exposure Calculator for scheduling and sensitivity estimates</li>
+      <li>Real-time validation of technical parameters</li>
+      <li>Submission tracking and outcome notifications</li>
+      <li>History and archive of past proposals</li>
+    </ul>
+  </ac:rich-text-body>
+</ac:structured-macro>
+<ac:structured-macro ac:name="expand">
+  <ac:parameter ac:name="title">Are there planning tools for observations?</ac:parameter>
+  <ac:rich-text-body>
+    <p>Yes. The Portal provides observation planning tools for proposal teams to:</p>
+    <ul>
+      <li>Visualise target positions and observability windows</li>
+      <li>Check for Radio Frequency Interference (RFI) in observing bands</li>
+      <li>Calculate expected resolution and sensitivity for specific array configurations</li>
+      <li>Schedule observations accounting for maintenance windows and array reconfiguration</li>
+    </ul>
+    <p>These tools are available to logged-in users and are updated regularly as the telescope commissioning progresses.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+<h2>General Questions</h2>
+<ac:structured-macro ac:name="expand">
+  <ac:parameter ac:name="title">Who can use the SKA?</ac:parameter>
+  <ac:rich-text-body>
+    <p>The SKA is an international observatory open to researchers from all countries and institutional types. There are no citizenship, visa, or institutional restrictions. PhD students, postdoctoral researchers, faculty, and independent researchers are all eligible to submit proposals.</p>
+    <p>The only requirement is to register for a Portal account and submit a proposal that passes scientific review.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+<ac:structured-macro ac:name="expand">
+  <ac:parameter ac:name="title">How should I cite SKA data or results in publications?</ac:parameter>
+  <ac:rich-text-body>
+    <p>When publishing results based on SKA data, please:</p>
+    <ol>
+      <li><strong>Cite the observatory:</strong> Use the standard SKA observatory citation provided in the Archive metadata for each dataset</li>
+      <li><strong>Include archive reference:</strong> Cite the archive DOI or unique identifier for the data used</li>
+      <li><strong>Acknowledge funding:</strong> Acknowledge support from the SKA Observatory and any regional computing facilities used (e.g., SRCnet)</li>
+      <li><strong>Data availability statement:</strong> Include a statement describing how readers can access the data, e.g., "Data are available from the SKA Science Archive at [URL] under accession [ID]."</li>
+    </ol>
+    <p>Templates for citations and acknowledgments are provided in the Portal's Publication Resources section.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+<ac:structured-macro ac:name="expand">
+  <ac:parameter ac:name="title">Where can I find community resources and tutorials?</ac:parameter>
+  <ac:rich-text-body>
+    <p>The Science Operations Portal hosts an extensive Resource Center including:</p>
+    <ul>
+      <li><strong>Tutorials and getting started guides:</strong> Walks through proposal submission, data discovery, and analysis workflows</li>
+      <li><strong>Jupyter notebooks:</strong> Example analyses for common science cases</li>
+      <li><strong>Software and containers:</strong> Pre-built analysis environments (Docker, Singularity) with standard radio astronomy tools</li>
+      <li><strong>Data reduction pipelines:</strong> Documented workflows for processing and analysing SKA data</li>
+      <li><strong>Community wiki:</strong> Curated knowledge base maintained by the SKA user community</li>
+      <li><strong>Helpdesk and FAQ:</strong> Contact support and search for answers to common questions</li>
+    </ul>
+    <p>All resources are freely available and regularly updated.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+<ac:structured-macro ac:name="expand">
+  <ac:parameter ac:name="title">How can I get help if I have questions?</ac:parameter>
+  <ac:rich-text-body>
+    <p>Help and support are available through multiple channels:</p>
+    <ul>
+      <li><strong>Portal help desk:</strong> Submit support tickets via the Portal's Help section. Typical response time is 1–2 business days</li>
+      <li><strong>Community forum:</strong> Ask questions and share knowledge with other SKA users (monitored by Portal staff)</li>
+      <li><strong>Email support:</strong> For urgent issues, email the SKA Observatory support team (address in Portal footer)</li>
+      <li><strong>Documentation:</strong> Comprehensive documentation and FAQs covering most common questions</li>
+    </ul>
+  </ac:rich-text-body>
+</ac:structured-macro>
+<ac:structured-macro ac:name="expand">
+  <ac:parameter ac:name="title">Is there a community newsletter or news feed?</ac:parameter>
+  <ac:rich-text-body>
+    <p>Yes. The Science Operations Portal publishes a regular newsletter featuring:</p>
+    <ul>
+      <li>Announcement of proposal deadlines and observation calls</li>
+      <li>Updates on new data releases from Science Verification</li>
+      <li>New features and improvements to Portal tools</li>
+      <li>Science highlights and recent discoveries</li>
+      <li>Community events and training opportunities</li>
+    </ul>
+    <p>Subscribe to the newsletter from your Portal account settings. You can also follow @SKA_Observatory on social media for real-time updates.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+<ac:structured-macro ac:name="note">
+  <ac:parameter ac:name="title">More Questions?</ac:parameter>
+  <ac:rich-text-body>
+    <p>If your question is not answered here, visit the Help section of the Science Operations Portal or contact the SKA Observatory support team. We are committed to supporting your science with the SKA.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>

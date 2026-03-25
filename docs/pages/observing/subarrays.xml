@@ -1,0 +1,197 @@
+<ac:structured-macro ac:name="excerpt">
+  <ac:parameter ac:name="atlassian-macro-output-type">BLOCK</ac:parameter>
+  <ac:rich-text-body>
+    <p>
+      <strong>SKA Subarray Operations</strong>
+    </p>
+    <p>
+      Subarrays are independent partitions of the SKA array that can be configured and scheduled separately. By dividing the full array into subarrays, the SKA can support multiple concurrent observations with different frequencies, sensitivities, and science requirements.
+    </p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+
+<h2>What is a Subarray?</h2>
+
+<p>
+  A subarray is a logically independent subset of the SKA's dishes (SKA-Mid) or stations (SKA-Low) that operates as a self-contained imaging instrument. Key characteristics:
+</p>
+
+<ul>
+  <li><strong>Independent configuration:</strong> Each subarray can be tuned to a different frequency band, with its own receiver setup and backend configuration</li>
+  <li><strong>Concurrent observations:</strong> Multiple subarrays can observe simultaneously without interfering with one another</li>
+  <li><strong>Flexible allocation:</strong> Subarrays can be created and dissolved on timescales from minutes to hours, allowing dynamic adjustment to observing schedules</li>
+  <li><strong>Shared infrastructure:</strong> All subarrays share common facilities (power, fiber optics, correlator/beamformer resources) but operate independently in terms of pointing and data processing</li>
+</ul>
+
+<h2>Why Use Subarrays?</h2>
+
+<p>
+  Subarray operations enable:
+</p>
+
+<ul>
+  <li><strong>Simultaneous multi-frequency observations:</strong> One subarray observing at 100 MHz while another observes at 1 GHz</li>
+  <li><strong>Flexible scheduling:</strong> Different science programmes can observe different targets without waiting for array reconfiguration</li>
+  <li><strong>Rapid target-of-opportunity response:</strong> A small, rapidly configurable subarray can respond to transient alerts while the main array continues scheduled observations</li>
+  <li><strong>Array testing and maintenance:</strong> Commissioning and maintenance can be conducted on portions of the array while science continues elsewhere</li>
+  <li><strong>Optimized sensitivity:</strong> Large subarrays achieve maximum sensitivity for faint-source surveys; smaller subarrays are better for bright, extended sources</li>
+</ul>
+
+<h2>SKA-Mid Subarray Configurations</h2>
+
+<p>
+  <strong>SKA-Mid (197 dishes total)</strong> can be partitioned into subarrays with the following typical configurations:
+</p>
+
+<table>
+  <colgroup><col /></colgroup>
+  <tbody>
+    <tr>
+      <th>Configuration</th>
+      <th>Number of Dishes</th>
+      <th>Typical Use Case</th>
+      <th>Frequency Range</th>
+    </tr>
+    <tr>
+      <td>Full Array</td>
+      <td>197</td>
+      <td>Maximum sensitivity surveys and deep fields</td>
+      <td>0.35–15.4 GHz</td>
+    </tr>
+    <tr>
+      <td>Large Subarray</td>
+      <td>~100</td>
+      <td>Wide-field surveys, spectral-line observations</td>
+      <td>0.35–15.4 GHz</td>
+    </tr>
+    <tr>
+      <td>Medium Subarray</td>
+      <td>~50</td>
+      <td>Deep-field imaging, high-frequency observations</td>
+      <td>0.35–15.4 GHz</td>
+    </tr>
+    <tr>
+      <td>Small Subarray (ToO)</td>
+      <td>~20</td>
+      <td>Target-of-opportunity rapid response</td>
+      <td>0.35–15.4 GHz</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>SKA-Low Subarray Configurations</h2>
+
+<p>
+  <strong>SKA-Low (512 stations total)</strong> can be partitioned as follows:
+</p>
+
+<table>
+  <colgroup><col /></colgroup>
+  <tbody>
+    <tr>
+      <th>Configuration</th>
+      <th>Number of Stations</th>
+      <th>Typical Use Case</th>
+      <th>Frequency Range</th>
+    </tr>
+    <tr>
+      <td>Full Array</td>
+      <td>512</td>
+      <td>Maximum sensitivity HI surveys and spectral-line</td>
+      <td>50–350 MHz</td>
+    </tr>
+    <tr>
+      <td>Core Array</td>
+      <td>~256</td>
+      <td>High-resolution continuum imaging, pulsar observations</td>
+      <td>50–350 MHz</td>
+    </tr>
+    <tr>
+      <td>Extended Array</td>
+      <td>~128</td>
+      <td>Low-frequency survey (short integration times)</td>
+      <td>50–350 MHz</td>
+    </tr>
+    <tr>
+      <td>Compact Array</td>
+      <td>~64</td>
+      <td>Solar and ionospheric monitoring</td>
+      <td>50–350 MHz</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Subarray Constraints</h2>
+
+<p>
+  Practical constraints govern subarray creation and operation:
+</p>
+
+<ul>
+  <li><strong>Minimum size:</strong> Each subarray must contain a minimum number of dishes/stations (typically ~10–20 elements) to achieve acceptable imaging performance and redundancy</li>
+  <li><strong>Frequency restrictions:</strong> Subarrays tuned to the same frequency band use the same receiver, so only one observation per frequency band per correlator/beamformer back-end can occur simultaneously. Different frequency bands can observe in parallel.</li>
+  <li><strong>Correlator capacity:</strong> The central correlator (or beamformer) has finite processing capability. The total computational load across all subarrays cannot exceed available resources.</li>
+  <li><strong>Data transport:</strong> High data rates from large subarrays or wide-bandwidth observations consume fiber-optic and compute resources that limit the total number of concurrent subarrays</li>
+  <li><strong>Reconfiguration time:</strong> Moving dishes/stations between subarrays requires physical tuning (antenna motions, cable changes). Reconfiguration typically takes 5–30 minutes depending on scope of changes.</li>
+</ul>
+
+<h2>Scheduling Subarrays</h2>
+
+<p>
+  Subarray scheduling considers:
+</p>
+
+<ul>
+  <li><strong>Observing blocks:</strong> Each science programme is scheduled as one or more observing blocks (OBs). An OB specifies subarray composition, target, duration, and technical parameters.</li>
+  <li><strong>Array state:</strong> The scheduler tracks which dishes/stations are currently allocated to which subarray and what reconfiguration is needed between OBs.</li>
+  <li><strong>Contention:</strong> When multiple programmes request the same subset of dishes, scheduling algorithms balance fairness, scientific priority, and operational efficiency.</li>
+  <li><strong>Maintenance windows:</strong> Subarrays can be dynamically reconfigured to isolate equipment under maintenance, allowing continued observations on unaffected portions of the array.</li>
+</ul>
+
+<h2>Dynamic Reconfiguration</h2>
+
+<p>
+  The SKA's architecture supports dynamic reconfiguration, allowing subarrays to be adjusted during an observation block or between blocks:
+</p>
+
+<ul>
+  <li><strong>Frequency changes:</strong> If two subarrays are observing different (non-overlapping) frequency bands, they can coexist indefinitely.</li>
+  <li><strong>Dish reallocation:</strong> Dishes can be moved between subarrays on timescales of minutes (for SKA-Mid, typical ~10 min reconfiguration). This enables rapid response to high-priority targets.</li>
+  <li><strong>Load balancing:</strong> If one subarray's correlator load drops (e.g., observation ends early), freed capacity can be allocated to another subarray.</li>
+  <li><strong>Beam hopping:</strong> Within a single subarray, the phased-array can rapidly switch between multiple pointing directions, enabling efficient surveys.</li>
+</ul>
+
+<ac:structured-macro ac:name="warning">
+  <ac:parameter ac:name="title">Subarray Availability</ac:parameter>
+  <ac:rich-text-body>
+    <p>
+      Requested subarray configurations are not guaranteed if they conflict with ongoing observations or maintenance. Proposers should indicate flexibility in subarray size and composition in their proposals. The SKA Time Allocation Committee will advise on the achievable subarray allocation for approved programmes.
+    </p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+
+<h2>Subarray Selection in Your Proposal</h2>
+
+<p>
+  When submitting a proposal, specify:
+</p>
+
+<ul>
+  <li><strong>Minimum subarray size:</strong> The smallest subarray with which your science goals can be achieved</li>
+  <li><strong>Preferred subarray configuration:</strong> Your ideal allocation if available</li>
+  <li><strong>Frequency band:</strong> The receiver band(s) required</li>
+  <li><strong>Integration time and sensitivity:</strong> How observing time and subarray size trade off in your science</li>
+</ul>
+
+<p>
+  The SKA User Support team can advise on realistic subarray allocations for your programme during proposal preparation.
+</p>
+
+<ac:structured-macro ac:name="tip">
+  <ac:parameter ac:name="title">Subarray Flexibility in Proposals</ac:parameter>
+  <ac:rich-text-body>
+    <p>
+      Proposals that allow flexibility in subarray composition are more likely to be accommodated in the schedule and may receive priority in time allocation. Consider whether your science is robust to modest changes in sensitivity or resolution.
+    </p>
+  </ac:rich-text-body>
+</ac:structured-macro>

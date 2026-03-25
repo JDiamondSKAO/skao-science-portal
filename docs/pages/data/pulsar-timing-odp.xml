@@ -1,0 +1,148 @@
+<ac:structured-macro ac:name="excerpt">
+  <ac:parameter ac:name="atlassian-macro-output-type">BLOCK</ac:parameter>
+  <ac:rich-text-body>
+    <p>Pulsar Timing Observatory Data Products provide high-precision arrival time measurements enabling gravitational wave detection and tests of fundamental physics with neutron stars.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+<h2>What is Pulsar Timing Data?</h2>
+<p>Pulsar Timing Observatory Data Products (PT-ODP) consist of high-precision arrival time measurements, timing residuals, and pulse profiles derived from observations of pulsars. These products enable breakthrough science in gravitational waves, tests of general relativity, and neutron star astrophysics.</p>
+<h2>Data Products and Formats</h2>
+<h3>Core Timing Products</h3>
+<p>PT-ODPs include:</p>
+<ul>
+  <li><strong>Times of Arrival (TOAs):</strong> Measured pulse arrival times at infinite frequency, referenced to a standard clock (typically UTC). TOAs are the fundamental timing observable with uncertainties of microseconds to tens of microseconds depending on pulsar brightness</li>
+  <li><strong>Timing Residuals:</strong> Differences between observed and predicted pulse arrival times after subtracting a timing model, revealing small departures from the regular pulsar spin-down</li>
+  <li><strong>Pulse Profiles:</strong> Average intensity as a function of pulse phase, enabling pulse morphology studies and assessing data quality</li>
+  <li><strong>Dispersion Measure (DM):</strong> Frequency-dependent delay due to free electrons, derived from multi-frequency observations</li>
+  <li><strong>Dispersion Measure Variations:</strong> Changes in DM over time, indicating changes in the ionised interstellar medium</li>
+</ul>
+<h3>Ancillary Data</h3>
+<p>Timing products include comprehensive metadata:</p>
+<ul>
+  <li>Observation parameters (date, time, frequency, integration time, antenna used)</li>
+  <li>Timing noise and arrival time uncertainties</li>
+  <li>RFI flagging and data quality flags</li>
+  <li>Software versions and processing parameters</li>
+</ul>
+<h2>The SKA Pulsar Timing Pipeline</h2>
+<h3>Processing Steps</h3>
+<p>The SKA Science Data Processor includes a specialised pulsar timing pipeline:</p>
+<ol>
+  <li><strong>Beamforming:</strong> SKA data (voltages or visibilities) are beamformed to create single-pixel or multiple-pixel streams at high time resolution</li>
+  <li><strong>Dedispersion:</strong> Dispersive delays are removed using the known DM (or measuring DM if unknown), aligning signals from all frequency channels</li>
+  <li><strong>Folding:</strong> Time-domain data are folded at the pulsar's rotation period, accumulating energy across many pulses</li>
+  <li><strong>Template Matching:</strong> The folded profile is cross-correlated with a high-quality standard template to measure TOA with maximum precision</li>
+  <li><strong>Timing Residual Calculation:</strong> TOAs are compared to a timing model to extract timing residuals for pulsar-specific analysis</li>
+</ol>
+<h3>Calibration</h3>
+<p>Pulsar timing measurements require careful calibration:</p>
+<ul>
+  <li><strong>Flux density scale:</strong> Normalised using standard calibrators (e.g., 3C 286, Cassiopeia A) for consistency with other timing programmes</li>
+  <li><strong>Dispersion measure correction:</strong> Precision DM measurements from broadband observations</li>
+  <li><strong>Parallax and proper motion:</strong> Measured from observations at different solar orbital positions and epochs</li>
+  <li><strong>Clock synchronisation:</strong> Tied to coordinated universal time (UTC) and leap second conventions</li>
+  <li><strong>Polarisation calibration:</strong> For Faraday rotation and polarisation-dependent effects</li>
+</ul>
+<h2>Science Applications</h2>
+<h3>Gravitational Wave Detection via Pulsar Timing Arrays</h3>
+<p>The primary science goal for SKA pulsar timing is the detection of low-frequency gravitational waves through pulsar timing arrays (PTAs):</p>
+<ul>
+  <li><strong>What are PTAs?:</strong> Arrays of ~100 pulsars with regular timing observations enable detection of gravitational wave backgrounds from supermassive black hole mergers and other sources</li>
+  <li><strong>Detection signature:</strong> Gravitational waves produce a characteristic correlated timing signal across the pulsar array</li>
+  <li><strong>SKA advantage:</strong> SKA sensitivity enables monitoring of many more pulsars with higher precision, significantly increasing PTA detection power</li>
+</ul>
+<h3>Pulsar Spin-Down and Evolution</h3>
+<p>High-precision timing tracks changes in pulsar rotation:</p>
+<ul>
+  <li>Measurement of spin-down rate and its variations</li>
+  <li>Detection of glitches (sudden spin-up events) and post-glitch relaxation</li>
+  <li>Studies of pulsar braking and magnetic field evolution</li>
+</ul>
+<h3>Tests of General Relativity</h3>
+<p>Binary pulsars and millisecond pulsars enable precision tests of gravitational theory:</p>
+<ul>
+  <li>Orbital decay measurements in binary systems</li>
+  <li>Relativistic precession and perihelion advance</li>
+  <li>Constraints on alternative theories of gravity</li>
+</ul>
+<h3>Neutron Star Structure and Composition</h3>
+<p>Timing measurements constrain the neutron star equation of state:</p>
+<ul>
+  <li>Mass measurements from orbital dynamics in binary systems</li>
+  <li>Internal structure and crustal properties through glitch analysis</li>
+  <li>Constraints on maximum neutron star mass and composition</li>
+</ul>
+<h3>Interstellar Medium Studies</h3>
+<p>Dispersion measure variations and scattering measurements probe the ionised ISM:</p>
+<ul>
+  <li>Electron density structures and turbulence</li>
+  <li>Magnetic field measurements via Faraday rotation</li>
+  <li>Distances to pulsars and interstellar scattering properties</li>
+</ul>
+<h2>SKA Advantages for Pulsar Timing</h2>
+<h3>Sensitivity</h3>
+<p>The SKA's unprecedented sensitivity enables:</p>
+<ul>
+  <li>Timing of very faint pulsars previously inaccessible to other instruments</li>
+  <li>Microsecond-level TOA uncertainties even for distant pulsars</li>
+  <li>Detection of small timing variations and subtle relativistic effects</li>
+</ul>
+<h3>Coverage and Frequency Range</h3>
+<ul>
+  <li><strong>Wide frequency range:</strong> SKA-Low covers 50–350 MHz, SKA-Mid covers ~0.35–15 GHz, enabling optimised DM correction and scintillation studies</li>
+  <li><strong>Simultaneous multi-frequency observations:</strong> Longer baselines and faster DM variations detectable than with single-frequency observations</li>
+</ul>
+<h3>Array Scale and Multiplexing</h3>
+<p>SKA's large antenna arrays enable simultaneous observations of multiple pulsars or rapid re-targeting, maximising PTA sample size and observation frequency.</p>
+<h2>Data Volume and Storage</h2>
+<h3>Typical Data Rates</h3>
+<p>Pulsar timing observations produce much smaller data volumes than continuum surveys:</p>
+<ul>
+  <li><strong>Raw beamformed data:</strong> Typically 1–10 GB per observation (depending on band and integration time)</li>
+  <li><strong>Folded products and TOAs:</strong> A few MB to tens of MB per observation</li>
+</ul>
+<h3>Long-term Archival</h3>
+<p>PT-ODPs are archived indefinitely with:</p>
+<ul>
+  <li>High-precision metadata for long-term consistency</li>
+  <li>Version control for timing models and calibration</li>
+  <li>Cross-referencing with other observatories (e.g., other PTA programmes)</li>
+</ul>
+<h2>Access and Analysis</h2>
+<h3>Downloading Pulsar Timing Data</h3>
+<p>Users can retrieve PT-ODPs from the SKA Archive filtered by:</p>
+<ul>
+  <li>Pulsar name or source catalogue identifier</li>
+  <li>Observation date or date range</li>
+  <li>Frequency band</li>
+  <li>TOA uncertainty threshold</li>
+  <li>Data quality metrics</li>
+</ul>
+<h3>Analysis Tools</h3>
+<p>Standard tools for pulsar timing analysis include:</p>
+<ul>
+  <li><strong>TEMPO2:</strong> Pulsar timing analysis and statistical tools</li>
+  <li><strong>PSRCHIVE:</strong> Pulsar data analysis suite for profiles and timing</li>
+  <li><strong>NANOGrav Pulsar Timing Suite:</strong> PTA-specific analysis tools</li>
+  <li><strong>Python timing libraries:</strong> Enterprise, Libstempo, and others for modern analysis workflows</li>
+</ul>
+<p>The SKA provides containerised versions of these tools and example Jupyter notebooks for new users.</p>
+<h3>Pulsar Timing Community Standards</h3>
+<p>SKA timing data conform to international standards including:</p>
+<ul>
+  <li>TOA format conventions adopted by the International Pulsar Timing Array</li>
+  <li>Compatibility with IPTA data archives and analysis pipelines</li>
+  <li>Coordination with other major timing programmes (NANOGrav, EPTA, PPTA)</li>
+</ul>
+<ac:structured-macro ac:name="tip">
+  <ac:parameter ac:name="title">Combining with Other PTAs</ac:parameter>
+  <ac:rich-text-body>
+    <p>SKA pulsar timing data can be combined with observations from other major PTA programmes (NANOGrav, EPTA, PPTA) via standard IPTA conventions, enabling global PTA analyses with enhanced sensitivity.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+<ac:structured-macro ac:name="note">
+  <ac:parameter ac:name="title">Related Products</ac:parameter>
+  <ac:rich-text-body>
+    <p>See also <ac:link><ac:plain-text-link-body>Detected Filterbank Observatory Data Product</ac:plain-text-link-body></ac:link> for pulsar search and discovery and <ac:link><ac:plain-text-link-body>Introduction to Observatory Data Products and Advanced Data Products</ac:plain-text-link-body></ac:link> for the full ODP suite.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>

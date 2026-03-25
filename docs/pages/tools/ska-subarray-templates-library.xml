@@ -1,0 +1,236 @@
+<ac:structured-macro ac:name="excerpt">
+  <ac:parameter ac:name="atlassian-macro-output-type">BLOCK</ac:parameter>
+  <ac:rich-text-body>
+    <p>
+      The <strong>SKA Subarray Templates Library</strong> is a collection of pre-configured subarray templates for common observation types. Templates encapsulate optimal array configurations, frequency bands, correlator settings, and data rates, allowing observers to quickly set up feasible observations without detailed array engineering knowledge.
+    </p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+<h2>What Are Subarrays?</h2>
+<p>A <strong>subarray</strong> is an independent partition of the SKA telescope that can observe simultaneously while other subarrays observe different targets or conduct different science. Subarrays provide:</p>
+<ul>
+  <li><strong>Parallel Observations:</strong> Multiple science teams use the array concurrently</li>
+  <li><strong>Flexible Resource Allocation:</strong> Distribute dishes/stations across different science goals</li>
+  <li><strong>Dedicated Pipelines:</strong> Each subarray has independent data processing chains</li>
+  <li><strong>Optimised Configurations:</strong> Tailor array geometry, frequency, and bandwidth to specific science</li>
+</ul>
+<p>Rather than designing subarrays from scratch each time, the Templates Library provides ready-made configurations tested and optimised by the Observatory.</p>
+<h2>The Templates Library</h2>
+<p>The Library contains templates organised by observation type and array stage. Each template includes:</p>
+<ul>
+  <li><strong>Template Name:</strong> Descriptive label (e.g., "SKA-Mid Continuum Survey – AA2")</li>
+  <li><strong>Science Use Case:</strong> Primary science enabled by the template</li>
+  <li><strong>Array Stage:</strong> Applicable Array Assembly stage (AA1, AA2, AA*, AA4)</li>
+  <li><strong>Dish/Station Count:</strong> Number of elements in the subarray</li>
+  <li><strong>Frequency Range:</strong> Supported frequency bands</li>
+  <li><strong>Correlator Configuration:</strong> Channel count, spectral resolution, polarisation</li>
+  <li><strong>Data Rate:</strong> Typical data rate in Gbps</li>
+  <li><strong>Expected Sensitivity:</strong> Approximate 1-sigma noise at standard integration time</li>
+</ul>
+<h3>Template Categories</h3>
+<table>
+  <colgroup>
+    <col />
+    <col />
+    <col />
+  </colgroup>
+  <tbody>
+    <tr>
+      <th>Category</th>
+      <th>Description</th>
+      <th>Example Templates</th>
+    </tr>
+    <tr>
+      <td><strong>Full Array</strong></td>
+      <td>All available dishes/stations for maximum sensitivity and resolution. Recommended for targeted deep surveys and transient searches.</td>
+      <td>SKA-Mid Full Array Survey, SKA-Low Full Array HI Survey</td>
+    </tr>
+    <tr>
+      <td><strong>Split Array</strong></td>
+      <td>Array partitioned into 2–4 independent subarrays for simultaneous multi-target observations. Each subarray is smaller but operates in parallel.</td>
+      <td>SKA-Mid Dual-Array Spectroscopy, SKA-Low Split-4 Transient Search</td>
+    </tr>
+    <tr>
+      <td><strong>Commensal Modes</strong></td>
+      <td>Dedicated subarray piggybacking on primary observations, sharing data streams. Enables science without dedicated observing time.</td>
+      <td>SKA-Mid Timing Array (commensal), SKA-Low Transient Monitor (commensal)</td>
+    </tr>
+    <tr>
+      <td><strong>Core Array</strong></td>
+      <td>Dense central cluster of antennas/dishes for high surface brightness sensitivity. Ideal for extended source studies.</td>
+      <td>SKA-Low Extended Source Survey (core), SKA-Mid Giant Radio Galaxy Mapping</td>
+    </tr>
+    <tr>
+      <td><strong>Extended Array</strong></td>
+      <td>Sparse outer baselines for high angular resolution. Suitable for compact sources and interferometric imaging.</td>
+      <td>SKA-Mid High-Resolution AGN Imaging, SKA-Low Radio Quasar Structure</td>
+    </tr>
+  </tbody>
+</table>
+<h2>Example Templates by Science Use Case</h2>
+<ac:structured-macro ac:name="expand">
+  <ac:parameter ac:name="title">Continuum Surveys (SKA-Mid)</ac:parameter>
+  <ac:rich-text-body>
+    <p><strong>SKA-Mid Continuum Survey – AA*</strong></p>
+    <ul>
+      <li>Dishes: 133 (AA* stage)</li>
+      <li>Frequency: 1–3 GHz (L and S bands)</li>
+      <li>Bandwidth: 2.7 GHz (full receiver passband)</li>
+      <li>Correlator: 32k channels, 1 kHz resolution</li>
+      <li>Data Rate: 180 Gbps</li>
+      <li>Sensitivity: ~3 µJy per 10-hour integration</li>
+      <li>Best For: Large-area continuum surveys, extragalactic source detection, AGN searches</li>
+    </ul>
+  </ac:rich-text-body>
+</ac:structured-macro>
+<ac:structured-macro ac:name="expand">
+  <ac:parameter ac:name="title">HI Line Surveys (SKA-Low)</ac:parameter>
+  <ac:rich-text-body>
+    <p><strong>SKA-Low HI Survey – AA*</strong></p>
+    <ul>
+      <li>Antennas: ~130,000 (AA* stage)</li>
+      <li>Frequency: 1.0–1.7 GHz (HI band)</li>
+      <li>Bandwidth: 700 MHz</li>
+      <li>Correlator: 64k channels, 10 kHz resolution</li>
+      <li>Data Rate: 250 Gbps</li>
+      <li>Sensitivity: ~20 mJy per 1-hour integration (per 10 kHz channel)</li>
+      <li>Best For: HI cosmology, galaxy surveys, neutral hydrogen mapping</li>
+    </ul>
+  </ac:rich-text-body>
+</ac:structured-macro>
+<ac:structured-macro ac:name="expand">
+  <ac:parameter ac:name="title">Pulsar Timing (SKA-Mid, Commensal)</ac:parameter>
+  <ac:rich-text-body>
+    <p><strong>SKA-Mid Pulsar Timing Array (Commensal) – AA2</strong></p>
+    <ul>
+      <li>Dishes: 32 (dedicated subarray, commensal to primary science)</li>
+      <li>Frequency: 0.7–1.2 GHz (UHF band)</li>
+      <li>Bandwidth: 500 MHz</li>
+      <li>Correlator: 1k channels, 500 kHz resolution (coarse for low computational load)</li>
+      <li>Data Rate: 5 Gbps (low overhead for commensal operation)</li>
+      <li>Sensitivity: ~1 mJy per 10-minute integration</li>
+      <li>Best For: Pulsar timing, gravitational wave detection, pulsar studies</li>
+    </ul>
+  </ac:rich-text-body>
+</ac:structured-macro>
+<ac:structured-macro ac:name="expand">
+  <ac:parameter ac:name="title">Spectroscopic Observations (Split Array)</ac:parameter>
+  <ac:rich-text-body>
+    <p><strong>SKA-Mid Dual-Target Spectroscopy – AA4</strong></p>
+    <ul>
+      <li>Configuration: 197 dishes split into 2 independent subarrays</li>
+      <li>Subarray A: 100 dishes, Frequency: 6.5–10 GHz, 1 target</li>
+      <li>Subarray B: 97 dishes, Frequency: 3.5–5 GHz, simultaneous different target</li>
+      <li>Each Correlator: 16k channels, 1 MHz resolution</li>
+      <li>Data Rate: 150 Gbps per subarray</li>
+      <li>Sensitivity: ~5 µJy per subarray, per 10-hour integration</li>
+      <li>Best For: Molecular line studies, redshift surveys, simultaneous multi-object spectroscopy</li>
+    </ul>
+  </ac:rich-text-body>
+</ac:structured-macro>
+<ac:structured-macro ac:name="expand">
+  <ac:parameter ac:name="title">High-Resolution Imaging (Extended Array)</ac:parameter>
+  <ac:rich-text-body>
+    <p><strong>SKA-Mid Extended Array – AA4</strong></p>
+    <ul>
+      <li>Dishes: All 197 in full extended configuration</li>
+      <li>Array Extent: ~150 km baseline (maximum)</li>
+      <li>Frequency: 8–14 GHz (Ku and K bands)</li>
+      <li>Bandwidth: 4 GHz</li>
+      <li>Beam Size: ~0.1 arcsec (diffraction-limited)</li>
+      <li>Correlator: 32k channels, 1 kHz resolution</li>
+      <li>Data Rate: 200 Gbps</li>
+      <li>Sensitivity: ~2 µJy per 10-hour integration</li>
+      <li>Best For: Compact source structure, AGN jets, radio quasar imaging, VLBI-class resolution</li>
+    </ul>
+  </ac:rich-text-body>
+</ac:structured-macro>
+<h2>Array Assembly Stages &amp; Available Templates</h2>
+<p>Different templates are available at each Array Assembly stage as the observatory grows:</p>
+<table>
+  <colgroup>
+    <col />
+    <col />
+    <col />
+  </colgroup>
+  <tbody>
+    <tr>
+      <th>Array Stage</th>
+      <th>Approximate Timeline</th>
+      <th>Available Templates</th>
+    </tr>
+    <tr>
+      <td><strong>AA1</strong></td>
+      <td>2026–2027 (Early Science)</td>
+      <td>Core continuum surveys, deep pointed observations, pulsar timing (commensal), HI pilot studies</td>
+    </tr>
+    <tr>
+      <td><strong>AA2</strong></td>
+      <td>2027–2028</td>
+      <td>Full-array continuum, extended HI surveys, dual-subarray spectroscopy, survey-depth imaging</td>
+    </tr>
+    <tr>
+      <td><strong>AA*</strong></td>
+      <td>2028–2029 (SKA-Mid hardware refresh)</td>
+      <td>Optimised continuum (2.7 GHz BW), multi-subarray operations, extended surveys, commensal science expanded</td>
+    </tr>
+    <tr>
+      <td><strong>AA4</strong></td>
+      <td>2030+ (Full Array)</td>
+      <td>All templates; maximum sensitivity, resolution, and parallel observing capabilities</td>
+    </tr>
+  </tbody>
+</table>
+<h2>How to Use Templates in Observation Planning</h2>
+<h3>1. Browse Available Templates</h3>
+<p>Visit the Templates Library in the <a href="https://pht.skao.int/">SKA Proposal Handling Tool (PHT)</a> or this portal. Filter by:</p>
+<ul>
+  <li>Telescope (SKA-Mid or SKA-Low)</li>
+  <li>Science goal (continuum survey, spectroscopy, etc.)</li>
+  <li>Array Assembly stage (your preferred deployment phase)</li>
+</ul>
+<h3>2. Review Template Details</h3>
+<p>Each template page includes a detailed description, expected sensitivity, beam properties, and data rates. Use the <a href="https://sensitivity-calculator.skao.int/">SKA Sensitivity Calculator</a> to estimate sensitivity for your specific integration time.</p>
+<h3>3. Create Observation from Template</h3>
+<p>In PHT, select "Create Observation from Template" and choose your desired template. The template pre-populates:</p>
+<ul>
+  <li>Correlator configuration (channels, resolution, polarisation)</li>
+  <li>Frequency band and bandwidth</li>
+  <li>Data rate and storage estimates</li>
+  <li>Subarray assignments (if applicable)</li>
+</ul>
+<p>You then customise:</p>
+<ul>
+  <li>Target coordinates</li>
+  <li>Integration time (or desired sensitivity)</li>
+  <li>Observing date/window</li>
+</ul>
+<h3>4. Validate &amp; Submit</h3>
+<p>Use the <a href="/tools/ska-set-up-validator">SKA Set Up Validator</a> to check your observation configuration for feasibility. Once validated, submit your proposal.</p>
+<ac:structured-macro ac:name="tip">
+  <ac:parameter ac:name="title">Customising Templates</ac:parameter>
+  <ac:rich-text-body>
+    <p>Templates are starting points. You can modify correlator settings, bandwidth, frequency, or subarray composition within limits. The Set Up Validator will flag any modifications that violate array capabilities for your chosen Array Assembly stage.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+<h2>Template Documentation &amp; Resources</h2>
+<p>For each template, detailed technical documentation is available including:</p>
+<ul>
+  <li><strong>Sensitivity Tables:</strong> Predicted noise levels at various integration times and elevations</li>
+  <li><strong>Beam Characteristics:</strong> Beam size, shape, and sidelobe levels across the field</li>
+  <li><strong>Correlator Specifications:</strong> Exact channel count, tuning resolution, Stokes product configuration</li>
+  <li><strong>Data Products:</strong> Raw data format, metadata content, calibration data included</li>
+  <li><strong>Example Observations:</strong> Sample proposals using this template (with PI permission)</li>
+</ul>
+<ac:structured-macro ac:name="note">
+  <ac:parameter ac:name="title">Template Updates</ac:parameter>
+  <ac:rich-text-body>
+    <p>The Templates Library is updated regularly as hardware is commissioned, correlator capabilities expand, and new science use cases are identified. Consult the Observatory documentation for the latest available templates and array configurations.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+<ac:structured-macro ac:name="info">
+  <ac:parameter ac:name="title">Need Help?</ac:parameter>
+  <ac:rich-text-body>
+    <p>If you cannot find a suitable template for your science goals, contact the SKA Observatory observing support team via the PHT help system. The team can advise on template selection, custom modifications, or proposal feasibility.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>

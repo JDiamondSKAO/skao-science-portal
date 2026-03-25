@@ -1,0 +1,67 @@
+<ac:structured-macro ac:name="excerpt">
+  <ac:parameter ac:name="atlassian-macro-output-type">BLOCK</ac:parameter>
+  <ac:rich-text-body>
+    <p>Science verification is the programme to validate telescope performance before transitioning to full science operations.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+<h2>What is Science Verification?</h2>
+<p>Science Verification (SV) is a critical phase in the SKA Observatory's journey to full science operations. During this phase, we validate that the SKA telescopes — SKA-Low and SKA-Mid — are performing as designed and are ready to deliver world-class science.</p>
+<p>SV involves commissioning activities that demonstrate:</p>
+<ul>
+  <li>End-to-end system performance across all signal processing pipelines</li>
+  <li>Data quality and integrity from antenna to archived products</li>
+  <li>Calibration and imaging performance across the full frequency range</li>
+  <li>Readiness of Science Data Processor (SDP) pipelines</li>
+  <li>Archive infrastructure and data discovery capabilities</li>
+</ul>
+<h2>Science Verification and Array Assemblies</h2>
+<p>Science Verification maps directly to <strong>Array Assembly 2 (AA2)</strong> in the SKA construction and commissioning roadmap:</p>
+<ul>
+  <li><strong>Array Assembly 1 (AA1):</strong> Basic commissioning and system integration</li>
+  <li><strong>Array Assembly 2 (AA2):</strong> Science Verification — full telescope performance validation</li>
+  <li><strong>Transition to Operations:</strong> Handover to ongoing science operations</li>
+</ul>
+<p>AA2 represents a fully functional SKA telescope ready to support open community science.</p>
+<h2>Timeline</h2>
+<ac:structured-macro ac:name="info">
+  <ac:parameter ac:name="title">Expected Data Release Schedule</ac:parameter>
+  <ac:rich-text-body>
+    <ul>
+      <li><strong>SKA-Low Science Verification data:</strong> Expected 2027</li>
+      <li><strong>SKA-Mid Science Verification data:</strong> Expected 2029</li>
+    </ul>
+  </ac:rich-text-body>
+</ac:structured-macro>
+<p>SV datasets will be released progressively as they become available. Early releases may be targeted at specific science cases or frequency ranges as the telescopes come online.</p>
+<h2>What the Community Can Expect</h2>
+<h3>Science Verification Data Releases</h3>
+<p>SV data will be made available to the global astronomy community through the SKA Archive. These releases will include:</p>
+<ul>
+  <li>Fully calibrated Observatory Data Products (ODPs) — images, spectral-line cubes, visibility data</li>
+  <li>Associated metadata and quality metrics</li>
+  <li>Pipeline processing information for reproducibility</li>
+</ul>
+<h3>Early Access and Community Testing</h3>
+<p>The SKA will offer early access opportunities for community researchers to:</p>
+<ul>
+  <li>Test analysis pipelines on real SKA data</li>
+  <li>Validate science use cases with actual telescope performance</li>
+  <li>Provide feedback to help improve data processing and archive services</li>
+</ul>
+<h3>Pipeline Development and Testing</h3>
+<p>SV data enables the broader community to develop and test science analysis pipelines, validation tools, and value-added data product algorithms before Cycle 0 operations begin.</p>
+<h2>Transition to Cycle 0 Operations</h2>
+<p>Upon completion of Science Verification and successful performance validation, the SKA will transition to <strong>Cycle 0</strong> — the first open call for science proposals. This transition marks the beginning of regular, sustained science operations.</p>
+<p>The SV programme ensures that:</p>
+<ul>
+  <li>The observatory is ready to support diverse science cases</li>
+  <li>Data products are of known quality and reproducibility</li>
+  <li>Archive and data discovery services are robust and scalable</li>
+  <li>The global community is prepared to conduct breakthrough science with SKA data</li>
+</ul>
+<ac:structured-macro ac:name="note">
+  <ac:parameter ac:name="title">More Information</ac:parameter>
+  <ac:rich-text-body>
+    <p>See <ac:link><ac:plain-text-link-body>Introduction to Observatory Data Products and Advanced Data Products</ac:plain-text-link-body></ac:link> for details on the data types produced during and after Science Verification.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>

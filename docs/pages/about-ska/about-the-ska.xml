@@ -1,0 +1,102 @@
+<ac:structured-macro ac:name="excerpt">
+  <ac:parameter ac:name="atlassian-macro-output-type">BLOCK</ac:parameter>
+  <ac:rich-text-body>
+    <p>SKA2 is the planned second expansion phase of both telescope arrays, delivering unprecedented sensitivity and extended geographic reach to enable the full SKA science case.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+
+<h2>What is SKA2?</h2>
+
+<p>SKA2 represents a planned major expansion of the SKA Observatory's telescope arrays, building upon the foundation of SKA1 (the current construction phase). SKA2 is not a separate instrument but rather a significant enhancement to both existing telescope arrays: SKA-Low in Australia and SKA-Mid in South Africa.</p>
+
+<ac:structured-macro ac:name="info">
+  <ac:rich-text-body>
+    <p><strong>One Observatory, Expanded Reach.</strong><br />SKA2 will extend the sensitivity, frequency coverage, baseline lengths, and geographic footprint of the current SKA1 design, enabling access to deeper science frontiers across all planned SKA science domains.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+
+<p>The expansion will increase collecting area, extend baseline lengths for higher angular resolution, add new receptor elements, and expand SKA-Mid's geographic footprint into African partner nations. Together, these enhancements will transform the SKA into an even more powerful instrument for transformational science.</p>
+
+<h2>SKA1 vs SKA2 Capabilities</h2>
+
+<p>The following table outlines how SKA2 capabilities compare to SKA1:</p>
+
+<table>
+  <colgroup><col /><col /><col /></colgroup>
+  <tbody>
+    <tr>
+      <th>Capability</th>
+      <th>SKA1</th>
+      <th>SKA2</th>
+    </tr>
+    <tr>
+      <td>Sensitivity improvement</td>
+      <td>Baseline Phase 1</td>
+      <td>4–10× improvement across frequency ranges</td>
+    </tr>
+    <tr>
+      <td>Frequency coverage</td>
+      <td>Modular, band-dependent</td>
+      <td>Continuous 50 MHz to 14 GHz (both arrays combined)</td>
+    </tr>
+    <tr>
+      <td>Extended baselines</td>
+      <td>SKA-Low: ~74 km, SKA-Mid: ~160 km</td>
+      <td>Significantly extended for higher angular resolution</td>
+    </tr>
+    <tr>
+      <td>Total receptor elements</td>
+      <td>SKA-Low: 131,072 antennas; SKA-Mid: 197 dishes</td>
+      <td>Increased number of antennas and dishes</td>
+    </tr>
+    <tr>
+      <td>Geographic reach</td>
+      <td>Australia and South Africa</td>
+      <td>Expansion to multiple African partner nations for SKA-Mid</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Planned Enhancements</h2>
+
+<h3>SKA-Low Expansion</h3>
+
+<p>SKA-Low will be expanded through the addition of more aperture array stations and extended baseline lengths. This will increase sensitivity across the 50–350 MHz frequency range and improve angular resolution, enabling finer details to be resolved in observations of extended sources such as galaxy clusters and supernova remnants.</p>
+
+<h3>SKA-Mid Expansion</h3>
+
+<p>SKA-Mid will grow through the addition of more 15-metre dishes and geographic expansion into multiple African partner nations. This distributed geographic expansion will extend baseline lengths dramatically, increasing angular resolution and enabling observations of distant, faint objects with unprecedented clarity. Partner nations may host additional antenna clusters as part of the continental SKA footprint.</p>
+
+<h3>New Capabilities</h3>
+
+<p>SKA2 planning also explores potential additions of new receiver systems, including survey dish arrays for wide-area rapid surveys and mid-frequency aperture arrays to fill frequency coverage gaps. These complementary systems would broaden the science capabilities available to the user community and enable new types of observations not possible with SKA1 alone.</p>
+
+<h2>Timeline and Status</h2>
+
+<p>SKA2 scope and design specifications are still under active development. The realisation of the full SKA2 vision depends on completion of SKA1 construction and commissioning, as well as future funding commitments from member states and partner organisations.</p>
+
+<ac:structured-macro ac:name="note">
+  <ac:rich-text-body>
+    <p><strong>Funding and Timeline Uncertainty:</strong> SKA2 is currently in the planning and concept development phase. Full deployment of SKA2 is targeted for the 2030s, contingent on successful SKA1 operations, positive scientific validation, and continued financial support from the SKAO's member countries and international partners.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+
+<p>The SKA Observatory continues to develop detailed technical specifications, cost estimates, and implementation timelines for SKA2 in consultation with member states, the international scientific community, and technology partners.</p>
+
+<h2>Relationship to Science Goals</h2>
+
+<p>SKA2 is designed to unlock the full potential of the SKA science case. The expanded sensitivity, frequency coverage, and geographic reach will enable observations that are simply not possible with SKA1 alone:</p>
+
+<ul>
+  <li><strong>Epoch of Reionisation:</strong> Improved sensitivity will allow detection of the faintest first galaxies and their role in reionising the early universe.</li>
+  <li><strong>Dark Energy and Cosmic Evolution:</strong> Extended baselines and continuous frequency coverage enable precise measurements of galaxy evolution and the expansion history of the universe.</li>
+  <li><strong>Gravitational Waves:</strong> Enhanced sensitivity to pulsar timing variations improves the detection of gravitational wave signals in pulsar timing arrays.</li>
+  <li><strong>Cosmic Magnetism:</strong> Greater sensitivity and broader frequency coverage reveal the magnetic structure of the universe across larger scales and fainter sources.</li>
+  <li><strong>Fundamental Physics:</strong> Higher resolution and sensitivity allow tests of general relativity and fundamental physics in extreme environments near supermassive black holes and neutron stars.</li>
+</ul>
+
+<ac:structured-macro ac:name="tip">
+  <ac:rich-text-body>
+    <p>For a detailed overview of the SKA science case and how SKA2 enables these goals, consult the scientific timeline and roadmap documents available on the <a href="https://www.skao.int">SKAO website</a>. The SKA Science Book and member publications provide comprehensive background on the key science drivers and expected breakthroughs.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>

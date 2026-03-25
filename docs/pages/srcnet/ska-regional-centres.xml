@@ -1,0 +1,193 @@
+<ac:structured-macro ac:name="excerpt">
+  <ac:parameter ac:name="atlassian-macro-output-type">BLOCK</ac:parameter>
+  <ac:rich-text-body>
+    <p>
+      <strong>SKA Regional Centres</strong> (SRCs) are national or regional computing facilities that provide the global SKA user community with data access, storage, processing power, and expert support. Together, they form the <strong>SRCnet network</strong> — a distributed infrastructure enabling astronomers to conduct science with SKA data without needing to relocate to central observatories.
+    </p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+<h2>What Are SKA Regional Centres?</h2>
+<p>SKA Regional Centres are geographically distributed computing and data facilities operated by member countries and regional organisations. They provide:</p>
+<ul>
+  <li><strong>Data Access:</strong> Rapid access to SKA raw data, calibrated products, and archival holdings</li>
+  <li><strong>Computing Resources:</strong> CPU and GPU clusters for data processing, analysis, and simulation</li>
+  <li><strong>Storage Infrastructure:</strong> Petabyte-scale data repositories with redundancy and backup</li>
+  <li><strong>User Support:</strong> Technical assistance, software support, and best-practice guidance</li>
+  <li><strong>Training:</strong> Workshops, tutorials, and documentation for SKA data analysis</li>
+</ul>
+<p>By distributing compute and storage across multiple centres, the SRCnet model implements the <strong>computation-to-data</strong> principle: bringing processing to where the data lives, minimising network traffic and reducing latency.</p>
+<h2>The SRCnet Network</h2>
+<p>SRCnet is a federated network of interconnected regional centres, coordinated by the SKA Observatory. Centres share:</p>
+<ul>
+  <li>Standardised data formats and metadata schemas</li>
+  <li>Common software stacks and tools</li>
+  <li>Unified authentication and access policies</li>
+  <li>Cross-centre query and data discovery capabilities</li>
+</ul>
+<p>This interconnection allows users to transparently access data and compute resources across multiple centres, choosing the facility best suited to their analysis needs.</p>
+<h2>Participating Regional Centres</h2>
+<p>The table below lists all SKA Regional Centres, their operating countries, and current status:</p>
+<table>
+  <colgroup>
+    <col />
+    <col />
+    <col />
+    <col />
+  </colgroup>
+  <tbody>
+    <tr>
+      <th>Centre</th>
+      <th>Country/Region</th>
+      <th>Status</th>
+      <th>Contact</th>
+    </tr>
+    <tr>
+      <td>SKA-Australia Regional Centre</td>
+      <td>Australia</td>
+      <td><ac:structured-macro ac:name="lozenges"><ac:parameter ac:name="color">Green</ac:parameter><ac:rich-text-body>Operational</ac:rich-text-body></ac:structured-macro></td>
+      <td><a href="https://www.csiro.au/">CSIRO</a></td>
+    </tr>
+    <tr>
+      <td>SKA-Canada Regional Centre</td>
+      <td>Canada</td>
+      <td><ac:structured-macro ac:name="lozenges"><ac:parameter ac:name="color">Green</ac:parameter><ac:rich-text-body>Operational</ac:rich-text-body></ac:structured-macro></td>
+      <td><a href="https://www.nrc.ca/">National Research Council</a></td>
+    </tr>
+    <tr>
+      <td>SKA-China Regional Centre</td>
+      <td>China</td>
+      <td><ac:structured-macro ac:name="lozenges"><ac:parameter ac:name="color">Yellow</ac:parameter><ac:rich-text-body>In Development</ac:rich-text-body></ac:structured-macro></td>
+      <td>NAOC</td>
+    </tr>
+    <tr>
+      <td>SKA-France Regional Centre</td>
+      <td>France</td>
+      <td><ac:structured-macro ac:name="lozenges"><ac:parameter ac:name="color">Green</ac:parameter><ac:rich-text-body>Operational</ac:rich-text-body></ac:structured-macro></td>
+      <td><a href="https://www.iram.fr/">IRAM / Observatoire Midi-Pyrénées</a></td>
+    </tr>
+    <tr>
+      <td>SKA-Germany Regional Centre</td>
+      <td>Germany</td>
+      <td><ac:structured-macro ac:name="lozenges"><ac:parameter ac:name="color">Green</ac:parameter><ac:rich-text-body>Operational</ac:rich-text-body></ac:structured-macro></td>
+      <td><a href="https://www.mpifr-bonn.mpg.de/">Max Planck Institute for Radio Astronomy</a></td>
+    </tr>
+    <tr>
+      <td>SKA-India Regional Centre</td>
+      <td>India</td>
+      <td><ac:structured-macro ac:name="lozenges"><ac:parameter ac:name="color">Yellow</ac:parameter><ac:rich-text-body>In Development</ac:rich-text-body></ac:structured-macro></td>
+      <td>National Centre for Radio Astrophysics</td>
+    </tr>
+    <tr>
+      <td>SKA-Italy Regional Centre</td>
+      <td>Italy</td>
+      <td><ac:structured-macro ac:name="lozenges"><ac:parameter ac:name="color">Green</ac:parameter><ac:rich-text-body>Operational</ac:rich-text-body></ac:structured-macro></td>
+      <td><a href="https://www.inaf.it/">INAF</a></td>
+    </tr>
+    <tr>
+      <td>SKA-Japan Regional Centre</td>
+      <td>Japan</td>
+      <td><ac:structured-macro ac:name="lozenges"><ac:parameter ac:name="color">Green</ac:parameter><ac:rich-text-body>Operational</ac:rich-text-body></ac:structured-macro></td>
+      <td><a href="https://www.nao.ac.jp/">National Astronomical Observatory of Japan</a></td>
+    </tr>
+    <tr>
+      <td>SKA-Netherlands Regional Centre</td>
+      <td>Netherlands</td>
+      <td><ac:structured-macro ac:name="lozenges"><ac:parameter ac:name="color">Green</ac:parameter><ac:rich-text-body>Operational</ac:rich-text-body></ac:structured-macro></td>
+      <td><a href="https://www.astron.nl/">ASTRON</a></td>
+    </tr>
+    <tr>
+      <td>SKA-Portugal Regional Centre</td>
+      <td>Portugal</td>
+      <td><ac:structured-macro ac:name="lozenges"><ac:parameter ac:name="color">Yellow</ac:parameter><ac:rich-text-body>In Development</ac:rich-text-body></ac:structured-macro></td>
+      <td>University of Lisbon</td>
+    </tr>
+    <tr>
+      <td>SKA-South Africa Regional Centre</td>
+      <td>South Africa</td>
+      <td><ac:structured-macro ac:name="lozenges"><ac:parameter ac:name="color">Green</ac:parameter><ac:rich-text-body>Operational</ac:rich-text-body></ac:structured-macro></td>
+      <td><a href="https://www.sarao.ac.za/">SARAO</a></td>
+    </tr>
+    <tr>
+      <td>SKA-South Korea Regional Centre</td>
+      <td>South Korea</td>
+      <td><ac:structured-macro ac:name="lozenges"><ac:parameter ac:name="color">Yellow</ac:parameter><ac:rich-text-body>In Development</ac:rich-text-body></ac:structured-macro></td>
+      <td>Korea Astronomy and Space Science Institute</td>
+    </tr>
+    <tr>
+      <td>SKA-Spain Regional Centre</td>
+      <td>Spain</td>
+      <td><ac:structured-macro ac:name="lozenges"><ac:parameter ac:name="color">Green</ac:parameter><ac:rich-text-body>Operational</ac:rich-text-body></ac:structured-macro></td>
+      <td><a href="https://www.iaa.csic.es/">Instituto de Astrofísica de Andalucía (IAA-CSIC)</a></td>
+    </tr>
+    <tr>
+      <td>SKA-Sweden Regional Centre</td>
+      <td>Sweden</td>
+      <td><ac:structured-macro ac:name="lozenges"><ac:parameter ac:name="color">Yellow</ac:parameter><ac:rich-text-body>In Development</ac:rich-text-body></ac:structured-macro></td>
+      <td>Chalmers University of Technology</td>
+    </tr>
+    <tr>
+      <td>SKA-Switzerland Regional Centre</td>
+      <td>Switzerland</td>
+      <td><ac:structured-macro ac:name="lozenges"><ac:parameter ac:name="color">Green</ac:parameter><ac:rich-text-body>Operational</ac:rich-text-body></ac:structured-macro></td>
+      <td><a href="https://www.ethz.ch/">ETH Zurich</a></td>
+    </tr>
+    <tr>
+      <td>SKA-UK Regional Centre</td>
+      <td>United Kingdom</td>
+      <td><ac:structured-macro ac:name="lozenges"><ac:parameter ac:name="color">Green</ac:parameter><ac:rich-text-body>Operational</ac:rich-text-body></ac:structured-macro></td>
+      <td><a href="https://www.jb.man.ac.uk/">Jodrell Bank Centre for Astrophysics</a></td>
+    </tr>
+  </tbody>
+</table>
+<h2>Services Provided</h2>
+<ac:structured-macro ac:name="expand">
+  <ac:parameter ac:name="title">Data Access</ac:parameter>
+  <ac:rich-text-body>
+    <p>All SKA data becomes available through your regional centre shortly after observation and initial quality control. Data is provided in standardised formats (FITS, HDF5) with complete metadata and calibration tables. Bulk data downloads and streaming access are supported.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+<ac:structured-macro ac:name="expand">
+  <ac:parameter ac:name="title">Processing Platforms</ac:parameter>
+  <ac:rich-text-body>
+    <p>Regional centres provide containerised processing pipelines, Jupyter notebook environments, and access to standard analysis software (CASA, ASKAPsoft, etc.). GPU acceleration is available at many centres for image reconstruction and machine learning workloads.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+<ac:structured-macro ac:name="expand">
+  <ac:parameter ac:name="title">User Support</ac:parameter>
+  <ac:rich-text-body>
+    <p>Each centre maintains a helpdesk and technical support team. Support includes data discovery assistance, troubleshooting pipeline failures, optimising compute jobs, and answering SKA-specific questions. Response times typically range from hours to one business day.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+<ac:structured-macro ac:name="expand">
+  <ac:parameter ac:name="title">Training &amp; Workshops</ac:parameter>
+  <ac:rich-text-body>
+    <p>Most regional centres host regular training sessions on data analysis, pipeline use, and advanced techniques. Many also participate in coordinated international training events run by the Observatory.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+<h2>How to Connect to Your Regional Centre</h2>
+<ac:structured-macro ac:name="note">
+  <ac:parameter ac:name="title">Finding Your Centre</ac:parameter>
+  <ac:rich-text-body>
+    <p>Select the centre serving your country or region from the table above. If your country is not yet listed, contact the <a href="https://www.skao.int/">SKA Observatory</a> to learn about interim arrangements or planned centre development.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+<ol>
+  <li><strong>Register:</strong> Create an account at your regional centre's portal (links provided in the table above).</li>
+  <li><strong>Request Data Access:</strong> Propose your project in the Observatory's proposal system. Once approved, your centre will grant you access to relevant datasets.</li>
+  <li><strong>Configure Your Environment:</strong> Your centre's support team will help you set up compute jobs, notebooks, and software environments tailored to your analysis.</li>
+  <li><strong>Get Support:</strong> Contact your centre's helpdesk for technical issues, data questions, or analysis guidance.</li>
+</ol>
+<h2>Computation-to-Data Model</h2>
+<p>Rather than downloading terabytes of raw data to your home institution, the SRCnet model brings your analysis code to the data. This approach offers several advantages:</p>
+<ul>
+  <li><strong>Speed:</strong> Avoid months of network transfers; process data at source.</li>
+  <li><strong>Cost:</strong> Reduce bandwidth charges and local infrastructure investment.</li>
+  <li><strong>Collaboration:</strong> Share results and intermediate products more easily with collaborators worldwide.</li>
+  <li><strong>Sustainability:</strong> Lower carbon footprint by minimising data replication and long-distance transfers.</li>
+</ul>
+<ac:structured-macro ac:name="tip">
+  <ac:parameter ac:name="title">Learning More</ac:parameter>
+  <ac:rich-text-body>
+    <p>See the <a href="https://www.skao.int/science-operations/">Science Operations documentation</a> for detailed technical architecture, API documentation, and best-practice guides for working with your regional centre.</p>
+  </ac:rich-text-body>
+</ac:structured-macro>

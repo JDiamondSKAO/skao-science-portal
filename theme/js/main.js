@@ -9,10 +9,74 @@ document.addEventListener('DOMContentLoaded', function () {
      * DARK MODE TOGGLE
      * ----------------------------------------- */
     var themeToggle = document.getElementById('themeToggle');
+    var themeAnimating = false;
+
+    function applyTheme(newDark) {
+        if (newDark) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+        try { localStorage.setItem('skao-theme', newDark ? 'dark' : 'light'); } catch (e) {}
+    }
+
     if (themeToggle) {
         themeToggle.addEventListener('click', function () {
-            var isDark = document.documentElement.classList.toggle('dark');
-            try { localStorage.setItem('skao-theme', isDark ? 'dark' : 'light'); } catch (e) {}
+            if (themeAnimating) return;
+
+            var btn = themeToggle;
+            var rect = btn.getBoundingClientRect();
+            var x = rect.left + rect.width / 2;
+            var y = rect.top + rect.height / 2;
+            var endRadius = Math.hypot(
+                Math.max(x, window.innerWidth - x),
+                Math.max(y, window.innerHeight - y)
+            );
+            var newDark = !document.documentElement.classList.contains('dark');
+
+            themeAnimating = true;
+
+            /* Modern path: View Transitions API */
+            if ('startViewTransition' in document) {
+                var transition = document.startViewTransition(function () {
+                    applyTheme(newDark);
+                });
+                transition.ready.then(function () {
+                    document.documentElement.animate(
+                        { clipPath: [
+                            'circle(0px at ' + x + 'px ' + y + 'px)',
+                            'circle(' + endRadius + 'px at ' + x + 'px ' + y + 'px)'
+                        ]},
+                        { duration: 400,
+                          easing: 'cubic-bezier(0.4, 0, 0.2, 1)',
+                          pseudoElement: '::view-transition-new(root)' }
+                    );
+                });
+                transition.finished.then(function () { themeAnimating = false; });
+            } else {
+                /* Fallback: clip-path overlay */
+                var overlay = document.createElement('div');
+                overlay.style.cssText =
+                    'position:fixed;top:0;left:0;width:100%;height:100%;z-index:9999;' +
+                    'pointer-events:none;will-change:clip-path;' +
+                    'background:' + (newDark ? '#0c0f1a' : '#ffffff') + ';' +
+                    'clip-path:circle(0px at ' + x + 'px ' + y + 'px);';
+                document.body.appendChild(overlay);
+
+                requestAnimationFrame(function () {
+                    overlay.style.transition = 'clip-path 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
+                    overlay.style.clipPath = 'circle(' + (endRadius * 1.5) + 'px at ' + x + 'px ' + y + 'px)';
+                });
+
+                /* Apply theme mid-animation */
+                setTimeout(function () { applyTheme(newDark); }, 150);
+
+                /* Clean up */
+                setTimeout(function () {
+                    overlay.remove();
+                    themeAnimating = false;
+                }, 420);
+            }
         });
     }
 
@@ -544,8 +608,16 @@ document.addEventListener('DOMContentLoaded', function () {
     if (contentBody && sidebarInner && !isSectionPage) {
         var headings = contentBody.querySelectorAll('h2, h3');
         if (headings.length >= 3) {
-            /* Build TOC */
-            var tocHtml = '<h4 class="sidebar-title sidebar-toc-title">On this page</h4><ul class="sidebar-toc">';
+            /* Show sidebar (it may be empty on leaf pages) */
+            sidebarInner.parentElement.style.display = '';
+            /* Build TOC with collapse toggle */
+            var tocHtml = '<div class="sidebar-toc-header">'
+                + '<h4 class="sidebar-title sidebar-toc-title">On this page</h4>'
+                + '<button class="sidebar-collapse-btn" id="sidebarCollapseBtn" aria-label="Collapse sidebar" title="Collapse sidebar">'
+                + '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>'
+                + '</button>'
+                + '</div>'
+                + '<ul class="sidebar-toc">';
             for (var h = 0; h < headings.length; h++) {
                 var heading = headings[h];
                 /* Ensure each heading has an ID */
@@ -563,19 +635,99 @@ document.addEventListener('DOMContentLoaded', function () {
             tocContainer.innerHTML = tocHtml;
             sidebarInner.insertBefore(tocContainer, sidebarInner.firstChild);
 
-            /* Scroll-spy: highlight active heading */
-            var tocLinks = tocContainer.querySelectorAll('.sidebar-toc-link');
-            var tocObserver = new IntersectionObserver(function (entries) {
-                entries.forEach(function (entry) {
-                    if (entry.isIntersecting) {
-                        tocLinks.forEach(function (l) { l.classList.remove('sidebar-toc-active'); });
-                        var activeLink = tocContainer.querySelector('a[href="#' + entry.target.id + '"]');
-                        if (activeLink) activeLink.classList.add('sidebar-toc-active');
-                    }
-                });
-            }, { rootMargin: '-80px 0px -60% 0px', threshold: 0 });
+            /* Sidebar collapse/expand */
+            var sidebarEl = sidebarInner.parentElement;
+            var contentCols = document.querySelector('.content-columns');
+            var collapseBtn = document.getElementById('sidebarCollapseBtn');
+            var sidebarCollapsed = false;
 
-            headings.forEach(function (heading) { tocObserver.observe(heading); });
+            /* Create an expand button that sits outside sidebar-inner (visible when collapsed) */
+            var expandBtn = document.createElement('button');
+            expandBtn.className = 'sidebar-expand-btn';
+            expandBtn.setAttribute('aria-label', 'Show sidebar');
+            expandBtn.setAttribute('title', 'Show sidebar');
+            expandBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>';
+            sidebarEl.appendChild(expandBtn);
+
+            /* Check localStorage for saved state */
+            try {
+                sidebarCollapsed = localStorage.getItem('skao-sidebar-collapsed') === '1';
+            } catch (e) {}
+
+            function applySidebarState() {
+                if (sidebarCollapsed) {
+                    sidebarEl.classList.add('sidebar-collapsed');
+                    if (contentCols) contentCols.classList.add('sidebar-hidden');
+                } else {
+                    sidebarEl.classList.remove('sidebar-collapsed');
+                    if (contentCols) contentCols.classList.remove('sidebar-hidden');
+                }
+            }
+
+            applySidebarState();
+
+            collapseBtn.addEventListener('click', function () {
+                sidebarCollapsed = true;
+                try { localStorage.setItem('skao-sidebar-collapsed', '1'); } catch (e) {}
+                applySidebarState();
+            });
+
+            expandBtn.addEventListener('click', function () {
+                sidebarCollapsed = false;
+                try { localStorage.setItem('skao-sidebar-collapsed', '0'); } catch (e) {}
+                applySidebarState();
+            });
+
+            /* Scroll-spy: highlight active heading on scroll.
+             * Strategy: on every scroll tick, find the last heading whose top
+             * edge is at or above a "trigger line" (120px from viewport top).
+             * This avoids IntersectionObserver edge-cases where the clicked
+             * heading sits above the observer zone and the next one wins. */
+            var tocLinks = tocContainer.querySelectorAll('.sidebar-toc-link');
+            var spyTicking = false;
+            var TRIGGER_LINE = 120; /* px from viewport top */
+
+            function updateTocHighlight() {
+                var activeId = null;
+
+                /* Walk backwards: first heading whose top <= TRIGGER_LINE wins */
+                for (var hi = headings.length - 1; hi >= 0; hi--) {
+                    if (headings[hi].getBoundingClientRect().top <= TRIGGER_LINE) {
+                        activeId = headings[hi].id;
+                        break;
+                    }
+                }
+
+                /* Edge-case: user at very top, no heading above trigger line yet */
+                if (!activeId && headings.length) {
+                    activeId = headings[0].id;
+                }
+
+                tocLinks.forEach(function (l) { l.classList.remove('sidebar-toc-active'); });
+                if (activeId) {
+                    var activeLink = tocContainer.querySelector('a[href="#' + activeId + '"]');
+                    if (activeLink) activeLink.classList.add('sidebar-toc-active');
+                }
+                spyTicking = false;
+            }
+
+            window.addEventListener('scroll', function () {
+                if (!spyTicking) {
+                    window.requestAnimationFrame(updateTocHighlight);
+                    spyTicking = true;
+                }
+            }, { passive: true });
+
+            /* Run once on load so the right item is highlighted immediately */
+            updateTocHighlight();
+        } else {
+            /* Not enough headings for a TOC — but keep sidebar if it has section nav */
+            var hasSectionNav = sidebarInner.querySelector('.sidebar-section-nav');
+            if (!hasSectionNav) {
+                sidebarInner.parentElement.style.display = 'none';
+                var cols = document.querySelector('.content-columns');
+                if (cols) cols.style.gridTemplateColumns = '1fr';
+            }
         }
     }
 
@@ -658,6 +810,86 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     /* -----------------------------------------
+     * UPCOMING EVENTS — .ICS CALENDAR EXPORT
+     * ----------------------------------------- */
+    function icsDate(date) {
+        /* Format as YYYYMMDD for VALUE=DATE (all-day event) */
+        var y = date.getFullYear();
+        var m = ('0' + (date.getMonth() + 1)).slice(-2);
+        var d = ('0' + date.getDate()).slice(-2);
+        return y + m + d;
+    }
+
+    function generateICS(title, description, startDate, endDate) {
+        var lines = [
+            'BEGIN:VCALENDAR',
+            'VERSION:2.0',
+            'PRODID:-//SKAO Science Portal//EN',
+            'CALSCALE:GREGORIAN',
+            'METHOD:PUBLISH',
+            'BEGIN:VEVENT',
+            'DTSTART;VALUE=DATE:' + icsDate(startDate),
+            'DTEND;VALUE=DATE:' + icsDate(endDate),
+            'SUMMARY:' + title.replace(/,/g, '\\,'),
+            'DESCRIPTION:' + description.replace(/,/g, '\\,').replace(/\n/g, '\\n'),
+            'STATUS:CONFIRMED',
+            'END:VEVENT',
+            'END:VCALENDAR'
+        ];
+        return lines.join('\r\n');
+    }
+
+    function downloadICS(filename, content) {
+        var blob = new Blob([content], { type: 'text/calendar;charset=utf-8' });
+        var link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = filename;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(link.href);
+    }
+
+    document.querySelectorAll('.ue-item').forEach(function (item) {
+        var monthEl = item.querySelector('.ue-month');
+        var dayEl = item.querySelector('.ue-day');
+        var titleEl = item.querySelector('.ue-title');
+        var descEl = item.querySelector('.ue-desc');
+        if (!monthEl || !dayEl || !titleEl) return;
+
+        var monthNames = { JAN: 0, FEB: 1, MAR: 2, APR: 3, MAY: 4, JUN: 5, JUL: 6, AUG: 7, SEP: 8, OCT: 9, NOV: 10, DEC: 11 };
+        var m = monthNames[monthEl.textContent.trim().toUpperCase()];
+        var d = parseInt(dayEl.textContent.trim(), 10);
+        if (m === undefined || isNaN(d)) return;
+
+        var now = new Date();
+        var eventDate = new Date(now.getFullYear(), m, d);
+        if (eventDate < now) eventDate.setFullYear(now.getFullYear() + 1);
+
+        /* End date = day after start (all-day event convention) */
+        var endDate = new Date(eventDate);
+        endDate.setDate(endDate.getDate() + 1);
+
+        var title = titleEl.textContent.trim();
+        var desc = descEl ? descEl.textContent.trim() : '';
+
+        var btn = document.createElement('button');
+        btn.className = 'ue-ics-btn';
+        btn.setAttribute('aria-label', 'Add "' + title + '" to calendar');
+        btn.setAttribute('title', 'Add to calendar');
+        btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="12" y1="14" x2="12" y2="18"/><line x1="10" y1="16" x2="14" y2="16"/></svg>';
+
+        btn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            var slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+            var ics = generateICS(title, desc + '\n\nSKAO Science Operations Portal', eventDate, endDate);
+            downloadICS(slug + '.ics', ics);
+        });
+
+        item.appendChild(btn);
+    });
+
+    /* -----------------------------------------
      * UPCOMING EVENTS — CATEGORY FILTER TABS
      * ----------------------------------------- */
     var ueFilterTabs = document.querySelectorAll('.ue-filter-tab');
@@ -679,6 +911,77 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     });
+
+    /* -----------------------------------------
+     * WATCH PAGE TOGGLE
+     * Uses Confluence REST API to watch/unwatch
+     * the current page for update notifications.
+     * ----------------------------------------- */
+    var watchBtn = document.getElementById('watchPageBtn');
+    if (watchBtn && typeof pageId !== 'undefined' && pageId) {
+        var watchIconOff = watchBtn.querySelector('.watch-icon-off');
+        var watchIconOn = watchBtn.querySelector('.watch-icon-on');
+        var watchLabel = watchBtn.querySelector('.watch-label');
+        var isWatching = false;
+        var watchBusy = false;
+        var watchApiBase = (typeof contextPath !== 'undefined' ? contextPath : '') + '/rest/api/user/watch/content/' + pageId;
+
+        function updateWatchUI() {
+            if (isWatching) {
+                watchIconOff.style.display = 'none';
+                watchIconOn.style.display = '';
+                watchLabel.textContent = 'Watching';
+                watchBtn.classList.add('watch-btn-active');
+                watchBtn.setAttribute('aria-label', 'Stop watching this page');
+            } else {
+                watchIconOff.style.display = '';
+                watchIconOn.style.display = 'none';
+                watchLabel.textContent = 'Watch';
+                watchBtn.classList.remove('watch-btn-active');
+                watchBtn.setAttribute('aria-label', 'Watch this page for updates');
+            }
+        }
+
+        /* Check current watch status */
+        fetch(watchApiBase, {
+            method: 'GET',
+            credentials: 'same-origin',
+            headers: { 'Accept': 'application/json' }
+        }).then(function (res) {
+            if (res.ok) return res.json();
+            throw new Error(res.status);
+        }).then(function (data) {
+            /* Confluence returns { "watching": true/false } */
+            isWatching = !!(data && data.watching);
+            updateWatchUI();
+            watchBtn.style.visibility = 'visible';
+        }).catch(function () {
+            /* API not available (user not logged in, or permission issue) — hide button */
+            watchBtn.style.display = 'none';
+        });
+
+        watchBtn.addEventListener('click', function () {
+            if (watchBusy) return;
+            watchBusy = true;
+            watchBtn.classList.add('watch-btn-loading');
+
+            fetch(watchApiBase, {
+                method: isWatching ? 'DELETE' : 'POST',
+                credentials: 'same-origin',
+                headers: { 'X-Atlassian-Token': 'no-check' }
+            }).then(function (res) {
+                if (res.status === 204 || res.ok) {
+                    isWatching = !isWatching;
+                    updateWatchUI();
+                }
+            }).catch(function () {
+                /* Silently fail — button stays in current state */
+            }).finally(function () {
+                watchBusy = false;
+                watchBtn.classList.remove('watch-btn-loading');
+            });
+        });
+    }
 
     /* -----------------------------------------
      * PAGE FEEDBACK WIDGET

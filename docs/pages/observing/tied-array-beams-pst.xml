@@ -1,0 +1,252 @@
+<ac:structured-macro ac:name="excerpt">
+  <ac:parameter ac:name="atlassian-macro-output-type">BLOCK</ac:parameter>
+  <ac:rich-text-body>
+    <p>
+      <strong>Tied-Array Beams for Pulsar Search and Timing (PST)</strong>
+    </p>
+    <p>
+      Tied-array beams coherently combine signals from multiple antennas or stations across the SKA to achieve maximum sensitivity to point sources. The PST (Pulsar Search and Timing) backend processes these beams in real-time for pulsar detection and millisecond-precision timing.
+    </p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+
+<h2>What are Tied-Array Beams?</h2>
+
+<p>
+  A tied-array beam is formed by coherently combining (co-adding with proper phase alignment) the voltage signals from many antennas or antenna groups. Unlike correlation or imaging beams, which operate on visibilities (cross-correlations), tied-array beams preserve the full signal phase and amplitude, enabling:
+</p>
+
+<ul>
+  <li><strong>Maximum point-source sensitivity:</strong> All collecting area is incoherently added, yielding sensitivity approaching N times the single-antenna sensitivity (where N is the number of elements)</li>
+  <li><strong>Narrow instantaneous field of view:</strong> Coherent phasing creates a sharp, directed beam (~1–10 arcmin depending on frequency and frequency resolution)</li>
+  <li><strong>Real-time signal inspection:</strong> The high signal-to-noise ratio enables immediate detection of pulsars, transients, and other signals</li>
+</ul>
+
+<p>
+  This is distinct from an imaging (correlation) beam, which creates full-resolution images by cross-correlating all pairs of antennas. Tied-array beams sacrifice spatial information for temporal resolution and sensitivity.
+</p>
+
+<h2>Tied-Array Beams vs. Correlation/Imaging Beams</h2>
+
+<ac:structured-macro ac:name="info">
+  <ac:parameter ac:name="title">Beam Type Comparison</ac:parameter>
+  <ac:rich-text-body>
+    <table>
+      <colgroup><col /></colgroup>
+      <tbody>
+        <tr>
+          <th>Property</th>
+          <th>Tied-Array Beam</th>
+          <th>Imaging (Correlation) Beam</th>
+        </tr>
+        <tr>
+          <td>Formation Method</td>
+          <td>Coherent co-addition of voltages</td>
+          <td>Cross-correlation of antenna pairs</td>
+        </tr>
+        <tr>
+          <td>Field of View</td>
+          <td>Narrow (1–10 arcmin)</td>
+          <td>Wide (variable, from ~1 degree to several degrees)</td>
+        </tr>
+        <tr>
+          <td>Data Rate</td>
+          <td>Very low (single time series per beam)</td>
+          <td>High (many visibilities)</td>
+        </tr>
+        <tr>
+          <td>Sensitivity to Point Sources</td>
+          <td>Maximum (N×single-element)</td>
+          <td>High but limited by image noise</td>
+        </tr>
+        <tr>
+          <td>Sky Information</td>
+          <td>One-dimensional (beam position only)</td>
+          <td>Two-dimensional (full image)</td>
+        </tr>
+        <tr>
+          <td>Ideal For</td>
+          <td>Pulsar search/timing, transient detection</td>
+          <td>Continuum/spectral-line imaging, surveys</td>
+        </tr>
+        <tr>
+          <td>Real-Time Processing</td>
+          <td>Feasible (low data rate)</td>
+          <td>Challenging for full-resolution imaging</td>
+        </tr>
+      </tbody>
+    </table>
+  </ac:rich-text-body>
+</ac:structured-macro>
+
+<h2>How Tied-Array Beams are Formed</h2>
+
+<p>
+  Formation proceeds in steps:
+</p>
+
+<ol>
+  <li><strong>Antenna/station selection:</strong> Choose which array elements (individual antennas for SKA-Mid, stations for SKA-Low, or substations within SKA-Low) will contribute to the beam</li>
+  <li><strong>Voltage digitization:</strong> Each antenna's voltage signal is digitized at the receiver (e.g., 8-bit sampling at the Nyquist frequency)</li>
+  <li><strong>Channelization:</strong> The full bandwidth is divided into narrow frequency channels (typically 1 kHz to 1 MHz depending on required spectral resolution)</li>
+  <li><strong>Delay correction:</strong> Geometric delays (due to array geometry and Earth rotation) are corrected in real-time. Each antenna's signal is shifted by the appropriate delay to align signals from a chosen sky position.</li>
+  <li><strong>Phase correction:</strong> Additional phase shifts compensate for instrumental phase errors and, for low frequencies, ionospheric delays</li>
+  <li><strong>Coherent co-addition:</strong> All corrected voltage signals are summed with proper complex weighting, forming a single complex time series per beam</li>
+  <li><strong>Backend processing:</strong> The PST backend processes the coherent beam(s) for pulsar search, timing, or other time-domain science</li>
+</ol>
+
+<h2>PST Backend Capabilities</h2>
+
+<p>
+  The Pulsar Search and Timing (PST) backend processes tied-array beams in real-time:
+</p>
+
+<h3>Pulsar Search Mode</h3>
+
+<ul>
+  <li><strong>Dedispersion:</strong> Removes the frequency-dependent delay caused by propagation through the ionosphere and interstellar medium, allowing coherent addition across frequency channels</li>
+  <li><strong>Folding:</strong> Optionally folds data on known pulsar periods for sensitivity enhancement</li>
+  <li><strong>Detection statistics:</strong> Computes signal-to-noise ratios and thresholds for automatic detection of new pulsars</li>
+  <li><strong>Output:</strong> Candidate list with pulse properties (period, DM, significance)</li>
+</ul>
+
+<h3>Pulsar Timing Mode</h3>
+
+<ul>
+  <li><strong>High time resolution:</strong> Records voltages or search-mode output with µs-to-ms time resolution for precision timing</li>
+  <li><strong>Multi-epoch observations:</strong> Supports repeated observations of known pulsars over weeks to years for gravitational-wave detection and tests of relativity</li>
+  <li><strong>Polarimetry:</strong> Measures linear and circular polarization of pulsar signals (SKA-Mid capability)</li>
+  <li><strong>Timing residuals:</strong> Provides timing residuals (microsecond-precision) for pulsar-timing-array analysis</li>
+</ul>
+
+<h3>Transient Detection Mode</h3>
+
+<ul>
+  <li><strong>Real-time filtering:</strong> Searches for bursts, flares, and other transient signals exceeding user-defined thresholds</li>
+  <li><strong>Fast alert generation:</strong> Outputs candidate events within seconds for rapid follow-up by other facilities</li>
+</ul>
+
+<h2>Beam Sensitivity and Field of View</h2>
+
+<p>
+  <strong>Sensitivity (system equivalent flux density):</strong>
+</p>
+
+<ul>
+  <li>Tied-array beams achieve the theoretical limit: <em>SEFD = SEFD_single / sqrt(N_elements)</em></li>
+  <li>For SKA-Low with 512 stations, a full-array tied-array beam reaches ~0.5–1 mJy (at mid-frequencies), making it sensitive to even weak pulsars</li>
+  <li>Partial-array beams (fewer stations) have proportionally higher SEFD but are quicker to reconfigure and less computationally expensive</li>
+</ul>
+
+<p>
+  <strong>Instantaneous Field of View (IFOV):</strong>
+</p>
+
+<ul>
+  <li>The coherence bandwidth (frequency channels that remain coherent after delay correction) defines the beam width: <em>θ ~ λ / B</em>, where <em>B</em> is the baseline length</li>
+  <li>SKA-Low full-array: IFOV ~1–10 arcmin (depends on frequency)</li>
+  <li>SKA-Mid: IFOV typically a few arcsec (limited by longest baselines and frequency)</li>
+  <li>Only one position in the sky can be observed per tied-array beam at a time (unlike imaging mode)</li>
+</ul>
+
+<h2>Maximum Number of Tied-Array Beams</h2>
+
+<p>
+  The number of simultaneous tied-array beams is limited by:
+</p>
+
+<ul>
+  <li><strong>Computational capacity:</strong> Each beam requires real-time FFT, dedispersion, and folding. Typical back-end hardware supports ~1–10 simultaneous beams depending on spectral resolution and data rate.</li>
+  <li><strong>Phasing infrastructure:</strong> Forming multiple tied-array beams from the same antenna set requires multiple phase correction paths, limited by available correlator/beamformer resources</li>
+  <li><strong>Data rate:</strong> Each beam generates a data stream of ~MB/s; total data rate must stay within storage and network capacity</li>
+</ul>
+
+<ac:structured-macro ac:name="warning">
+  <ac:parameter ac:name="title">Typical Tied-Array Beam Allocations</ac:parameter>
+  <ac:rich-text-body>
+    <p>
+      During early cycles, expect to have ~1–4 simultaneous tied-array beams available. The SKA operations team will provide actual limits based on operational experience and back-end utilization. Proposals should specify whether they require multiple simultaneous beams and the motivation.
+    </p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+
+<h2>Tied-Array Beams in Commensal Mode</h2>
+
+<p>
+  Tied-array beams can operate as primary observing mode (dedicated telescope time) or as commensals on an imaging observation. In commensal mode:
+</p>
+
+<ul>
+  <li>The host provides a continuum imaging observation, feeding data to the PST backend</li>
+  <li>The PST backend forms one or more tied-array beams within the imaging field of view, processing them for pulsar search/timing</li>
+  <li>No additional antenna time is consumed; the commensal beam shares correlator and back-end resources with the host</li>
+  <li>This enables efficient simultaneous continuum imaging and pulsar monitoring</li>
+</ul>
+
+<h2>Science Applications</h2>
+
+<h3>Pulsar Searches</h3>
+
+<p>
+  The SKA can discover thousands of new pulsars through sensitive surveys at SKA-Low frequencies. Tied-array beams enable:
+</p>
+
+<ul>
+  <li>Discovery of millisecond pulsars in dense stellar environments</li>
+  <li>Detection of recycled pulsars in globular clusters</li>
+  <li>Identification of pulsar populations at intermediate distances (kpc–Mpc scale)</li>
+</ul>
+
+<h3>Pulsar Timing Arrays</h3>
+
+<p>
+  Arrays of precisely timed pulsars are sensitive probes of gravitational-wave backgrounds and tests of fundamental physics. SKA-based pulsar timing will:
+</p>
+
+<ul>
+  <li>Achieve microsecond timing precision (improving on current by factor of 10+)</li>
+  <li>Enable detection of gravitational waves from supermassive black hole mergers</li>
+  <li>Test equivalence principle and strong-field gravity</li>
+</ul>
+
+<h3>Transient and Time-Domain Studies</h3>
+
+<p>
+  Real-time tied-array beams can detect:
+</p>
+
+<ul>
+  <li>Pulsar magnetar outbursts and glitches</li>
+  <li>Pulsar nulling and mode changes</li>
+  <li>RFI and solar bursts (for characterization)</li>
+  <li>Rapid polarization changes during pulsar flares</li>
+</ul>
+
+<h2>Requesting Tied-Array Beams in Your Proposal</h2>
+
+<p>
+  When proposing tied-array observations, specify:
+</p>
+
+<ul>
+  <li><strong>Target list:</strong> Pulsar names or sky coordinates</li>
+  <li><strong>Observation mode:</strong> Search or timing</li>
+  <li><strong>Frequency band(s):</strong> SKA-Low, SKA-Mid, or both</li>
+  <li><strong>Dispersion measure range:</strong> For search mode (helps optimize dedispersion)</li>
+  <li><strong>Timing precision requirement:</strong> For timing mode (drives frequency resolution and coherence time)</li>
+  <li><strong>Number of simultaneous beams:</strong> If observing multiple targets concurrently</li>
+  <li><strong>Observing frequency:</strong> Annual cadence for pulsar-timing-array targets</li>
+</ul>
+
+<p>
+  The SKA User Support team will advise on feasibility and expected sensitivity during proposal review.
+</p>
+
+<ac:structured-macro ac:name="tip">
+  <ac:parameter ac:name="title">Learn More</ac:parameter>
+  <ac:rich-text-body>
+    <p>
+      Detailed specifications for SKA pulsar capabilities are available in the <strong>SKA Pulsar Science Book</strong> and <strong>PST Backend Technical Specifications</strong> documents. For questions specific to your science case, contact the SKA Pulsar Science Working Group via the User Support portal.
+    </p>
+  </ac:rich-text-body>
+</ac:structured-macro>

@@ -1,0 +1,261 @@
+/* =============================================================
+   SKA Sensitivity Calculator — Scoped Styles
+   Uses the portal's existing design tokens (--slate-*, --blue-*)
+   All rules prefixed with .ska-calc.
+   ============================================================= */
+
+/* --- Card wrapper --- */
+.ska-calc .calc-card {
+    background: #fff;
+    border: 1px solid var(--slate-200);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+html.dark .ska-calc .calc-card {
+    background: #111827;
+    border-color: var(--slate-700);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+/* --- Notice bar --- */
+.ska-calc .calc-notice {
+    background: var(--blue-50);
+    border-left: 4px solid var(--blue-600);
+    padding: 12px 16px;
+    border-radius: var(--radius);
+    margin-bottom: 24px;
+    font-size: 13px;
+    color: var(--slate-500);
+}
+html.dark .ska-calc .calc-notice {
+    background: rgba(37,99,235,0.1);
+    color: #93c5fd;
+}
+.ska-calc .calc-notice a { color: var(--blue-600); text-decoration: none; font-weight: 600; }
+html.dark .ska-calc .calc-notice a { color: #60a5fa; }
+
+/* --- Toggle buttons (Telescope, Mode) --- */
+.ska-calc .toggle-group {
+    display: flex; gap: 8px; margin-bottom: 24px;
+}
+.ska-calc .toggle-btn {
+    flex: 1; padding: 12px 16px;
+    border: 1px solid var(--slate-200);
+    background: #fff; color: var(--slate-500);
+    border-radius: var(--radius); font-size: 14px;
+    font-weight: 600; cursor: pointer;
+    transition: all 0.15s ease; font-family: inherit;
+}
+html.dark .ska-calc .toggle-btn {
+    border-color: var(--slate-700);
+    background: var(--slate-800);
+    color: var(--slate-400);
+}
+.ska-calc .toggle-btn:hover {
+    border-color: var(--blue-400); color: var(--slate-900);
+}
+html.dark .ska-calc .toggle-btn:hover {
+    border-color: var(--blue-400); color: var(--slate-200);
+}
+.ska-calc .toggle-btn.active {
+    background: var(--blue-600); color: #fff; border-color: var(--blue-600);
+}
+
+/* --- Form sections --- */
+.ska-calc .form-section { margin-bottom: 28px; }
+.ska-calc .form-section h3 {
+    font-size: 13px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.5px;
+    color: var(--slate-500); margin-bottom: 16px;
+}
+html.dark .ska-calc .form-section h3 { color: var(--slate-400); }
+
+.ska-calc .form-row {
+    display: grid; gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    margin-bottom: 16px;
+}
+.ska-calc .form-group { display: flex; flex-direction: column; }
+.ska-calc .form-group label {
+    font-size: 12px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.5px;
+    color: var(--slate-500); margin-bottom: 6px;
+}
+html.dark .ska-calc .form-group label { color: var(--slate-400); }
+
+/* --- Inputs & Selects --- */
+/* Override Confluence/AUI defaults aggressively to prevent decoration artefacts */
+.ska-calc input[type="number"],
+.ska-calc input[type="text"],
+.ska-calc select {
+    font-size: 13px !important; padding: 10px 12px !important;
+    border: 1px solid var(--slate-200) !important;
+    border-image: none !important;
+    border-radius: var(--radius) !important;
+    background: #fff !important; color: var(--slate-900) !important;
+    font-family: inherit !important; transition: border-color 0.15s ease;
+    outline: none;
+    box-shadow: none;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+}
+html.dark .ska-calc input[type="number"],
+html.dark .ska-calc input[type="text"],
+html.dark .ska-calc select {
+    border-color: var(--slate-700) !important;
+    background: var(--slate-800) !important;
+    color: var(--slate-100) !important;
+}
+.ska-calc input:focus,
+.ska-calc select:focus {
+    outline: none !important;
+    border-color: var(--blue-400) !important;
+    box-shadow: 0 0 0 3px rgba(96,165,250,0.15) !important;
+}
+html.dark .ska-calc input:focus,
+html.dark .ska-calc select:focus {
+    box-shadow: 0 0 0 3px rgba(96,165,250,0.1) !important;
+}
+.ska-calc select {
+    cursor: pointer;
+    /* Use background shorthand to set ALL background properties at once,
+       preventing AUI from overriding individual sub-properties */
+    background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2364748b' d='M6 9L1 4h10z'/%3E%3C/svg%3E") no-repeat right 10px center !important;
+    background-size: 12px 12px !important;
+    padding-right: 32px !important;
+}
+html.dark .ska-calc select {
+    background: var(--slate-800) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23cbd5e1' d='M6 9L1 4h10z'/%3E%3C/svg%3E") no-repeat right 10px center !important;
+    background-size: 12px 12px !important;
+}
+.ska-calc input::placeholder { color: var(--slate-400) !important; }
+html.dark .ska-calc input::placeholder { color: var(--slate-600) !important; }
+
+/* --- Unit buttons --- */
+.ska-calc .unit-group { display: flex; gap: 8px; }
+.ska-calc .unit-group input { flex: 1; }
+.ska-calc .unit-selector { display: flex; gap: 4px; }
+.ska-calc .unit-btn {
+    padding: 10px 8px;
+    border: 1px solid var(--slate-200);
+    background: #fff; color: var(--slate-500);
+    border-radius: var(--radius); font-size: 12px;
+    font-weight: 600; cursor: pointer;
+    transition: all 0.15s ease; min-width: 50px; font-family: inherit;
+}
+html.dark .ska-calc .unit-btn {
+    border-color: var(--slate-700);
+    background: var(--slate-800);
+    color: var(--slate-400);
+}
+.ska-calc .unit-btn:hover { border-color: var(--blue-400); }
+.ska-calc .unit-btn.active {
+    background: var(--blue-600); color: #fff; border-color: var(--blue-600);
+}
+
+/* --- Radio buttons --- */
+.ska-calc .radio-group { display: flex; gap: 24px; margin-bottom: 16px; }
+.ska-calc .radio-option { display: flex; align-items: center; gap: 8px; cursor: pointer; }
+.ska-calc .radio-option input[type="radio"] {
+    cursor: pointer; width: 18px; height: 18px; margin: 0;
+    accent-color: var(--blue-600);
+}
+.ska-calc .radio-option label {
+    margin: 0; text-transform: none; font-weight: 500; font-size: 14px; cursor: pointer;
+}
+html.dark .ska-calc .radio-option label { color: var(--slate-200); }
+
+/* --- Action buttons --- */
+.ska-calc .button-group { display: flex; gap: 12px; margin-top: 32px; }
+.ska-calc .btn-primary {
+    padding: 12px 24px; border: none; border-radius: var(--radius);
+    font-size: 14px; font-weight: 600; cursor: pointer;
+    transition: all 0.15s ease; font-family: inherit;
+    background: var(--blue-600); color: #fff;
+}
+.ska-calc .btn-primary:hover { background: #1d4ed8; }
+.ska-calc .btn-primary:active { transform: scale(0.98); }
+.ska-calc .btn-primary:disabled { opacity: 0.6; cursor: not-allowed; }
+.ska-calc .btn-secondary {
+    padding: 12px 24px; border: none; border-radius: var(--radius);
+    font-size: 14px; font-weight: 600; cursor: pointer;
+    transition: all 0.15s ease; font-family: inherit;
+    background: var(--slate-200); color: var(--slate-900);
+}
+html.dark .ska-calc .btn-secondary {
+    background: var(--slate-700); color: var(--slate-200);
+}
+.ska-calc .btn-secondary:hover { background: var(--slate-300); }
+html.dark .ska-calc .btn-secondary:hover { background: var(--slate-600); }
+
+/* --- Results panel --- */
+.ska-calc .results-panel {
+    margin-top: 32px; padding: 20px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--slate-200);
+    background: var(--slate-50); display: none;
+}
+html.dark .ska-calc .results-panel {
+    background: var(--slate-800); border-color: var(--slate-700);
+}
+.ska-calc .results-panel.show { display: block; }
+.ska-calc .results-panel h3 {
+    font-size: 14px; font-weight: 700; margin-bottom: 16px;
+    color: var(--slate-900); text-transform: none; letter-spacing: 0;
+}
+html.dark .ska-calc .results-panel h3 { color: var(--slate-100); }
+.ska-calc .result-item {
+    display: grid; grid-template-columns: 180px 1fr;
+    gap: 16px; padding: 12px 0;
+    border-bottom: 1px solid var(--slate-200);
+}
+html.dark .ska-calc .result-item { border-bottom-color: var(--slate-700); }
+.ska-calc .result-item:last-child { border-bottom: none; }
+.ska-calc .result-label {
+    font-size: 12px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.5px;
+    color: var(--slate-500);
+}
+.ska-calc .result-value {
+    font-size: 16px; font-weight: 600;
+    color: var(--slate-900);
+    font-family: 'Monaco', 'Menlo', monospace;
+}
+html.dark .ska-calc .result-value { color: var(--slate-100); }
+
+/* --- Error panel --- */
+.ska-calc .error-panel {
+    padding: 16px; border-radius: var(--radius);
+    background: #fef2f2; border-left: 4px solid #dc2626;
+    color: #dc2626; margin-bottom: 16px;
+    display: none; font-size: 13px;
+}
+html.dark .ska-calc .error-panel {
+    background: rgba(220,38,38,0.1); color: #fca5a5;
+}
+.ska-calc .error-panel.show { display: block; }
+.ska-calc .error-panel a { color: inherit; font-weight: 600; }
+
+/* --- Spinner --- */
+.ska-calc .spinner {
+    display: inline-block; width: 16px; height: 16px;
+    border: 2px solid var(--blue-400);
+    border-top-color: var(--blue-600);
+    border-radius: 50%;
+    animation: ska-calc-spin 0.8s linear infinite;
+    margin-right: 8px; vertical-align: middle;
+}
+@keyframes ska-calc-spin { to { transform: rotate(360deg); } }
+
+/* --- Responsive --- */
+@media (max-width: 640px) {
+    .ska-calc .calc-card { padding: 20px; }
+    .ska-calc .form-row { grid-template-columns: 1fr; }
+    .ska-calc .toggle-group { flex-direction: column; }
+    .ska-calc .radio-group { flex-direction: column; gap: 12px; }
+    .ska-calc .result-item { grid-template-columns: 1fr; gap: 4px; }
+    .ska-calc .button-group { flex-direction: column; }
+    .ska-calc .button-group button { width: 100%; }
+}
