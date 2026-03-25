@@ -32,13 +32,35 @@
     $page.resources.requireForContext('viewcontent')
     $page.resources.require('com.atlassian.confluence.plugins.confluence-inline-tasks:inline-tasks-styles')
 
-    <title>$page.title — SKAO Science Users Portal</title>
+    <title>$page.title — SKAO Science Operations Portal</title>
+
+    ## OpenGraph / social meta tags for link previews
+    <meta property="og:title" content="$page.title — SKAO Science Operations Portal" />
+    <meta property="og:description" content="The central hub for SKAO science operations — documentation, tools, proposals, and community resources for the world's largest radio telescope." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="${theme.baseUrl}/images/og-image.jpg" />
+    <meta property="og:site_name" content="SKAO Science Operations Portal" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="$page.title — SKAO Science Operations Portal" />
+    <meta name="twitter:description" content="Documentation, tools, and resources for the SKAO science community." />
+    <meta name="twitter:image" content="${theme.baseUrl}/images/og-image.jpg" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="${theme.baseUrl}/css/style.css">
     <link rel="stylesheet" href="${theme.baseUrl}/css/eggs.css">
+
+    ## Matter.js for interactive 404 page — only load when needed
+    #set($checkTitle = $page.title.toLowerCase().trim())
+    #if($checkTitle == "not found" || $checkTitle == "page not found" || $checkTitle == "404")
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js" defer></script>
+    #end
+
+    ## Prevent flash of wrong theme — runs before body renders
+    <script>
+        (function(){try{if(localStorage.getItem('skao-theme')==='dark'){document.documentElement.classList.add('dark')}}catch(e){}})();
+    </script>
 </head>
 
 <body>
@@ -102,7 +124,7 @@
                     <a href="$homeLink" class="brand-link">
                         <img src="${theme.baseUrl}/images/skao-logo-white.png" alt="SKAO" class="logo-img">
                         <div class="brand-title">
-                            <span class="site-title">Science Users Portal</span>
+                            <span class="site-title">Science Operations Portal</span>
                             <span class="site-subtitle">Square Kilometre Array Observatory</span>
                         </div>
                     </a>
@@ -113,6 +135,10 @@
                                 <kbd class="header-kbd">Ctrl+K</kbd>
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                             </span>
+                        </button>
+                        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+                            <svg class="theme-icon-light" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                            <svg class="theme-icon-dark" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
                         </button>
                         <button class="mobile-search-btn" id="openSearchModalMobile" aria-label="Search">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
@@ -148,7 +174,7 @@
             <div class="announcement-content">
                 <svg class="announcement-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
                 <p class="announcement-text">
-                    Welcome to the SKAO Science Users Portal — documentation is being migrated. Check back regularly for updates.
+                    Welcome to the SKAO Science Operations Portal — documentation is being migrated. Check back regularly for updates.
                 </p>
             </div>
             <button class="announcement-close" aria-label="Dismiss">
@@ -190,7 +216,42 @@
 
         #set($children = $page.children)
         #set($isHomePage = (!$page.parent))
-        #if($isHomePage && $children && $children.size() > 0)
+
+        ## =============================================
+        ## 404 DETECTION — Viewport routes errors through page.vm
+        ## Detect by title "Not Found" with no children (not the real homepage)
+        ## =============================================
+        #set($pageTitle = $page.title.toLowerCase().trim())
+        #set($is404 = false)
+        #if($pageTitle == "not found" || $pageTitle == "page not found" || $pageTitle == "404")
+            #set($is404 = true)
+        #end
+
+        #if($is404)
+        ## =============================================
+        ## 404 ERROR PAGE — Interactive physics-based
+        ## Matter.js loaded in <head> only for 404 pages
+        ## =============================================
+            <div class="nf-container" id="notFoundContainer">
+                <canvas class="nf-canvas" id="nfCanvas"></canvas>
+                <div class="nf-content">
+                    <h1 class="nf-title">404</h1>
+                    <p class="nf-subtitle">Page Not Found</p>
+                    <p class="nf-text">The page you're looking for has drifted into the cosmic void.</p>
+                    <div class="nf-actions">
+                        <a href="$homeLink" class="nf-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:6px;"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                            Return to Portal
+                        </a>
+                        <a href="https://jira.skatelescope.org/servicedesk" target="_blank" rel="noopener" class="nf-btn nf-btn-outline">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:6px;"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                            Report an Issue
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        #elseif($isHomePage && $children && $children.size() > 0)
         ## =============================================
         ## HOMEPAGE LAYOUT (only for the root page)
         ## =============================================
@@ -201,7 +262,7 @@
                     <div class="hero-inner">
                         <h1 class="hero-title">$page.title</h1>
                         <p class="hero-desc">
-                            Welcome to the SKAO Science Users Portal. Access comprehensive documentation,
+                            Welcome to the SKAO Science Operations Portal. Access comprehensive documentation,
                             tools, and guidance for using the Square Kilometre Array Observatory for your research.
                         </p>
                         <div class="hero-actions">
@@ -375,7 +436,7 @@
                                     </span>
                                 </div>
                                 <h3 class="ru-card-title">Portal launched</h3>
-                                <p class="ru-card-desc">The Science Users Portal is now live. Documentation is being migrated from existing sources.</p>
+                                <p class="ru-card-desc">The Science Operations Portal is now live. Documentation is being migrated from existing sources.</p>
                             </div>
                         </div>
                         <div class="ru-card" data-category="announcement" data-date="2026-03-20">
@@ -465,6 +526,7 @@
             ## UPCOMING DEADLINES & EVENTS
             <section class="upcoming-events">
                 <div class="section-inner">
+                  <div class="ue-container">
                     <h2 class="section-heading">Upcoming Deadlines &amp; Events</h2>
                     <div class="ue-filter-tabs" id="ueFilterTabs">
                         <button class="ue-filter-tab ue-filter-active" data-ue-filter="all">All</button>
@@ -478,8 +540,8 @@
                                 <span class="ue-month">JUN</span>
                                 <span class="ue-day">15</span>
                             </div>
-                            <div class="ue-body">
-                                <span class="ue-badge ue-badge-deadline">Deadline</span>
+                            <span class="ue-badge ue-badge-deadline">Deadline</span>
+                            <div class="ue-body-text">
                                 <h3 class="ue-title">Call for Proposals — Cycle 2026A closes</h3>
                                 <p class="ue-desc">Submit proposals for SKAO observing time via the proposal submission portal.</p>
                             </div>
@@ -489,8 +551,8 @@
                                 <span class="ue-month">JUL</span>
                                 <span class="ue-day">07</span>
                             </div>
-                            <div class="ue-body">
-                                <span class="ue-badge ue-badge-workshop">Workshop</span>
+                            <span class="ue-badge ue-badge-workshop">Workshop</span>
+                            <div class="ue-body-text">
                                 <h3 class="ue-title">SKA Data Analysis Workshop — Manchester</h3>
                                 <p class="ue-desc">Hands-on workshop for processing and analysing SKA pathfinder data. Registration open.</p>
                             </div>
@@ -500,8 +562,8 @@
                                 <span class="ue-month">JUL</span>
                                 <span class="ue-day">21</span>
                             </div>
-                            <div class="ue-body">
-                                <span class="ue-badge ue-badge-maint">Maintenance</span>
+                            <span class="ue-badge ue-badge-maint">Maintenance</span>
+                            <div class="ue-body-text">
                                 <h3 class="ue-title">SRCNet scheduled maintenance window</h3>
                                 <p class="ue-desc">Planned downtime for infrastructure upgrades. Services may be intermittent 21–23 July.</p>
                             </div>
@@ -511,13 +573,14 @@
                                 <span class="ue-month">SEP</span>
                                 <span class="ue-day">15</span>
                             </div>
-                            <div class="ue-body">
-                                <span class="ue-badge ue-badge-workshop">Conference</span>
+                            <span class="ue-badge ue-badge-workshop">Conference</span>
+                            <div class="ue-body-text">
                                 <h3 class="ue-title">SKAO Science Conference 2026</h3>
                                 <p class="ue-desc">Annual gathering of the SKAO science community. Abstract submission deadline: 1 August.</p>
                             </div>
                         </div>
                     </div>
+                  </div>
                 </div>
             </section>
 
@@ -530,15 +593,12 @@
                             <h3 class="community-heading">Latest from Contact Magazine</h3>
                             <div class="contact-mag-body">
                                 <div class="contact-mag-cover">
-                                    <div class="contact-mag-placeholder">
-                                        <span class="contact-mag-issue">19</span>
-                                        <span class="contact-mag-label">Contact</span>
-                                    </div>
+                                    <img src="${theme.baseUrl}/images/Contact.png" alt="Contact Issue 19 cover" class="contact-mag-img" />
                                 </div>
                                 <div class="contact-mag-info">
                                     <h4 class="contact-mag-title">Contact Issue 19</h4>
-                                    <p class="contact-mag-highlight">Featuring: First light preparations, SRCNet progress, and the next generation of SKA scientists.</p>
-                                    <a href="https://www.skao.int/en/explore/publications" target="_blank" rel="noopener" class="contact-mag-link">Read the full issue →</a>
+                                    <p class="contact-mag-highlight">Published on the seventh anniversary of SKAO Convention being signed, this issue celebrates recent technical milestones for the SKA-Mid telescope, dives into how interferometers work, details our latest construction progress in Australia and South Africa, and much more!</p>
+                                    <a href="https://www.skao.int/en/news-events/contact-skao-magazine" target="_blank" rel="noopener" class="contact-mag-link">Read the full issue →</a>
                                 </div>
                             </div>
                         </div>
@@ -659,9 +719,9 @@
                         <h1 class="article-title">$page.title</h1>
                         <div class="article-meta">
                             #if($page.lastModificationDate)
-                                <span class="article-meta-item">
+                                <span class="article-meta-item article-date" data-raw-date="$page.lastModificationDate">
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                                    Last updated: $dateTool.format('d MMM yyyy', $page.lastModificationDate)
+                                    <span class="article-date-text">Last updated</span>
                                 </span>
                             #end
                             ## Version badge — reads from Confluence page label matching "version-*"
@@ -671,10 +731,30 @@
                                 #end
                             #end
                         </div>
+                        #if($page.content && $page.content.toString().trim().length() > 0)
                         <div class="content-body">
                             $page.content
+                        </div>
+                        #end
 
-                            ## "Was this helpful?" feedback widget
+                            ## For section pages, render a list of child pages
+                            #if($isSectionPage)
+                                <div class="section-children">
+                                    <p>This section contains the following pages:</p>
+                                    <div class="section-children-grid">
+                                        #foreach($childPage in $pageChildren)
+                                            <a href="$childPage.absoluteLink" class="section-child-card">
+                                                <span class="section-child-title">$childPage.title</span>
+                                                <span class="section-child-arrow">
+                                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                                                </span>
+                                            </a>
+                                        #end
+                                    </div>
+                                </div>
+                            #end
+
+                            ## "Was this helpful?" feedback widget — always at the bottom
                             <div class="page-feedback" id="pageFeedback">
                                 <div class="pf-question">
                                     <span class="pf-label">Was this page helpful?</span>
@@ -701,24 +781,6 @@
                                     <span>Thank you for your feedback!</span>
                                 </div>
                             </div>
-
-                            ## For section pages, render a list of child pages
-                            #if($isSectionPage)
-                                <div class="section-children">
-                                    <p>This section contains the following pages:</p>
-                                    <div class="section-children-grid">
-                                        #foreach($childPage in $pageChildren)
-                                            <a href="$childPage.absoluteLink" class="section-child-card">
-                                                <h3 class="section-child-title">$childPage.title</h3>
-                                                <span class="section-child-arrow">
-                                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
-                                                </span>
-                                            </a>
-                                        #end
-                                    </div>
-                                </div>
-                            #end
-                        </div>
                     </article>
 
                     ## Sidebar: show children for section pages, siblings for leaf pages
@@ -764,10 +826,10 @@
                 <div class="footer-col">
                     <h3 class="footer-heading">About SKAO</h3>
                     <ul class="footer-links">
-                        <li><a href="https://www.skao.int/en/about" target="_blank" rel="noopener">About the Observatory</a></li>
-                        <li><a href="https://www.skao.int/en/science" target="_blank" rel="noopener">Science Goals</a></li>
-                        <li><a href="https://www.skao.int/en/organisation" target="_blank" rel="noopener">Organisation</a></li>
-                        <li><a href="https://www.skao.int/en/news" target="_blank" rel="noopener">News &amp; Events</a></li>
+                        <li><a href="https://www.skao.int/en/about-us/skao" target="_blank" rel="noopener">About the Observatory</a></li>
+                        <li><a href="https://www.skao.int/en/explore/science-goals" target="_blank" rel="noopener">Science Goals</a></li>
+                        <li><a href="https://www.skao.int/en/opportunities/careers-opportunities" target="_blank" rel="noopener">Careers</a></li>
+                        <li><a href="https://www.skao.int/en/news-events" target="_blank" rel="noopener">News &amp; Events</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -799,7 +861,7 @@
                     <h3 class="footer-heading">Support</h3>
                     <ul class="footer-links">
                         <li><a href="https://jira.skatelescope.org/servicedesk" target="_blank" rel="noopener">Help Desk</a></li>
-                        <li><a href="https://www.skao.int/en/explore/contact" target="_blank" rel="noopener">Contact Us</a></li>
+                        <li><a href="https://www.skao.int/en/news-events/contact-skao-magazine" target="_blank" rel="noopener">Contact Magazine</a></li>
                         <li><a href="https://www.skao.int/en/explore/subscribe" target="_blank" rel="noopener">Subscribe to Updates</a></li>
                     </ul>
                 </div>

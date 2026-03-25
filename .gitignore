@@ -1,28 +1,28 @@
-# OS files
+# OS
 .DS_Store
 Thumbs.db
 Desktop.ini
 
-# IDE files
+# Editors
 .idea/
 .vscode/
 *.swp
 *.swo
 *~
 
-# Node (if we add build tools later)
+# Node (reserved for future build tooling)
 node_modules/
 package-lock.json
 
 # Obsidian
 .obsidian/
 
-# Backups (kept separately)
+# Local backups
 backups/
 
 # Logs
 *.log
 
-# Easter eggs — keep these out of version control
+# Easter eggs (intentionally excluded from version control)
 theme/css/eggs.css
 theme/js/eggs.js
