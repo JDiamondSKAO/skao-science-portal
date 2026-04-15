@@ -116,27 +116,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     /* -----------------------------------------
-     * HERO SECTION COLLAPSE / EXPAND
-     * ----------------------------------------- */
-    var heroToggle = document.querySelector('.hero-toggle');
-    var heroContent = document.querySelector('.hero-content');
-    var heroCollapsed = document.querySelector('.hero-collapsed');
-
-    if (heroToggle && heroContent) {
-        heroToggle.addEventListener('click', function () {
-            heroContent.style.display = 'none';
-            if (heroCollapsed) heroCollapsed.style.display = 'block';
-        });
-    }
-
-    if (heroCollapsed) {
-        heroCollapsed.addEventListener('click', function () {
-            heroContent.style.display = 'block';
-            heroCollapsed.style.display = 'none';
-        });
-    }
-
-    /* -----------------------------------------
      * DOCUMENTATION CATEGORIES TABS
      * ----------------------------------------- */
     var tabButtons = document.querySelectorAll('.cat-tab');
@@ -513,30 +492,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    /* -----------------------------------------
-     * RECENT UPDATES — CATEGORY FILTER TABS
-     * ----------------------------------------- */
-    var filterTabs = document.querySelectorAll('.ru-filter-tab');
-    var ruCards = document.querySelectorAll('.ru-card[data-category]');
-
-    filterTabs.forEach(function (tab) {
-        tab.addEventListener('click', function () {
-            var filter = this.getAttribute('data-filter');
-
-            /* Update active tab */
-            filterTabs.forEach(function (t) { t.classList.remove('ru-filter-active'); });
-            this.classList.add('ru-filter-active');
-
-            /* Filter cards */
-            ruCards.forEach(function (card) {
-                if (filter === 'all' || card.getAttribute('data-category') === filter) {
-                    card.classList.remove('ru-card-hidden');
-                } else {
-                    card.classList.add('ru-card-hidden');
-                }
-            });
-        });
-    });
+    /* Filter tabs removed in v1.3 — announcements now shown as compact list */
 
     /* -----------------------------------------
      * RELATIVE DATE FORMATTING

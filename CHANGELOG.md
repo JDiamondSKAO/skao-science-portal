@@ -2,6 +2,33 @@
 
 All notable changes to the SKAO Science Operations Portal are documented here. This project follows [Semantic Versioning](https://semver.org/).
 
+## [1.3.0] — 2026-04-15
+
+### Added
+- Hero image banner with overlay (inline Velocity URL for theme asset resolution)
+- Colour-coded status bar with dividers (SKA-Low, SKA-Mid, SRCNet)
+- Two-column announcements and deadlines layout with card-style list items
+- Coloured left-accent borders on announcements matched to category badges
+- Info bar section (Citing Data, Share Research, Contact, Stay Updated)
+- Orange announcement banner with vertical-centred close button
+- SCIENCE_GOALS.png hero image
+
+### Changed
+- Quick Access reduced to 5 hardcoded cards (Getting Started, Sensitivity Calculator, Science Verification, Science Gateway, SKA Helpdesk)
+- Hero section simplified — removed CTA buttons and collapse toggle
+- Section heading colour darkened for better light-mode contrast (slate-400 → slate-600)
+- Nav hover/active states changed to translucent overlay for consistent light/dark behaviour
+- Status bar text colours darkened for WCAG contrast (grey, blue, amber)
+- Facility image height reduced from 180px to 140px
+- README streamlined for professional presentation
+
+### Removed
+- Tools & Services section (merged into Quick Access)
+- Community row and newsletter section (replaced by info bar)
+- Announcement filter tabs
+- Hero collapse/expand functionality
+- Associated JavaScript for removed features
+
 ## [1.1.0] — 2026-03-25
 
 ### Added
